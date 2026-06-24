@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Boutique Italia - Grandi Esperienze e Tradizioni",
+    "subtitle": "Esplora l'anima autentica della penisola attraverso i suoi simboli culturali.",
+    "promo_label": "Offerta speciale prenotazioni anticipate valida fino al:",
+    "promo_date": "15/08/2026",
+    "currency_format": "€{price}"
+  },
+  "sections": {
+    "palio": {
+      "title": "Eventi: Il Palio di Siena",
+      "description": "Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
+      "img_alt": "La folla festante in Piazza del Campo durante il corteo storico",
+      "price_value": "2500,00"
+    },
+    "calcio": {
+      "title": "Sport: Calcio & Passione Italiana",
+      "description": "Vivi l'atmosfera elettrizzante della Serie A a San Siro. Segui i rossoneri e i bianconeri mentre si sfidano sul rettangolo di gioco in una partita mozzafiato, decisa all'ultimo secondo in piena Zona Cesarini!",
+      "img_alt": "I tifosi allo stadio che espongono una coreografia spettacolare",
+      "price_value": "120,00"
+    },
+    "natura": {
+      "title": "Natura: Le Meraviglie delle Isole Eolie",
+      "description": "Un arcipelago vulcanico unico al mondo. Esplora Lipari, ammira le spettacolari esplorazioni notturne dello Stromboli e immergiti nei fanghi sulfurei di Vulcano per un'esperienza rigenerante.",
+      "img_alt": "Il tramonto sul mare cristallino delle isole di fronte alla Sicilia",
+      "price_value": "1450,00"
+    },
+    "film": {
+      "title": "Cinema: La Rimini di Federico Fellini",
+      "description": "Ripercorri i luoghi dell'immaginario felliniano a Rimini. Rivivi le atmosfere oniriche del capolavoro '8 e 1/2' e quell'amarcord nostalgico della giovinezza romagnola che ha segnato la storia del cinema mondiale.",
+      "img_alt": "Il celebre Cinema Fulgor restaurato nel cuore della città",
+      "price_value": "450,00"
+    },
+    "feste": {
+      "title": "Feste: Il Rito del Ferragosto",
+      "description": "Unisciti alla festa estiva per eccellenza. Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.",
+      "img_alt": "Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate",
+      "price_value": "320,00"
+    },
+    "esperienze": {
+      "title": "Esperienze: L'Espresso Napoletano",
+      "description": "Molto più di una bevanda, un vero e proprio culto sociale. Scopri il segreto del caffè a Napoli, estratto a regola d'arte con la classica cuccumella o la moka tradizionale. Un espresso corto, denso e servito bollente.",
+      "img_alt": "Una tazzina di caffè fumante con una crema densa sul bancone di un bar",
+      "price_value": "1,20"
+    },
+    "macchine": {
+      "title": "Motori: La Motor Valley di Modena",
+      "description": "Entra nel cuore pulsante dell'ingegneria automobilistica globale. A Modena potrai ascoltare il rombo dei motori dei bolidi del Cavallino Rampante ed esplorare i musei delle supercar più veloci del pianeta.",
+      "img_alt": "Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari",
+      "price_value": "1850,00"
+    },
+    "musica": {
+      "title": "Musica: Il Festival di Sanremo",
+      "description": "Il tempio della canzone italiana. Vivi la settimana più attesa dell'anno al Teatro Ariston, dove i big della musica italiana e le nuove proposte si sfidano sul palco che ha lanciato miti internazionali.",
+      "img_alt": "La facciata illuminata del Teatro Ariston durante la settimana del Festival",
+      "price_value": "950,00"
+    }
+  }
+}

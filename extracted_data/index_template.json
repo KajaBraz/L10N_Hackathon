@@ -1,0 +1,286 @@
+[
+  {
+    "type": "text",
+    "content": "html",
+    "tag": "[document]",
+    "dom_path": ""
+  },
+  {
+    "type": "text",
+    "content": "{{META_TITLE}}",
+    "tag": "title",
+    "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{META_TITLE}}",
+    "tag": "h1",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{META_SUBTITLE}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{PROMO_LABEL}}",
+    "tag": "div",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{PROMO_DATE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{PALIO_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{PALIO_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{PALIO_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{PALIO_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{CALCIO_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{CALCIO_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{CALCIO_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{CALCIO_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{NATURA_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{NATURA_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{NATURA_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{NATURA_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{FILM_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{FILM_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{FILM_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{FILM_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{FESTE_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{FESTE_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{FESTE_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{FESTE_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{ESPERIENZE_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{ESPERIENZE_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{ESPERIENZE_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{ESPERIENZE_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{MACCHINE_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{MACCHINE_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{MACCHINE_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{MACCHINE_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "text",
+    "content": "{{MUSICA_TITLE}}",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{MUSICA_DESC}}",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "\"{{MUSICA_ALT}}\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+  },
+  {
+    "type": "text",
+    "content": "{{MUSICA_PRICE}}",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+  },
+  {
+    "type": "image",
+    "src": "images/palio_siena.jpg",
+    "alt": "{{PALIO_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/calcio_san_siro.jpg",
+    "alt": "{{CALCIO_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/eolie_islands.jpg",
+    "alt": "{{NATURA_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/fellini_rimini.jpg",
+    "alt": "{{FILM_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/ferragosto_beach.jpg",
+    "alt": "{{FESTE_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/naples_coffee.jpg",
+    "alt": "{{ESPERIENZE_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/modena_motors.jpg",
+    "alt": "{{MACCHINE_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)"
+  },
+  {
+    "type": "image",
+    "src": "images/sanremo_ariston.jpg",
+    "alt": "{{MUSICA_ALT}}",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > img:nth-of-type(1)"
+  }
+]

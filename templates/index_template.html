@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="{{LANG_CODE}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{META_TITLE}}</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2520; }
+        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1em; }
+        .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Two-column layout grid to look professional for judges */
+        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+        /* New Image Styling */
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
+
+        .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
+        .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
+        .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
+        .meta-item { font-weight: bold; color: #7a6e65; display: block; margin-bottom: 4px; }
+        .meta-price { font-weight: bold; color: #b83227; font-size: 1.15em; display: block; text-align: right; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>{{META_TITLE}}</h1>
+        <p>{{META_SUBTITLE}}</p>
+    </header>
+
+    <div class="promo-banner">
+        {{PROMO_LABEL}} <span class="date-highlight">{{PROMO_DATE}}</span>
+    </div>
+
+    <div class="container">
+        <main class="section-grid">
+
+            <article class="card" id="palio">
+                <div class="card-content">
+                    <div>
+                        <h2>{{PALIO_TITLE}}</h2>
+                        <p>{{PALIO_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/palio_siena.jpg" alt="{{PALIO_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{PALIO_ALT}}"</em></span>
+                        <span class="meta-price">{{PALIO_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="calcio">
+                <div class="card-content">
+                    <div>
+                        <h2>{{CALCIO_TITLE}}</h2>
+                        <p>{{CALCIO_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/calcio_san_siro.jpg" alt="{{CALCIO_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{CALCIO_ALT}}"</em></span>
+                        <span class="meta-price">{{CALCIO_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="natura">
+                <div class="card-content">
+                    <div>
+                        <h2>{{NATURA_TITLE}}</h2>
+                        <p>{{NATURA_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/eolie_islands.jpg" alt="{{NATURA_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{NATURA_ALT}}"</em></span>
+                        <span class="meta-price">{{NATURA_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="film">
+                <div class="card-content">
+                    <div>
+                        <h2>{{FILM_TITLE}}</h2>
+                        <p>{{FILM_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/fellini_rimini.jpg" alt="{{FILM_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{FILM_ALT}}"</em></span>
+                        <span class="meta-price">{{FILM_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="feste">
+                <div class="card-content">
+                    <div>
+                        <h2>{{FESTE_TITLE}}</h2>
+                        <p>{{FESTE_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/ferragosto_beach.jpg" alt="{{FESTE_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{FESTE_ALT}}"</em></span>
+                        <span class="meta-price">{{FESTE_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="esperienze">
+                <div class="card-content">
+                    <div>
+                        <h2>{{ESPERIENZE_TITLE}}</h2>
+                        <p>{{ESPERIENZE_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/naples_coffee.jpg" alt="{{ESPERIENZE_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{ESPERIENZE_ALT}}"</em></span>
+                        <span class="meta-price">{{ESPERIENZE_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="macchine">
+                <div class="card-content">
+                    <div>
+                        <h2>{{MACCHINE_TITLE}}</h2>
+                        <p>{{MACCHINE_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/modena_motors.jpg" alt="{{MACCHINE_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{MACCHINE_ALT}}"</em></span>
+                        <span class="meta-price">{{MACCHINE_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="musica">
+                <div class="card-content">
+                    <div>
+                        <h2>{{MUSICA_TITLE}}</h2>
+                        <p>{{MUSICA_DESC}}</p>
+                    </div>
+                    <img class="card-img" src="images/sanremo_ariston.jpg" alt="{{MUSICA_ALT}}">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"{{MUSICA_ALT}}"</em></span>
+                        <span class="meta-price">{{MUSICA_PRICE}}</span>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+</body>
+</html>

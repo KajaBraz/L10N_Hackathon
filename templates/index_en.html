@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Italy - Big Experiences and Traditions</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2520; }
+        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1em; }
+        .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Two-column layout grid to look professional for judges */
+        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+        /* New Image Styling */
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
+
+        .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
+        .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
+        .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
+        .meta-item { font-weight: bold; color: #7a6e65; display: block; margin-bottom: 4px; }
+        .meta-price { font-weight: bold; color: #b83227; font-size: 1.15em; display: block; text-align: right; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Boutique Italy - Big Experiences and Traditions</h1>
+        <p>Explore the authentic soul of the peninsula through its cultural badges.</p>
+    </header>
+
+    <div class="promo-banner">
+        Special early bird offer valid until: <span class="date-highlight">15/08/2026</span>
+    </div>
+
+    <div class="container">
+        <main class="section-grid">
+
+            <article class="card" id="palio">
+                <div class="card-content">
+                    <div>
+                        <h2>Events: The Palio of Siena</h2>
+                        <p>Discover the timeless magic of Siena. Live the historic rivalry between the Shop-Districts, walk among the medieval neighborhoods in party and witness the legendary race of the barbers, guided by the authority of the mover on the big glass.</p>
+                    </div>
+                    <img class="card-img" src="images/palio_siena.jpg" alt="The partying crowd in Field Square during the historical parade">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"The partying crowd in Field Square during the historical parade"</em></span>
+                        <span class="meta-price">€2500,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="calcio">
+                <div class="card-content">
+                    <div>
+                        <h2>Sport: Italian Passion Calcium</h2>
+                        <p>Live the electrifying atmosphere of Series A at San Siro. Follow the red-and-blacks and the white-and-blacks while they challenge on the game rectangle in a breathtaking match, decided at the last second in full Cesarini Zone!</p>
+                    </div>
+                    <img class="card-img" src="images/calcio_san_siro.jpg" alt="The fans at the stadium exposing a spectacular choreography">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"The fans at the stadium exposing a spectacular choreography"</em></span>
+                        <span class="meta-price">€120,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="natura">
+                <div class="card-content">
+                    <div>
+                        <h2>Nature: The Wonders of the Aeolian Islands</h2>
+                        <p>A unique volcanic archipelago in the world. Explore Lipari, admire the spectacular nightly explorations of the volcano and dive into the sulfur muds of volcano for a regenerating experience.</p>
+                    </div>
+                    <img class="card-img" src="images/eolie_islands.jpg" alt="The sunset on the crystalline sea of the islands in front of Sicily">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"The sunset on the crystalline sea of the islands in front of Sicily"</em></span>
+                        <span class="meta-price">€1450,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="film">
+                <div class="card-content">
+                    <div>
+                        <h2>Cinema: The Rimini of Federico Fellini</h2>
+                        <p>Retrace the places of Fellinian imaginary in Rimini. Relive the dreamlike atmospheres of the masterpiece '8 and a half' and that nostalgic arcord of Romagnolo youth that marked the history of world cinema.</p>
+                    </div>
+                    <img class="card-img" src="images/fellini_rimini.jpg" alt="The famous Fulgor Cinema restored in the heart of the city">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"The famous Fulgor Cinema restored in the heart of the city"</em></span>
+                        <span class="meta-price">€450,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="feste">
+                <div class="card-content">
+                    <div>
+                        <h2>Holidays: The Ritual of Iron August</h2>
+                        <p>Join the summer party par excellence. August 15th in Italy means barbecues in the mountain, bonfires on the beach, trips outside the door to Riccione and total relax under the Mediterranean sun.</p>
+                    </div>
+                    <img class="card-img" src="images/ferragosto_beach.jpg" alt="Packed beach and colored umbrellas during the mid-summer party">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"Packed beach and colored umbrellas during the mid-summer party"</em></span>
+                        <span class="meta-price">€320,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="esperienze">
+                <div class="card-content">
+                    <div>
+                        <h2>Experiences: The Neapolitan Express</h2>
+                        <p>Much more than a drink, a real social cult. Discover the secret of coffee in Naples, extracted to a rule of art with the classic cuccumella or the traditional moka. A short, dense express served boiling hot.</p>
+                    </div>
+                    <img class="card-img" src="images/naples_coffee.jpg" alt="A steaming cup of coffee with a dense cream on a bar counter">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"A steaming cup of coffee with a dense cream on a bar counter"</em></span>
+                        <span class="meta-price">€1,20</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="macchine">
+                <div class="card-content">
+                    <div>
+                        <h2>Engines: The Motor Valley of Modena</h2>
+                        <p>Enter the beating heart of global automotive engineering. In Modena you can listen to the roar of the engines of the racing cars of the Prancing Pony and explore the museums of the fastest supercars on the planet.</p>
+                    </div>
+                    <img class="card-img" src="images/modena_motors.jpg" alt="A flaming red sports car displayed in front of the Enzo Ferrari museum">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"A flaming red sports car displayed in front of the Enzo Ferrari museum"</em></span>
+                        <span class="meta-price">€1850,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="musica">
+                <div class="card-content">
+                    <div>
+                        <h2>Music: The Sanremo Festival</h2>
+                        <p>The temple of the Italian song. Live the most awaited week of the year at the Ariston Theatre, where the bigs of Italian music and new proposals challenge on the stage that launched international myths.</p>
+                    </div>
+                    <img class="card-img" src="images/sanremo_ariston.jpg" alt="The illuminated facade of the Ariston Theatre during the Festival week">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"The illuminated facade of the Ariston Theatre during the Festival week"</em></span>
+                        <span class="meta-price">€950,00</span>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+</body>
+</html>

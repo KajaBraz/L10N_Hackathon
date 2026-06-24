@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Boutique Italy - Big Experiences and Traditions",
+    "subtitle": "Explore the authentic soul of the peninsula through its cultural badges.",
+    "promo_label": "Special early bird offer valid until:",
+    "promo_date": "15/08/2026",
+    "currency_format": "€{price}"
+  },
+  "sections": {
+    "palio": {
+      "title": "Events: The Palio of Siena",
+      "description": "Discover the timeless magic of Siena. Live the historic rivalry between the Shop-Districts, walk among the medieval neighborhoods in party and witness the legendary race of the barbers, guided by the authority of the mover on the big glass.",
+      "img_alt": "The partying crowd in Field Square during the historical parade",
+      "price_value": "2500,00"
+    },
+    "calcio": {
+      "title": "Sport: Italian Passion Calcium",
+      "description": "Live the electrifying atmosphere of Series A at San Siro. Follow the red-and-blacks and the white-and-blacks while they challenge on the game rectangle in a breathtaking match, decided at the last second in full Cesarini Zone!",
+      "img_alt": "The fans at the stadium exposing a spectacular choreography",
+      "price_value": "120,00"
+    },
+    "natura": {
+      "title": "Nature: The Wonders of the Aeolian Islands",
+      "description": "A unique volcanic archipelago in the world. Explore Lipari, admire the spectacular nightly explorations of the volcano and dive into the sulfur muds of volcano for a regenerating experience.",
+      "img_alt": "The sunset on the crystalline sea of the islands in front of Sicily",
+      "price_value": "1450,00"
+    },
+    "film": {
+      "title": "Cinema: The Rimini of Federico Fellini",
+      "description": "Retrace the places of Fellinian imaginary in Rimini. Relive the dreamlike atmospheres of the masterpiece '8 and a half' and that nostalgic arcord of Romagnolo youth that marked the history of world cinema.",
+      "img_alt": "The famous Fulgor Cinema restored in the heart of the city",
+      "price_value": "450,00"
+    },
+    "feste": {
+      "title": "Holidays: The Ritual of Iron August",
+      "description": "Join the summer party par excellence. August 15th in Italy means barbecues in the mountain, bonfires on the beach, trips outside the door to Riccione and total relax under the Mediterranean sun.",
+      "img_alt": "Packed beach and colored umbrellas during the mid-summer party",
+      "price_value": "320,00"
+    },
+    "esperienze": {
+      "title": "Experiences: The Neapolitan Express",
+      "description": "Much more than a drink, a real social cult. Discover the secret of coffee in Naples, extracted to a rule of art with the classic cuccumella or the traditional moka. A short, dense express served boiling hot.",
+      "img_alt": "A steaming cup of coffee with a dense cream on a bar counter",
+      "price_value": "1,20"
+    },
+    "macchine": {
+      "title": "Engines: The Motor Valley of Modena",
+      "description": "Enter the beating heart of global automotive engineering. In Modena you can listen to the roar of the engines of the racing cars of the Prancing Pony and explore the museums of the fastest supercars on the planet.",
+      "img_alt": "A flaming red sports car displayed in front of the Enzo Ferrari museum",
+      "price_value": "1850,00"
+    },
+    "musica": {
+      "title": "Music: The Sanremo Festival",
+      "description": "The temple of the Italian song. Live the most awaited week of the year at the Ariston Theatre, where the bigs of Italian music and new proposals challenge on the stage that launched international myths.",
+      "img_alt": "The illuminated facade of the Ariston Theatre during the Festival week",
+      "price_value": "950,00"
+    }
+  }
+}

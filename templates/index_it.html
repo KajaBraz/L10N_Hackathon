@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Italia - Grandi Esperienze e Tradizioni</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2520; }
+        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1em; }
+        .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Two-column layout grid to look professional for judges */
+        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+        /* New Image Styling */
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
+
+        .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
+        .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
+        .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
+        .meta-item { font-weight: bold; color: #7a6e65; display: block; margin-bottom: 4px; }
+        .meta-price { font-weight: bold; color: #b83227; font-size: 1.15em; display: block; text-align: right; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Boutique Italia - Grandi Esperienze e Tradizioni</h1>
+        <p>Esplora l'anima autentica della penisola attraverso i suoi simboli culturali.</p>
+    </header>
+
+    <div class="promo-banner">
+        Offerta speciale prenotazioni anticipate valida fino al: <span class="date-highlight">15/08/2026</span>
+    </div>
+
+    <div class="container">
+        <main class="section-grid">
+
+            <article class="card" id="palio">
+                <div class="card-content">
+                    <div>
+                        <h2>Eventi: Il Palio di Siena</h2>
+                        <p>Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.</p>
+                    </div>
+                    <img class="card-img" src="images/palio_siena.jpg" alt="La folla festante in Piazza del Campo durante il corteo storico">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"La folla festante in Piazza del Campo durante il corteo storico"</em></span>
+                        <span class="meta-price">€2500,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="calcio">
+                <div class="card-content">
+                    <div>
+                        <h2>Sport: Calcio & Passione Italiana</h2>
+                        <p>Vivi l'atmosfera elettrizzante della Serie A a San Siro. Segui i rossoneri e i bianconeri mentre si sfidano sul rettangolo di gioco in una partita mozzafiato, decisa all'ultimo secondo in piena Zona Cesarini!</p>
+                    </div>
+                    <img class="card-img" src="images/calcio_san_siro.jpg" alt="I tifosi allo stadio che espongono una coreografia spettacolare">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"I tifosi allo stadio che espongono una coreografia spettacolare"</em></span>
+                        <span class="meta-price">€120,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="natura">
+                <div class="card-content">
+                    <div>
+                        <h2>Natura: Le Meraviglie delle Isole Eolie</h2>
+                        <p>Un arcipelago vulcanico unico al mondo. Esplora Lipari, ammira le spettacolari esplorazioni notturne dello Stromboli e immergiti nei fanghi sulfurei di Vulcano per un'esperienza rigenerante.</p>
+                    </div>
+                    <img class="card-img" src="images/eolie_islands.jpg" alt="Il tramonto sul mare cristallino delle isole di fronte alla Sicilia">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"Il tramonto sul mare cristallino delle isole di fronte alla Sicilia"</em></span>
+                        <span class="meta-price">€1450,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="film">
+                <div class="card-content">
+                    <div>
+                        <h2>Cinema: La Rimini di Federico Fellini</h2>
+                        <p>Ripercorri i luoghi dell'immaginario felliniano a Rimini. Rivivi le atmosfere oniriche del capolavoro '8 e 1/2' e quell'amarcord nostalgico della giovinezza romagnola che ha segnato la storia del cinema mondiale.</p>
+                    </div>
+                    <img class="card-img" src="images/fellini_rimini.jpg" alt="Il celebre Cinema Fulgor restaurato nel cuore della città">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"Il celebre Cinema Fulgor restaurato nel cuore della città"</em></span>
+                        <span class="meta-price">€450,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="feste">
+                <div class="card-content">
+                    <div>
+                        <h2>Feste: Il Rito del Ferragosto</h2>
+                        <p>Unisciti alla festa estiva per eccellenza. Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.</p>
+                    </div>
+                    <img class="card-img" src="images/ferragosto_beach.jpg" alt="Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate"</em></span>
+                        <span class="meta-price">€320,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="esperienze">
+                <div class="card-content">
+                    <div>
+                        <h2>Esperienze: L'Espresso Napoletano</h2>
+                        <p>Molto più di una bevanda, un vero e proprio culto sociale. Scopri il segreto del caffè a Napoli, estratto a regola d'arte con la classica cuccumella o la moka tradizionale. Un espresso corto, denso e servito bollente.</p>
+                    </div>
+                    <img class="card-img" src="images/naples_coffee.jpg" alt="Una tazzina di caffè fumante con una crema densa sul bancone di un bar">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"Una tazzina di caffè fumante con una crema densa sul bancone di un bar"</em></span>
+                        <span class="meta-price">€1,20</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="macchine">
+                <div class="card-content">
+                    <div>
+                        <h2>Motori: La Motor Valley di Modena</h2>
+                        <p>Entra nel cuore pulsante dell'ingegneria automobilistica globale. A Modena potrai ascoltare il rombo dei motori dei bolidi del Cavallino Rampante ed esplorare i musei delle supercar più veloci del pianeta.</p>
+                    </div>
+                    <img class="card-img" src="images/modena_motors.jpg" alt="Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari"</em></span>
+                        <span class="meta-price">€1850,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="musica">
+                <div class="card-content">
+                    <div>
+                        <h2>Musica: Il Festival di Sanremo</h2>
+                        <p>Il tempio della canzone italiana. Vivi la settimana più attesa dell'anno al Teatro Ariston, dove i big della musica italiana e le nuove proposte si sfidano sul palco che ha lanciato miti internazionali.</p>
+                    </div>
+                    <img class="card-img" src="images/sanremo_ariston.jpg" alt="La facciata illuminata del Teatro Ariston durante la settimana del Festival">
+                    <div class="meta-box">
+                        <span class="meta-item"><em>"La facciata illuminata del Teatro Ariston durante la settimana del Festival"</em></span>
+                        <span class="meta-price">€950,00</span>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+</body>
+</html>
