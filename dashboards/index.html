@@ -17,6 +17,9 @@
         </div>
 
         <div class="flex items-center gap-6">
+            <button id="rebuild-btn" onclick="triggerTemplateRebuild()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs tracking-wide shadow transition-all flex items-center gap-2 border border-blue-400/20 active:scale-95">
+                ⚙️ Update Translations & Rebuild
+            </button>
             <div class="bg-gray-900 border border-gray-700 px-4 py-1.5 rounded-lg text-center">
                 <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Global Quality Score</p>
                 <p id="score-display" class="text-xl font-black text-green-400">--/100</p>
@@ -296,13 +299,11 @@
                     card.querySelector('.target-flaw-text').innerText = error.target_text_snippet;
                     card.querySelector('.target-fix-text').innerText = error.suggested_fix;
 
-                    // Read custom modifications dynamically from DOM when clicked
                     card.querySelector('.action-hotfix-btn').onclick = () => {
                         const modifiedFixText = card.querySelector('.target-fix-text').innerText.trim();
-                        applyHotfix(error.error_id, error.dom_path, error.source_text_snippet, modifiedFixText, error.html_element_id, error.severity);
+                        applyHotfix(error.error_id, error.dom_path, error.source_text_snippet, error.target_text_snippet, modifiedFixText, error.html_element_id, error.severity);
                     };
 
-                    // Dynamic Highlighting & Auto-Scroll Listeners
                     card.addEventListener('mouseenter', () => {
                         const targetComponent = document.getElementById(targetElementId);
                         if (targetComponent) {
@@ -335,7 +336,7 @@
             document.getElementById('total-errors').innerText = currentErrorsCount;
         }
 
-        async function applyHotfix(errorId, domPath, srcText, suggestedFix, htmlElementId, severity) {
+        async function applyHotfix(errorId, domPath, srcText, targetText, suggestedFix, htmlElementId, severity) {
             try {
                 const response = await fetch('/api/approve', {
                     method: 'POST',
@@ -345,7 +346,9 @@
                         error_id: errorId,
                         dom_path: domPath,
                         source_text: srcText,
-                        approved_translation: suggestedFix
+                        target_text_snippet: targetText,
+                        approved_translation: suggestedFix,
+                        html_element_id: htmlElementId
                     })
                 });
 
@@ -397,6 +400,33 @@
                 }
             } catch (err) {
                 alert("Pipeline network synchronization threat aborted hotfix submission.");
+            }
+        }
+
+        async function triggerTemplateRebuild() {
+            if (!currentActiveLocale) return;
+
+            const btn = document.getElementById('rebuild-btn');
+            const originalText = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = "⏳ Updating Resources...";
+            btn.className = "bg-gray-700 text-gray-400 font-bold px-4 py-2 rounded-lg text-xs tracking-wide shadow cursor-not-allowed border border-gray-600";
+
+            try {
+                const response = await fetch(`/api/rebuild/${currentActiveLocale}`, { method: 'POST' });
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(`🎉 Success!\n\n✅ Updated ${result.patched_elements} translations in: ${result.locale_file_updated}\n✅ Regenerated templates\n\nOutput:\n${result.template_generation_output}`);
+                } else {
+                    alert(`❌ Rebuild error: ${result.detail || "Verification failed."}`);
+                }
+            } catch (err) {
+                alert("❌ Critical Network failure connecting to the rebuild system.");
+            } finally {
+                btn.disabled = false;
+                btn.innerText = originalText;
+                btn.className = "bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs tracking-wide shadow transition-all flex items-center gap-2 border border-blue-400/20 active:scale-95";
             }
         }
 

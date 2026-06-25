@@ -1,6 +1,7 @@
 import glob
 import json
 import os
+import subprocess
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
@@ -18,8 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OUTPUT_DIR = "../output"
+OUTPUT_DIR = "../outputs"
 EXTRACTED_DIR = "../extracted_data"
+TEMPLATES_DIR = "../templates"  # Directory where index_*.html lives
+LOCALES_DIR = "../locales"  # Directory where locale JSON resource files live
+GENERATE_SCRIPT = "../generate_pages.py"  # Template generation script
 
 
 class ApprovalPayload(BaseModel):
@@ -28,6 +32,8 @@ class ApprovalPayload(BaseModel):
     dom_path: str
     source_text: str
     approved_translation: str
+    html_element_id: str = ""
+    target_text_snippet: str = ""
 
 
 @app.get("/")
@@ -110,7 +116,7 @@ def get_lqa_combined_data(locale: str):
                 "detected_errors": [{
                     "error_id": "ERR_002", "html_element_id": "macchine", "mqm_category": "Fluency",
                     "severity": "Major",
-                    "dom_path": "html > body > div > main > article#macchine > h3",
+                    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > article:nth-of-type(7) > h3:nth-of-type(1)",
                     "source_text_snippet": "Motor Valley Supercars",
                     "target_text_snippet": "Automobil-Valley-Superautos",
                     "issue_explanation": "Unnatural compound structure for high-end German branding.",
@@ -123,7 +129,7 @@ def get_lqa_combined_data(locale: str):
                 "detected_errors": [{
                     "error_id": "ERR_001", "html_element_id": "calcio", "mqm_category": "Accuracy",
                     "severity": "Critical",
-                    "dom_path": "html > body > div > main > article#calcio > h3",
+                    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > article:nth-of-type(2) > h3:nth-of-type(1)",
                     "source_text_snippet": "Calcio Storico", "target_text_snippet": "Historical Calcium Match",
                     "issue_explanation": "Catastrophic mistranslation of 'Calcio' as a chemical element instead of soccer.",
                     "suggested_fix": "Historic Soccer Match"
@@ -146,11 +152,178 @@ def approve_fix(payload: ApprovalPayload):
                 fixes = json.load(f)
             except json.JSONDecodeError:
                 fixes = []
+
+    # Avoid duplicate registrations for the same error item
+    fixes = [f for f in fixes if f.get('error_id') != payload.error_id]
     fixes.append(payload.model_dump())
+
     with open(fixes_path, "w", encoding="utf-8") as f:
         json.dump(fixes, f, indent=2, ensure_ascii=False)
     print(f"[LIVE AUDIT] [{payload.locale}] Fix recorded for {payload.error_id}!")
     return {"status": "success"}
+
+
+def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: str, approved_translation: str,
+                              locale_data: dict):
+    """
+    Maps HTML element ID, DOM path, and target text to the corresponding key path in locale JSON.
+    Returns tuple: (section_key, field_key) or (None, None) if not found.
+
+    Args:
+        html_element_id: The ID of the HTML element containing the error
+        dom_path: CSS selector path to the element
+        target_text: The current (flawed) target text that needs to be replaced
+        approved_translation: The corrected translation
+        locale_data: The current locale JSON data
+    """
+    # Handle meta fields (header, promo banner)
+    if html_element_id == "global_banner":
+        # Check if it's the promo label or date based on content
+        if any(char.isdigit() for char in target_text) and any(char.isdigit() for char in approved_translation):
+            return ("meta", "promo_date")
+        else:
+            return ("meta", "promo_label")
+
+    # Handle header elements
+    if not html_element_id or html_element_id in ["live-webpage-title", "emulated-site-title"]:
+        return ("meta", "title")
+
+    if not html_element_id or html_element_id in ["live-webpage-subtitle", "emulated-site-subtitle"]:
+        return ("meta", "subtitle")
+
+    # Handle section-specific elements
+    section_ids = ["palio", "calcio", "natura", "film", "feste", "esperienze", "macchine", "musica"]
+    if html_element_id in section_ids:
+        section_data = locale_data.get("sections", {}).get(html_element_id, {})
+
+        if not section_data:
+            return (None, None)
+
+        # Use DOM path to determine field type
+        # h2/h3 tags are typically titles
+        if "h2" in dom_path.lower() or "h3" in dom_path.lower():
+            return (html_element_id, "title")
+
+        # p tags are typically descriptions
+        elif "p" in dom_path.lower():
+            # If the target text matches the description, it's a description
+            if "description" in section_data:
+                current_desc = section_data["description"]
+                # Check if significant overlap with current description
+                if target_text.lower() in current_desc.lower() or current_desc.lower() in target_text.lower():
+                    return (html_element_id, "description")
+            return (html_element_id, "description")
+
+        # img tags with alt attributes
+        elif "img" in dom_path.lower():
+            return (html_element_id, "img_alt")
+
+        # Fallback: try to match based on target text content
+        for field_key in ["title", "description", "img_alt"]:
+            if field_key in section_data:
+                field_value = section_data[field_key]
+                # Normalize and compare
+                normalized_target = " ".join(target_text.split()).lower()
+                normalized_field = " ".join(field_value.split()).lower()
+
+                # Exact match
+                if normalized_target == normalized_field:
+                    return (html_element_id, field_key)
+
+                # Substring match (either direction)
+                if normalized_target in normalized_field or normalized_field in normalized_target:
+                    return (html_element_id, field_key)
+
+    return (None, None)
+
+
+@app.post("/api/rebuild/{locale}")
+def rebuild_localization_template(locale: str):
+    """
+    Updates the locale JSON resource file with approved fixes,
+    then runs generate_pages.py to regenerate the HTML templates.
+    """
+    fixes_path = os.path.join(OUTPUT_DIR, f"approved_fixes_{locale}.json")
+    locale_json_path = os.path.join(LOCALES_DIR, f"{locale}.json")
+
+    if not os.path.exists(fixes_path):
+        raise HTTPException(status_code=400,
+                            detail=f"No approved fixes found for locale '{locale}'. Please approve at least one fix before rebuilding.")
+
+    if not os.path.exists(locale_json_path):
+        raise HTTPException(status_code=404,
+                            detail=f"Locale resource file not found: {locale_json_path}\nPlease ensure the locale JSON file exists in the locales directory.")
+
+    # 1. Load approved string adjustments
+    with open(fixes_path, "r", encoding="utf-8") as f:
+        approved_fixes = json.load(f)
+
+    # 2. Load current locale JSON data
+    with open(locale_json_path, "r", encoding="utf-8") as f:
+        locale_data = json.load(f)
+
+    applied_count = 0
+
+    # 3. Apply fixes to locale JSON structure
+    for fix in approved_fixes:
+        html_element_id = fix.get("html_element_id", "")
+        dom_path = fix.get("dom_path", "")
+        target_text = fix.get("target_text_snippet", fix.get("source_text", ""))
+        new_text = fix["approved_translation"]
+
+        # Map element to JSON key path
+        section_key, field_key = map_element_to_locale_key(html_element_id, dom_path, target_text, new_text,
+                                                           locale_data)
+
+        if section_key and field_key:
+            if section_key == "meta":
+                locale_data["meta"][field_key] = new_text
+                applied_count += 1
+                print(f"[LOCALE UPDATE] Updated meta.{field_key} = '{new_text}'")
+            elif section_key in locale_data.get("sections", {}):
+                locale_data["sections"][section_key][field_key] = new_text
+                applied_count += 1
+                print(f"[LOCALE UPDATE] Updated sections.{section_key}.{field_key} = '{new_text}'")
+        else:
+            print(
+                f"[LOCALE WARNING] Could not map fix for element '{html_element_id}' with target text '{target_text[:50]}...'")
+
+    # 4. Save updated locale JSON
+    with open(locale_json_path, "w", encoding="utf-8") as f:
+        json.dump(locale_data, f, indent=2, ensure_ascii=False)
+
+    print(f"[LOCALE WRITE-BACK SUCCESS] Updated {applied_count} strings in '{locale_json_path}'")
+
+    # 5. Run generate_pages.py to regenerate templates
+    try:
+        # Change to parent directory to run the script
+        parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        result = subprocess.run(
+            ["python", "generate_pages.py"],
+            cwd=parent_dir,
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+
+        if result.returncode == 0:
+            print(f"[TEMPLATE GENERATION SUCCESS] {result.stdout}")
+            return {
+                "status": "success",
+                "patched_elements": applied_count,
+                "locale_file_updated": locale_json_path,
+                "template_generation_output": result.stdout.strip()
+            }
+        else:
+            print(f"[TEMPLATE GENERATION ERROR] {result.stderr}")
+            raise HTTPException(
+                status_code=500,
+                detail=f"Template generation failed: {result.stderr}"
+            )
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=500, detail="Template generation timed out.")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to run template generation: {str(e)}")
 
 
 if __name__ == "__main__":
