@@ -1,0 +1,99 @@
+{
+  "global_score": 80,
+  "summary": {
+    "total_errors": 8,
+    "critical": 0,
+    "major": 3,
+    "minor": 5
+  },
+  "detected_errors": [
+    {
+      "error_id": "ERR_001",
+      "html_element_id": "global_banner",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Offerta speciale prenotazioni anticipate valida fino al:",
+      "target_text_snippet": "Specjalna oferta dla wczesnego ptaszka ważna do:",
+      "issue_explanation": "The phrase 'wczesnego ptaszka' is a direct translation of 'early bird' which may not resonate culturally with Polish audiences. A more natural phrasing would enhance engagement.",
+      "suggested_fix": "Specjalna oferta dla wcześniejszych rezerwacji ważna do:"
+    },
+    {
+      "error_id": "ERR_002",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
+      "target_text_snippet": "Odkryj ponadczasową magię Sieny. Żyj historyczną rywalizacją między Sklepowymi Dzielnicami, spaceruj wśród średniowiecznych sąsiedztw w imprezie i bądź świadkiem legendarnego wyścigu fryzjerów, prowadzonego przez autorytet poruszacza na dużym szkle.",
+      "issue_explanation": "The term 'Sklepowymi Dzielnicami' is a literal translation of 'Contrade' which refers to specific districts in Siena. This term should be localized to maintain cultural relevance.",
+      "suggested_fix": "Odkryj ponadczasową magię Sieny. Żyj historyczną rywalizacją między dzielnicami, spaceruj wśród średniowiecznych sąsiedztw w imprezie i bądź świadkiem legendarnego wyścigu, prowadzonego przez autorytet na dużym szkle."
+    },
+    {
+      "error_id": "ERR_003",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "Sport: Calcio & Passione Italiana",
+      "target_text_snippet": "Sport: Włoska Pasja Wapń",
+      "issue_explanation": "The term 'Wapń' is a mistranslation of 'Passione' which means 'passion'. This creates confusion and misrepresents the intended meaning.",
+      "suggested_fix": "Sport: Włoska Pasja"
+    },
+    {
+      "error_id": "ERR_004",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.",
+      "target_text_snippet": "15 sierpnia we Włoszech oznacza grille w górze, ogniska na plaży, wycieczki poza drzwi do Riccione i całkowity relaks pod śródziemnomorskim słońcem.",
+      "issue_explanation": "The phrase 'wycieczki poza drzwi' is awkward and does not convey the intended meaning of 'day trips'. A more natural phrasing is needed.",
+      "suggested_fix": "15 sierpnia we Włoszech oznacza grille w górach, ogniska na plaży, wycieczki do Riccione i całkowity relaks pod śródziemnomorskim słońcem."
+    },
+    {
+      "error_id": "ERR_005",
+      "html_element_id": "esperienze",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Molto più di una bevanda, un vero e proprio culto sociale.",
+      "target_text_snippet": "Dużo więcej niż napój, prawdziwy kult społeczny.",
+      "issue_explanation": "The phrase 'prawdziwy kult społeczny' is slightly awkward in Polish. A more fluid expression would enhance readability.",
+      "suggested_fix": "Dużo więcej niż napój, to prawdziwy kult społeczny."
+    },
+    {
+      "error_id": "ERR_006",
+      "html_element_id": "macchine",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Entra nel cuore pulsante dell'ingegneria automobilistica globale.",
+      "target_text_snippet": "Wejdź do bijącego serca globalnej inżynierii motoryzacyjnej.",
+      "issue_explanation": "The phrase 'bijącego serca' is a direct translation that may not resonate well. A more idiomatic expression would be preferable.",
+      "suggested_fix": "Wejdź do serca globalnej inżynierii motoryzacyjnej."
+    },
+    {
+      "error_id": "ERR_007",
+      "html_element_id": "musica",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Il tempio della canzone italiana.",
+      "target_text_snippet": "Świątynia włoskiej piosenki.",
+      "issue_explanation": "While the translation is correct, it could be more engaging. A more dynamic phrasing would enhance the appeal.",
+      "suggested_fix": "Miejsce kultu włoskiej piosenki."
+    },
+    {
+      "error_id": "ERR_008",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+      "mqm_category": "Price Conventions",
+      "severity": "Major",
+      "source_text_snippet": "€320,00",
+      "target_text_snippet": "€320,00",
+      "issue_explanation": "The price format does not comply with Polish conventions. The correct format should use a space for thousands and a comma for decimals.",
+      "suggested_fix": "320,00 €"
+    }
+  ]
+}

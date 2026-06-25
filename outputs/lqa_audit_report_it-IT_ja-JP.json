@@ -1,0 +1,110 @@
+{
+  "global_score": 70,
+  "summary": {
+    "total_errors": 10,
+    "critical": 1,
+    "major": 5,
+    "minor": 4
+  },
+  "detected_errors": [
+    {
+      "error_id": "ERR_001",
+      "html_element_id": "global_banner",
+      "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "Boutique Italia - Grandi Esperienze e Tradizioni",
+      "target_text_snippet": "ブティック・イタリア - 巨大な体験と伝統",
+      "issue_explanation": "The term '巨大な' (giant) is an awkward translation for 'grandi' (great), which should convey a sense of quality rather than size. This results in a less appealing and culturally appropriate phrase.",
+      "suggested_fix": "ブティック・イタリア - 素晴らしい体験と伝統"
+    },
+    {
+      "error_id": "ERR_002",
+      "html_element_id": "global_banner",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "Boutique Italia - Grandi Esperienze e Tradizioni",
+      "target_text_snippet": "ブティック・イタリア - 巨大な体験と伝統",
+      "issue_explanation": "Similar to the title, the translation fails to capture the intended meaning of 'grandi' as 'great' and instead uses '巨大な' which implies size rather than quality.",
+      "suggested_fix": "ブティック・イタリア - 素晴らしい体験と伝統"
+    },
+    {
+      "error_id": "ERR_003",
+      "html_element_id": "global_banner",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Major",
+      "source_text_snippet": "15/08/2026",
+      "target_text_snippet": "15/08/2026",
+      "issue_explanation": "The date format does not comply with Japanese standards, which require the format YYYY/MM/DD. This could lead to confusion for users.",
+      "suggested_fix": "2026/08/15"
+    },
+    {
+      "error_id": "ERR_004",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
+      "target_text_snippet": "シエナの時代を超越した魔法を発見してください。ショップ地区の間の歴史的なライバル関係を生き、パーティー中の中世の近隣を歩き、大きなガラスの上のムーバーの権威に導かれた、理髪師たちの伝説的なレースを目撃してください。",
+      "issue_explanation": "The translation contains awkward phrasing and literal translations that do not resonate with Japanese cultural context, making it sound unnatural.",
+      "suggested_fix": "シエナの時を超えた魔法を発見し、歴史的な対立を体験し、中世の祭りの中を歩き、伝説の理髪師のレースを目撃してください。"
+    },
+    {
+      "error_id": "ERR_005",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "\"La folla festante in Piazza del Campo durante il corteo storico\"",
+      "target_text_snippet": "\"歴史的なパレード中のフィールド広場のパーティー群衆\"",
+      "issue_explanation": "The phrase 'パーティー群衆' (party crowd) is a literal translation that does not convey the festive atmosphere intended in the source text.",
+      "suggested_fix": "\"歴史的なパレード中の賑やかな群衆\""
+    },
+    {
+      "error_id": "ERR_006",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Major",
+      "source_text_snippet": "Sport: Calcio & Passione Italiana",
+      "target_text_snippet": "スポーツ：イタリアの情熱カルシウム",
+      "issue_explanation": "The term 'カルシウム' (calcium) is a mistranslation of 'calcio' (football/soccer), which could confuse the audience.",
+      "suggested_fix": "スポーツ：イタリアの情熱サッカー"
+    },
+    {
+      "error_id": "ERR_007",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Vivi l'atmosfera elettrizzante della Serie A a San Siro. Segui i rossoneri e i bianconeri mentre si sfidano sul rettangolo di gioco in una partita mozzafiato, decisa all'ultimo secondo in piena Zona Cesarini!",
+      "target_text_snippet": "サン・シーロでのセリアAの刺激的な雰囲気を生きてください。息をのむような試合でゲームの長方形の上で彼らが挑戦する間、赤と黒、そして白と黒をフォローしてください。フル・チェザリーニ地帯の最後の秒で決定されます！",
+      "issue_explanation": "The phrase 'ゲームの長方形の上で' is awkward and does not sound natural in Japanese.",
+      "suggested_fix": "サン・シーロでのセリエAの刺激的な雰囲気を体験し、赤と黒、白と黒のチームが挑戦する息をのむ試合を見守ってください。"
+    },
+    {
+      "error_id": "ERR_008",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Critical",
+      "source_text_snippet": "Feste: Il Rito del Ferragosto",
+      "target_text_snippet": "祝日：鉄 di 8月の儀式",
+      "issue_explanation": "The term '鉄 di 8月の儀式' is a catastrophic mistranslation that fails to convey the cultural significance of 'Ferragosto', which is a major holiday in Italy.",
+      "suggested_fix": "祝日：フェッラゴストの儀式"
+    },
+    {
+      "error_id": "ERR_009",
+      "html_element_id": "esperienze",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Adaptability",
+      "severity": "Minor",
+      "source_text_snippet": "Esperienze: L'Espresso Napoletano",
+      "target_text_snippet": "体験：ナポリタン・エクスプレス",
+      "issue_explanation": "The term 'ナポリタン・エクスプレス' is a literal translation that does not resonate with the Japanese audience and could lead to confusion.",
+      "suggested_fix": "体験：ナポリのエスプレッソ"
+    }
+  ]
+}
