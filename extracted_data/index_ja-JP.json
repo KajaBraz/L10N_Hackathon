@@ -1,7 +1,7 @@
 [
   {
     "type": "text",
-    "content": "Boutique Italy - Big Experiences and Traditions",
+    "content": "ブティック・イタリア - 巨大な体験と伝統",
     "tag": "title",
     "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
     "attributes": {
@@ -17,7 +17,7 @@
   },
   {
     "type": "text",
-    "content": "Boutique Italy - Big Experiences and Traditions",
+    "content": "ブティック・イタリア - 巨大な体験と伝統",
     "tag": "h1",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)",
     "attributes": {
@@ -33,7 +33,7 @@
   },
   {
     "type": "text",
-    "content": "Explore the authentic soul of the peninsula through its cultural badges.",
+    "content": "文化的なバッジを通じて半島の本格的な魂を探索してください。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -49,7 +49,7 @@
   },
   {
     "type": "text",
-    "content": "Special early bird offer valid until:",
+    "content": "早期予約特別オファーの有効期限：",
     "tag": "div",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1)",
     "attributes": {
@@ -81,7 +81,7 @@
   },
   {
     "type": "text",
-    "content": "Events: The Palio of Siena",
+    "content": "イベント：シエナのパリオ",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -100,7 +100,7 @@
   },
   {
     "type": "text",
-    "content": "Discover the timeless magic of Siena. Live the historic rivalry between the Shop-Districts, walk among the medieval neighborhoods in party and witness the legendary race of the barbers, guided by the authority of the mover on the big glass.",
+    "content": "シエナの時代を超越した魔法を発見してください。ショップ地区の間の歴史的なライバル関係を生き、パーティー中の中世の近隣を歩き、大きなガラスの上のムーバーの権威に導かれた、理髪師たちの伝説的なレースを目撃してください。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -119,7 +119,7 @@
   },
   {
     "type": "text",
-    "content": "\"The partying crowd in Field Square during the historical parade\"",
+    "content": "\"歴史的なパレード中のフィールド広場のパーティー群衆\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -157,7 +157,7 @@
   },
   {
     "type": "text",
-    "content": "Sport: Italian Passion Calcium",
+    "content": "スポーツ：イタリアの情熱カルシウム",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -176,7 +176,7 @@
   },
   {
     "type": "text",
-    "content": "Live the electrifying atmosphere of Series A at San Siro. Follow the red-and-blacks and the white-and-blacks while they challenge on the game rectangle in a breathtaking match, decided at the last second in full Cesarini Zone!",
+    "content": "サン・シーロでのセリアAの刺激的な雰囲気を生きてください。息をのむような試合でゲームの長方形の上で彼らが挑戦する間、赤と黒、そして白と黒をフォローしてください。フル・チェザリーニ地帯の最後の秒で決定されます！",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -195,7 +195,7 @@
   },
   {
     "type": "text",
-    "content": "\"The fans at the stadium exposing a spectacular choreography\"",
+    "content": "\"壮大な振り付けを露出しているスタジアムのファン\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -233,7 +233,7 @@
   },
   {
     "type": "text",
-    "content": "Nature: The Wonders of the Aeolian Islands",
+    "content": "自然：エオリア諸島の驚異",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -252,7 +252,7 @@
   },
   {
     "type": "text",
-    "content": "A unique volcanic archipelago in the world. Explore Lipari, admire the spectacular nightly explorations of the volcano and dive into the sulfur muds of volcano for a regenerating experience.",
+    "content": "世界で唯一の火山性群島。リパリを探索し、火山の壮大な夜間の探検を称賛し、再生体験のために火山の硫黄泥に飛び込みます。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -271,7 +271,7 @@
   },
   {
     "type": "text",
-    "content": "\"The sunset on the crystalline sea of the islands in front of Sicily\"",
+    "content": "\"シチリアの前の島々の結晶の海に沈む夕日\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -309,7 +309,7 @@
   },
   {
     "type": "text",
-    "content": "Cinema: The Rimini of Federico Fellini",
+    "content": "映画：フェデリコ・フェリーニのリミニ",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -328,7 +328,7 @@
   },
   {
     "type": "text",
-    "content": "Retrace the places of Fellinian imaginary in Rimini. Relive the dreamlike atmospheres of the masterpiece '8 and a half' and that nostalgic arcord of Romagnolo youth that marked the history of world cinema.",
+    "content": "リミニのフェリーニ的想像力の場所をたどる。傑作『8と半分』の夢のような雰囲気と、世界映画の歴史を刻んだロマニョーラの若者の、あの郷愁を誘うアルコルドを追体験してください。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -347,7 +347,7 @@
   },
   {
     "type": "text",
-    "content": "\"The famous Fulgor Cinema restored in the heart of the city\"",
+    "content": "\"街の中心部に復元された有名なフルゴール・シネマ\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -385,7 +385,7 @@
   },
   {
     "type": "text",
-    "content": "Holidays: The Ritual of Iron August",
+    "content": "祝日：鉄 di 8月の儀式",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -404,7 +404,7 @@
   },
   {
     "type": "text",
-    "content": "Join the summer party par excellence. August 15th in Italy means barbecues in the mountain, bonfires on the beach, trips outside the door to Riccione and total relax under the Mediterranean sun.",
+    "content": "夏のパーティーにぜひご参加ください。イタリアの8月15日は、山の中でのバーベキュー、ビーチでの焚き火、リッチョーネへのドアの外への旅行、地中海の太陽の下でのトータルリラックスを意味します。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -423,7 +423,7 @@
   },
   {
     "type": "text",
-    "content": "\"Packed beach and colored umbrellas during the mid-summer party\"",
+    "content": "\"真夏のパーティー中の満員のビーチと色付きの傘\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -461,7 +461,7 @@
   },
   {
     "type": "text",
-    "content": "Experiences: The Neapolitan Express",
+    "content": "体験：ナポリタン・エクスプレス",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -480,7 +480,7 @@
   },
   {
     "type": "text",
-    "content": "Much more than a drink, a real social cult. Discover the secret of coffee in Naples, extracted to a rule of art with the classic cuccumella or the traditional moka. A short, dense express served boiling hot.",
+    "content": "飲み物以上の、本物の社会的カルト。古典的なクックメッラや伝統的なモカを使って、芸術の規則に従って抽出されたナポリのコーヒーの秘密を発見してください。沸騰した状態で提供される、短くて濃いエクスプレス。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -499,7 +499,7 @@
   },
   {
     "type": "text",
-    "content": "\"A steaming cup of coffee with a dense cream on a bar counter\"",
+    "content": "\"バーのカウンターにある、濃いクリームが入った湯気の立つコーヒーカップ\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -537,7 +537,7 @@
   },
   {
     "type": "text",
-    "content": "Engines: The Motor Valley of Modena",
+    "content": "エンジン：モデナのモーターバレー",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -556,7 +556,7 @@
   },
   {
     "type": "text",
-    "content": "Enter the beating heart of global automotive engineering. In Modena you can listen to the roar of the engines of the racing cars of the Prancing Pony and explore the museums of the fastest supercars on the planet.",
+    "content": "世界的な自動車エンジニアリングの鼓動する心臓部に入りましょう。モデナでは、跳ね馬ポニーのレーシングカーのエンジンの咆哮を聞き、地球上で最も速いスーパーカーの博物館を探索できます。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -575,7 +575,7 @@
   },
   {
     "type": "text",
-    "content": "\"A flaming red sports car displayed in front of the Enzo Ferrari museum\"",
+    "content": "\"エンツォ・フェラーリ博物館の前に展示された燃えるような赤いスポーツカー\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -613,7 +613,7 @@
   },
   {
     "type": "text",
-    "content": "Music: The Sanremo Festival",
+    "content": "音楽：サンレモ・フェスティバル",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -632,7 +632,7 @@
   },
   {
     "type": "text",
-    "content": "The temple of the Italian song. Live the most awaited week of the year at the Ariston Theatre, where the bigs of Italian music and new proposals challenge on the stage that launched international myths.",
+    "content": "イタリアの歌の神殿。アリストン劇場で一年で最も待ち望まれているウィークを生きてください。そこでは、イタリア音楽のビッグたちと新しい提案が、国際的な神話を立ち上げたステージの上で挑戦します。",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -651,7 +651,7 @@
   },
   {
     "type": "text",
-    "content": "\"The illuminated facade of the Ariston Theatre during the Festival week\"",
+    "content": "\"フェスティバルウィーク中のアリストン劇場の照らされたファサード\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -690,7 +690,7 @@
   {
     "type": "image",
     "src": "images/palio_siena.jpg",
-    "alt": "The partying crowd in Field Square during the historical parade",
+    "alt": "歴史的なパレード中のフィールド広場のパーティー群衆",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -710,7 +710,7 @@
   {
     "type": "image",
     "src": "images/calcio_san_siro.jpg",
-    "alt": "The fans at the stadium exposing a spectacular choreography",
+    "alt": "壮大な振り付けを露出しているスタジアムのファン",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -730,7 +730,7 @@
   {
     "type": "image",
     "src": "images/eolie_islands.jpg",
-    "alt": "The sunset on the crystalline sea of the islands in front of Sicily",
+    "alt": "シチリアの前の島々の結晶の海に沈む夕日",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -750,7 +750,7 @@
   {
     "type": "image",
     "src": "images/fellini_rimini.jpg",
-    "alt": "The famous Fulgor Cinema restored in the heart of the city",
+    "alt": "街の中心部に復元された有名なフルゴール・シネマ",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -770,7 +770,7 @@
   {
     "type": "image",
     "src": "images/ferragosto_beach.jpg",
-    "alt": "Packed beach and colored umbrellas during the mid-summer party",
+    "alt": "真夏のパーティー中の満員のビーチと色付きの傘",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -790,7 +790,7 @@
   {
     "type": "image",
     "src": "images/naples_coffee.jpg",
-    "alt": "A steaming cup of coffee with a dense cream on a bar counter",
+    "alt": "バーのカウンターにある、濃いクリームが入った湯気の立つコーヒーカップ",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -810,7 +810,7 @@
   {
     "type": "image",
     "src": "images/modena_motors.jpg",
-    "alt": "A flaming red sports car displayed in front of the Enzo Ferrari museum",
+    "alt": "エンツォ・フェラーリ博物館の前に展示された燃えるような赤いスポーツカー",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -830,7 +830,7 @@
   {
     "type": "image",
     "src": "images/sanremo_ariston.jpg",
-    "alt": "The illuminated facade of the Ariston Theatre during the Festival week",
+    "alt": "フェスティバルウィーク中のアリストン劇場の照らされたファサード",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {

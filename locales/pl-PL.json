@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Butik Włochy - Wielkie Doświadczenia i Tradycje",
+    "subtitle": "Odkryj autentyczną duszę półwyspu poprzez jego kulturowe odznaki.",
+    "promo_label": "Specjalna oferta dla wczesnego ptaszka ważna do:",
+    "promo_date": "15/08/2026",
+    "currency_format": "€{price}"
+  },
+  "sections": {
+    "palio": {
+      "title": "Wydarzenia: Palio w Sienie",
+      "description": "Odkryj ponadczasową magię Sieny. Żyj historyczną rywalizacją między Sklepowymi Dzielnicami, spaceruj wśród średniowiecznych sąsiedztw w imprezie i bądź świadkiem legendarnego wyścigu fryzjerów, prowadzonego przez autorytet poruszacza na dużym szkle.",
+      "img_alt": "Imprezujący tłum na Placu Pola podczas historycznej parady",
+      "price_value": "2500,00"
+    },
+    "calcio": {
+      "title": "Sport: Włoska Pasja Wapń",
+      "description": "Żyj elektryzującą atmosferą Serii A na San Siro. Śledź czerwono-czarnych i biało-czarnych, gdy wyzywają się na prostokącie gry w zapierającym dech w piersiach meczu, rozstrzygniętym w ostatniej sekundzie w pełnej Strefie Cesarini!",
+      "img_alt": "Fani na stadionie eksponujący spektakularną choreografię",
+      "price_value": "120,00"
+    },
+    "natura": {
+      "title": "Natura: Cuda Wysp Eolskich",
+      "description": "Unikalny archipelag wulkaniczny na świecie. Eksploruj Lipari, podziwiaj spektakularne nocne eksploracje wulkanu i zanurkuj w siarkowych błotach wulkanu dla regenerującego doświadczenia.",
+      "img_alt": "Zachód słońca nad krystalicznym morzem wysp przed Sycylią",
+      "price_value": "1450,00"
+    },
+    "film": {
+      "title": "Kino: Rimini Federico Felliniego",
+      "description": "Prześledź miejsca felliniowskiej wyobraźni w Rimini. Przeżyj na nowo oniryczne atmosfery arcydzieła 'Osiem i pół' i ten nostalgiczny arkord romaniolskiej młodości, który zapisał się w historii światowego kina.",
+      "img_alt": "Słynne Kino Fulgor odrestaurowane w sercu miasta",
+      "price_value": "450,00"
+    },
+    "feste": {
+      "title": "Święta: Rytuał Żelaznego Sierpnia",
+      "description": "Dołącz do letniej imprezy par excellence. 15 sierpnia we Włoszech oznacza grille w górze, ogniska na plaży, wycieczki poza drzwi do Riccione i całkowity relaks pod śródziemnomorskim słońcem.",
+      "img_alt": "Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata",
+      "price_value": "320,00"
+    },
+    "esperienze": {
+      "title": "Doświadczenia: Neapolitański Ekspres",
+      "description": "Dużo więcej niż napój, prawdziwy kult społeczny. Odkryj tajemnicę kawy w Neapolu, wyciśniętej do reguły sztuki z klasyczną cuccumella lub tradycyjną moka. Krótki, gęsty ekspres podawany wrzący.",
+      "img_alt": "Parująca filiżanka kawy z gęstą śmietanką na ladzie baru",
+      "price_value": "1,20"
+    },
+    "macchine": {
+      "title": "Silniki: Dolina Motorowa Modeny",
+      "description": "Wejdź do bijącego serca globalnej inżynierii motoryzacyjcznej. W Modenie możesz słuchać ryku silników samochodów wyścigowych Rozbrykanego Kucyka i odkrywać muzea najszybszych supersamochodów na planecie.",
+      "img_alt": "Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari",
+      "price_value": "1850,00"
+    },
+    "musica": {
+      "title": "Muzyka: Festiwal w Sanremo",
+      "description": "Świątynia włoskiej piosenki. Żyj najbardziej oczekiwanym tygodniem roku w Teatrze Ariston, gdzie wielcy włoskiej muzyki i nowe propozycje wyzywają się na scenie, która lansowała międzynarodowe mity.",
+      "img_alt": "Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu",
+      "price_value": "950,00"
+    }
+  }
+}

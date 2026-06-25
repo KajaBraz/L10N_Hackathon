@@ -1,12 +1,15 @@
 import json
 import os
 from typing import List, Literal
+
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
 # Import your custom modules
 from align_elements import align_localization_payloads
 from batch_parser import process_localization_templates
+from prompt.compile_prompt import compile_generic_prompt
+from prompt.locale_profiles import LOCALE_PROFILES
 
 
 # ==========================================
@@ -19,10 +22,11 @@ class ErrorDetail(BaseModel):
     mqm_category: str = Field(
         description="Locale Convention, Terminology, Cultural Transcreation, Accuracy, or Fluency")
     severity: Literal["Minor", "Major", "Critical"]
-    source_text_snippet: str = Field(description="The original Italian string context")
-    target_text_snippet: str = Field(description="The flawed translated English string found")
-    issue_explanation: str = Field(description="Why this fails for a US user.")
-    suggested_fix: str = Field(description="Corrected text ready for live deployment.")
+    source_text_snippet: str = Field(description="The original source language string context")
+    target_text_snippet: str = Field(description="The flawed translated target string found")
+    issue_explanation: str = Field(
+        description="Clear architectural evaluation of why this fails for the target locale context.")
+    suggested_fix: str = Field(description="Corrected text ready for live production hotfix deployment.")
 
 
 class LqaSummary(BaseModel):
@@ -42,63 +46,35 @@ class LqaReportSchema(BaseModel):
 # ==========================================
 # 2. RUN EXTRACTION AND ALIGNMENT CORRIDOR
 # ==========================================
-def run_lqa_pipeline():
-    print("--- 🚀 Initializing Universal LQA Ingestion Pipeline ---")
+def run_lqa_pipeline(target_locale_key: str = "en-US"):
+    print(f"--- 🚀 Initializing Universal LQA Ingestion Pipeline [{target_locale_key}] ---")
 
-    # Run your BeautifulSoup scraper
+    # 1. Fetch the target configuration profile
+    if target_locale_key not in LOCALE_PROFILES:
+        raise ValueError(f"Locale profile for '{target_locale_key}' is missing from configurations.")
+
+    active_profile = LOCALE_PROFILES[target_locale_key]
+
+    # 2. Run scraping routines (assuming your output maps to target file layouts)
     process_localization_templates()
 
-    # Combine individual files into the pre-aligned payload array
-    aligned_data = align_localization_payloads("extracted_data/index_it.json", "extracted_data/index_en.json")
-    print(f"[INFO] Successfully aligned {len(aligned_data)} visual DOM fragments.")
+    # Make sure your scraper maps correctly to the dynamic target file names
+    source_json = "extracted_data/index_it-IT.json"
+    target_json = f"extracted_data/index_{target_locale_key}.json"
 
-    # Convert aligned python list to formatted string block
+    aligned_data = align_localization_payloads(source_json, target_json)
     serialized_payload = json.dumps(aligned_data, indent=2, ensure_ascii=False)
 
-    # Export Pydantic schema as a pure JSON string to force compliance inside the prompt text
+    # 3. Compile the Pydantic schema mapping
     pure_json_schema = json.dumps(LqaReportSchema.model_json_schema(), indent=2)
 
-    # ==========================================
-    # 3. COMPILE UNIVERSAL SYSTEM PROMPT
-    # ==========================================
-    system_prompt = (
-        "You are an enterprise-grade Localization Quality Assurance (LQA) Engine.\n"
-        "Your task is to evaluate an array of pre-aligned source (Italian) and target (US English) UI segments, "
-        "identify localization flaws, calculate an MQM (Multidimensional Quality Metrics) score, and report findings.\n\n"
-
-        "CRITICAL RESPONSE REQUIREMENT:\n"
-        "You must respond with a single, well-formed JSON object. "
-        "Do not include markdown blocks (like ```json). "
-        f"The architecture of your JSON output MUST strictly match this JSON Schema:\n{pure_json_schema}\n\n"
-
-        "INSPECTION DIRECTIVES & CRITERIA:\n"
-        "1. Global Banners: Look for segments where html_element_id is 'global_banner' and css_class contains 'promo-banner'. "
-        "Ensure dates match US conventions (MM/DD/YYYY).\n"
-        "2. Section Component Cards: Evaluate elements mapped by their structural html_element_id tokens "
-        "(palio, calcio, natura, film, feste, esperienze, macchine, musica).\n"
-        "3. Price Conventions: Look for segments where css_class contains 'meta-price'. Check that numbers use US layout punctuation "
-        "(commas for thousands, periods for decimals) and match target preferences (e.g., '$1,200.00').\n"
-        "4. Visual/Alt Text: Evaluate elements where element_tag is 'img'. Ensure the target_text (alt text) represents natural, "
-        "localized phrasing instead of literal translations of local landmarks.\n\n"
-
-        "MQM SEVERITY & SCORING GUIDE:\n"
-        "- Minor (1 pt penalty): Awkward phrasing, minor punctuation layout error, or natural but slightly un-localized terms.\n"
-        "- Major (5 pts penalty): Highly unnatural terms, literal translations of idioms, or incorrect date/currency structures that confuse a US user.\n"
-        "- Critical (10 pts penalty): Catastrophic domain mistranslations that break reality (e.g., translating 'Calcio' as the chemical element 'Calcium').\n\n"
-
-        "Scoring formula: global_score = Max(0, 100 - Total_Penalties_Accumulated)\n"
-        "Ensure your summary count matches the array of detected_errors exactly."
-    )
-
+    # 4. Generate the hybrid generic system prompt
+    system_prompt = compile_generic_prompt(pure_json_schema, active_profile)
     user_content = f"### Input Segments to Evaluate:\n```json\n{serialized_payload}\n```"
 
-    # ==========================================
-    # 4. EXECUTE COUPLING WITH ALTERNATIVE API
-    # ==========================================
-    print("\n--- 🤖 Initiating Third-Party LLM Analysis Sequence ---")
-
+    # 5. Execute API payload passage
     client = OpenAI(
-        base_url=os.environ.get("LLM_BASE_URL", "https://api.openai.com/v1"),
+        base_url=os.environ.get("LLM_BASE_URL", "[https://api.openai.com/v1](https://api.openai.com/v1)"),
         api_key=os.environ.get("LLM_API_KEY")
     )
     model_name = os.environ.get("LLM_MODEL_NAME", "gpt-4o-mini")
@@ -156,8 +132,9 @@ def run_lqa_pipeline():
         # ==========================================
         # 5. SAVE RUNTIME ARTIFACTS
         # ==========================================
-        output_dir = "extracted_data"
-        report_path = os.path.join(output_dir, "lqa_audit_report.json")
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        report_path = os.path.join(output_dir, f"lqa_audit_report_it-IT_{target_locale_key}.json")
 
         with open(report_path, "w", encoding="utf-8") as f:
             # Safely dump back out as clean JSON for your frontend application
@@ -173,4 +150,5 @@ def run_lqa_pipeline():
 
 
 if __name__ == "__main__":
-    run_lqa_pipeline()
+    target_locale = 'en-US'
+    run_lqa_pipeline(target_locale)

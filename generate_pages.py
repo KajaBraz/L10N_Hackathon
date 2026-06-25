@@ -2,7 +2,7 @@ import json
 import os
 
 
-def render_page(locale_json_path, output_html_path, lang_code):
+def render_page(locale_json_path, lang_code):
     # 1. Load localized text resource file
     with open(locale_json_path, 'r', encoding='utf-8') as lf:
         data = json.load(lf)
@@ -69,6 +69,7 @@ def render_page(locale_json_path, output_html_path, lang_code):
         html_content = html_content.replace(key, val)
 
     # 5. Save output file
+    output_html_path = os.path.join('templates', f'index_{locale}.html')
     with open(output_html_path, 'w', encoding='utf-8') as outf:
         outf.write(html_content)
 
@@ -76,6 +77,9 @@ def render_page(locale_json_path, output_html_path, lang_code):
 
 
 if __name__ == '__main__':
+    locales = os.listdir('locales')
+
     # Compile both language test instances safely
-    render_page(os.path.join('locales', 'it.json'), 'index_it.html', 'it')
-    render_page(os.path.join('locales', 'en.json'), 'index_en.html', 'en-US')
+    for locale_file in locales:
+        locale = locale_file.split('.')[0]
+        render_page(os.path.join('locales', f'{locale}.json'), locale)
