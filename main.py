@@ -151,4 +151,5 @@ def run_lqa_pipeline(target_locale_key: str = "en-US"):
 
 if __name__ == "__main__":
     target_locale = 'en-US'
+
     run_lqa_pipeline(target_locale)

@@ -6,14 +6,14 @@
     <title>Enterprise Multi-Locale LQA Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+<body class="bg-gray-900 text-gray-100 h-screen flex flex-col font-sans overflow-hidden">
 
     <header class="bg-gray-800 border-b border-gray-700 px-6 py-4 flex justify-between items-center shadow-lg z-20">
         <div>
-            <h1 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                🛠️ Enterprise Multi-Locale LQA Workspace
+            <h1 id="live-webpage-title" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                Loading Application Title...
             </h1>
-            <p class="text-xs text-gray-400 mt-0.5">Localization Audit Interface & Live Component Validation Framework</p>
+            <p id="live-webpage-subtitle" class="text-xs text-gray-400 mt-0.5">Loading Page Subtitle component context...</p>
         </div>
 
         <div class="flex items-center gap-6">
@@ -28,87 +28,78 @@
         </div>
     </header>
 
-    <nav class="bg-gray-850 border-b border-gray-800 px-6 py-3 flex items-center gap-3 shadow-inner z-10">
+    <nav class="bg-gray-850 border-b border-gray-800 px-6 py-3 flex items-center gap-3 shadow-inner z-20">
         <span class="text-xs font-mono font-bold uppercase tracking-wider text-gray-400 mr-2">Target Markets:</span>
         <div id="locale-tabs-container" class="flex gap-2"></div>
     </nav>
 
     <div class="flex-1 flex overflow-hidden">
 
-        <main class="flex-1 p-6 overflow-y-auto space-y-4 bg-gray-950">
-            <div class="text-xs text-gray-500 uppercase font-mono tracking-widest">// VIRTUAL WEBVIEW EMULATION WINDOW</div>
+        <main class="flex-1 p-6 overflow-y-auto bg-gray-950">
+            <div class="bg-[#fcfbfa] text-[#2c2520] rounded-xl shadow-2xl border border-gray-800 overflow-hidden flex flex-col min-h-full">
 
-            <div id="virtual-browser-frame" class="bg-[#fcfbfa] rounded-xl overflow-hidden shadow-2xl border border-gray-800 pb-12 transition-all duration-300">
-
-                <header id="global_banner" class="bg-gradient-to-r from-[#8a1c14] to-[#b83227] text-white text-center py-12 px-6 shadow-md transition-all duration-300 relative">
-                    <h1 id="live-webpage-title" class="text-3xl font-bold tracking-tight text-white mb-2 drop-shadow-sm">
-                        Loading Page Title...
-                    </h1>
-                    <p id="live-webpage-subtitle" class="text-sm opacity-90 max-w-xl mx-auto font-light leading-relaxed">
-                        Loading description subtitle components...
-                    </p>
-                </header>
-
-                <div id="global_banner_strip" class="bg-[#f39c12] text-white text-center py-3 px-4 font-bold text-sm tracking-wide transition-all duration-300 relative border-b border-orange-600 shadow-sm">
-                    <span id="live-promo-text">Special early bird offer valid until: <span class="bg-black/20 px-1.5 py-0.5 rounded font-mono font-bold">15/08/2026</span></span>
+                <div class="bg-gray-200 border-b border-gray-300 px-4 py-2.5 flex items-center gap-2 text-xs text-gray-500 font-mono select-none">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                    <span class="ml-4 bg-white px-3 py-0.5 rounded border border-gray-300 text-[11px] text-gray-600 flex items-center gap-1 shadow-sm">
+                        🔒 https://boutique-italia.travel/live-viewport
+                    </span>
                 </div>
 
-                <div class="max-w-4xl mx-auto px-6 mt-10">
-                    <div class="grid grid-cols-2 gap-6">
+                <div class="bg-gradient-to-r from-[#8a1c14] to-[#b83227] text-white py-8 px-6 text-center shadow-md">
+                    <h2 id="emulated-site-title" class="text-2xl font-serif font-bold tracking-tight">Loading Brand Assets...</h2>
+                    <p id="emulated-site-subtitle" class="text-xs opacity-90 mt-1 max-w-xl mx-auto font-sans leading-relaxed">Loading context...</p>
+                </div>
 
-                        <article id="palio" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #palio</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                <div id="emulated-promo-banner" class="hidden relative bg-[#f39c12] text-white text-center py-3.5 px-12 font-bold text-[0.95em] shadow-inner select-none transition-all duration-300 border-b border-transparent"></div>
 
-                        <article id="calcio" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #calcio</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                <div class="p-6 grid grid-cols-2 gap-4 flex-1 bg-[#fcfbfa]">
 
-                        <article id="natura" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #natura</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                    <article id="palio" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #palio</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
 
-                        <article id="film" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #film</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                    <article id="calcio" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #calcio</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
 
-                        <article id="feste" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #feste</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                    <article id="natura" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #natura</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
 
-                        <article id="esperienze" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #esperienze</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                    <article id="film" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #film</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
 
-                        <article id="macchine" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #macchine</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
+                    <article id="feste" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #feste</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
 
-                        <article id="musica" class="relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800">
-                            <span class="text-[9px] font-mono text-gray-400 block mb-1 uppercase tracking-wider">ID: #musica</span>
-                            <h3 class="text-base font-bold text-gray-900 mb-1.5"></h3>
-                            <p class="text-xs text-gray-600 leading-relaxed"></p>
-                        </article>
-                    </div>
+                    <article id="esperienze" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #esperienze</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
+
+                    <article id="macchine" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #macchine</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
+
+                    <article id="musica" class="relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]">
+                        <div><span class="text-[9px] font-mono text-gray-400 block mb-1">DOM ID: #musica</span><h3 class="text-base font-bold text-gray-900 leading-tight"></h3><p class="text-xs text-gray-600 leading-relaxed mt-1"></p></div>
+                        <div class="mt-3"><div class="w-full h-16 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center text-[10px] text-gray-400 font-mono italic select-none">// IMAGE_ASSET_HOLDER</div><div class="flex justify-between items-center mt-2.5 pt-2 border-t border-gray-100 text-[11px]"><span class="text-gray-400 italic">Live Meta Node</span><span class="font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-mono">Premium</span></div></div>
+                    </article>
                 </div>
             </div>
         </main>
 
-        <aside class="w-[450px] bg-gray-800 border-l border-gray-700 flex flex-col overflow-hidden shadow-2xl z-10">
+        <aside class="w-[450px] bg-gray-800 border-l border-gray-700 flex flex-col overflow-hidden shadow-2xl">
             <div class="px-5 py-4 border-b border-gray-700 bg-gray-800/50 flex justify-between items-center">
                 <h2 class="font-bold text-sm tracking-wider text-gray-300 uppercase flex items-center gap-2">
                     <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> AI LQA Issue Pipeline
@@ -121,6 +112,8 @@
 
     <script>
         let currentActiveLocale = "";
+        let currentErrorsCount = 0;
+        let currentGlobalScore = 100;
 
         async function initDashboard() {
             try {
@@ -150,29 +143,29 @@
         }
 
         function clearViewportGrid() {
-            document.getElementById("live-webpage-title").innerText = "Loading Application Title...";
-            document.getElementById("live-webpage-subtitle").innerText = "Loading Page Subtitle component context...";
-            document.getElementById("live-promo-text").innerHTML = 'Special early bird offer valid until: <span class="bg-black/20 px-1.5 py-0.5 rounded font-mono font-bold">15/08/2026</span>';
-
-            const headerBox = document.getElementById("global_banner");
-            headerBox.className = "bg-gradient-to-r from-[#8a1c14] to-[#b83227] text-white text-center py-12 px-6 shadow-md transition-all duration-300 relative";
-            const oldHeaderBadge = headerBox.querySelector('[id^="badge-"]');
-            if (oldHeaderBadge) oldHeaderBadge.remove();
-
-            const promoStrip = document.getElementById("global_banner_strip");
-            promoStrip.className = "bg-[#f39c12] text-white text-center py-3 px-4 font-bold text-sm tracking-wide transition-all duration-300 relative border-b border-orange-600 shadow-sm";
-            const oldPromoBadge = promoStrip.querySelector('[id^="badge-"]');
-            if (oldPromoBadge) oldPromoBadge.remove();
+            const promoBanner = document.getElementById("emulated-promo-banner");
+            if (promoBanner) {
+                promoBanner.className = "hidden relative bg-[#f39c12] text-white text-center py-3.5 px-12 font-bold text-[0.95em] shadow-inner select-none transition-all duration-300 border-b border-transparent";
+                promoBanner.innerText = "";
+            }
 
             const structuralIds = ['palio', 'calcio', 'natura', 'film', 'feste', 'esperienze', 'macchine', 'musica'];
             structuralIds.forEach(id => {
                 const card = document.getElementById(id);
                 if (card) {
-                    card.className = "relative bg-white p-5 rounded-xl border border-gray-200 min-h-[140px] transition-all duration-300 shadow-sm text-gray-800";
-                    card.querySelector('h3').innerText = "Untitled Component Block";
-                    card.querySelector('p').innerText = "No localized copy strings projected into this block container.";
-                    const balanceBadge = card.querySelector('[id^="badge-"]');
-                    if (balanceBadge) balanceBadge.remove();
+                    card.className = "relative bg-white p-5 rounded-xl border border-gray-200 shadow-sm text-[#2c2520] transition-all duration-300 flex flex-col justify-between min-h-[240px]";
+                    const titleEl = card.querySelector('h3');
+                    if (titleEl) {
+                        titleEl.className = "text-base font-bold text-gray-900 leading-tight";
+                        titleEl.innerText = "Untitled Component Block";
+                    }
+                    const textEl = card.querySelector('p');
+                    if (textEl) {
+                        textEl.className = "text-xs text-gray-600 leading-relaxed mt-1";
+                        textEl.innerText = "No localized copy strings projected into this block container.";
+                    }
+                    const balanceBadges = card.querySelectorAll('[id^="badge-"]');
+                    balanceBadges.forEach(b => b.remove());
                 }
             });
         }
@@ -196,48 +189,47 @@
                 const lqaReport = data.lqa;
                 const pageContent = data.page_content;
 
-                // 1. PROJECT REAL WEBPAGE CONTENT LOGIC
+                currentErrorsCount = lqaReport.summary.total_errors;
+                currentGlobalScore = lqaReport.global_score;
+
                 pageContent.forEach(item => {
-                    let targetAnchorId = null;
-                    if (item.closest_anchor_id) {
-                        targetAnchorId = typeof item.closest_anchor_id === 'object' ? item.closest_anchor_id.id : item.closest_anchor_id;
-                    }
-
-                    if (!targetAnchorId) {
-                        if (item.tag === "h1" || item.tag === "title") {
-                            document.getElementById("live-webpage-title").innerText = item.content;
+                    if (!item.closest_anchor_id) {
+                        if (item.tag === "h1") {
+                            document.getElementById("live-webpage-title").innerText = `🌐 ${item.content}`;
+                            document.getElementById("emulated-site-title").innerText = item.content;
                         }
-                        else if (item.tag === "p" && item.content && (item.content.includes("Explore") || item.content.includes("Entdecken") || item.content.includes("soul"))) {
+                        if (item.tag === "p" && item.parent_node && item.parent_node.tag === "header") {
                             document.getElementById("live-webpage-subtitle").innerText = item.content;
+                            document.getElementById("emulated-site-subtitle").innerText = item.content;
                         }
-
-                        // Handle custom promo text if present in specific JSON keys
-                        if (item.class === "promo-banner" || (item.tag === "div" && item.content && item.content.includes("offer"))) {
-                            document.getElementById("live-promo-text").innerHTML = item.content;
+                        if ((item.tag === "div" && item.attributes && item.attributes.class === "promo-banner") ||
+                            (item.parent_node && item.parent_node.attributes && item.parent_node.attributes.class === "promo-banner")) {
+                            const promoBanner = document.getElementById("emulated-promo-banner");
+                            if (promoBanner) {
+                                promoBanner.innerText = item.content;
+                                promoBanner.classList.remove("hidden");
+                            }
                         }
                         return;
                     }
 
-                    const targetCard = document.getElementById(targetAnchorId);
-                    if (targetCard) {
-                        if (item.tag === "h2" || item.tag === "h3") {
-                            const titleElement = targetCard.querySelector('h3');
-                            if (titleElement) titleElement.innerText = item.content;
-                        }
-                        if (item.tag === "p") {
-                            const bodyElement = targetCard.querySelector('p');
-                            if (bodyElement) bodyElement.innerText = item.content;
+                    if (item.closest_anchor_id && item.closest_anchor_id.id) {
+                        const targetCard = document.getElementById(item.closest_anchor_id.id);
+                        if (targetCard) {
+                            if (item.tag === "h2" || item.tag === "h3") {
+                                const titleElement = targetCard.querySelector('h3');
+                                if (titleElement) titleElement.innerText = item.content;
+                            }
+                            if (item.tag === "p") {
+                                const bodyElement = targetCard.querySelector('p');
+                                if (bodyElement) bodyElement.innerText = item.content;
+                            }
                         }
                     }
                 });
 
-                // 2. PROJECT SCOREBAR SUMMARY OVERLAYS
-                const scoreDisplay = document.getElementById('score-display');
-                scoreDisplay.innerText = lqaReport.global_score + "/100";
-                scoreDisplay.className = lqaReport.global_score >= 90 ? "text-xl font-black text-green-400" : "text-xl font-black text-red-400";
-                document.getElementById('total-errors').innerText = lqaReport.summary.total_errors;
+                updateSummaryMetrics();
 
-                // 3. INJECT LQA ALERTS AND RENDER SIDEBAR FEED
                 const feed = document.getElementById('sidebar-feed');
                 feed.innerHTML = "";
 
@@ -247,51 +239,35 @@
                 }
 
                 lqaReport.detected_errors.forEach(error => {
-                    let targetContainerElement = null;
-                    if (error.html_element_id === "global_banner") {
-                        // Isolate the date-strip from main landing box title errors
-                        if (error.dom_path.includes('div') || error.error_id === "ERR_003" || error.issue_explanation.toLowerCase().includes('date') || error.target_text_snippet.includes('15/08')) {
-                            targetContainerElement = document.getElementById("global_banner_strip");
-                        } else {
-                            targetContainerElement = document.getElementById("global_banner");
-                        }
-                    } else {
-                        targetContainerElement = document.getElementById(error.html_element_id);
-                    }
+                    const targetElementId = error.html_element_id === "global_banner" ? "emulated-promo-banner" : error.html_element_id;
+                    const targetCard = document.getElementById(targetElementId);
 
-                    if (targetContainerElement) {
-                        if (targetContainerElement.id === "global_banner_strip") {
-                            // Style the promo banner to highlight errors visibly
-                            targetContainerElement.className = "bg-red-100 text-red-900 text-center py-3 px-4 font-bold text-sm tracking-wide transition-all duration-300 relative border-b border-red-400 shadow-sm ring-1 ring-red-500/30";
+                    if (targetCard) {
+                        if (targetElementId === "emulated-promo-banner") {
+                            targetCard.classList.add('border-b-4', 'border-red-500', 'ring-2', 'ring-red-400');
+                            targetCard.innerText = error.target_text_snippet;
                         } else {
-                            targetContainerElement.classList.remove('border-gray-200', 'bg-white');
-                            targetContainerElement.classList.add('border-red-500', 'bg-red-50/70', 'ring-1', 'ring-red-500/20');
-                        }
+                            targetCard.classList.remove('border-gray-200', 'bg-white');
+                            targetCard.classList.add('border-red-500', 'bg-red-50/70', 'ring-1', 'ring-red-400');
 
-                        // Inject content safely depending on target
-                        if (error.dom_path.includes('h2') || error.dom_path.includes('h3')) {
-                            const innerHeading = targetContainerElement.querySelector('h3');
-                            if (innerHeading) innerHeading.innerText = error.target_text_snippet;
-                        } else if (error.dom_path.includes('h1') || error.dom_path.includes('title')) {
-                            const innerGlobalTitle = document.getElementById("live-webpage-title");
-                            if (innerGlobalTitle) innerGlobalTitle.innerText = error.target_text_snippet;
-                        } else if (targetContainerElement.id === "global_banner_strip") {
-                            const innerPromoText = document.getElementById("live-promo-text");
-                            if (innerPromoText) {
-                                innerPromoText.innerHTML = `Special early bird offer valid until: <span class="bg-red-600 text-white px-2 py-0.5 rounded font-mono font-bold animate-pulse">${error.target_text_snippet}</span>`;
+                            const heading = targetCard.querySelector('h3');
+                            if (heading) {
+                                heading.innerText = error.target_text_snippet;
+                                heading.classList.add('text-red-800');
                             }
                         }
 
                         const badge = document.createElement('div');
                         badge.id = `badge-${error.error_id}`;
-                        badge.className = "absolute top-2 right-3 text-[9px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-red-600 text-white shadow z-10 font-sans";
-                        badge.innerText = `${error.severity}: ${error.mqm_category}`;
-                        targetContainerElement.appendChild(badge);
+                        badge.className = "absolute top-3 right-3 text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-red-600 text-white shadow shadow-red-700/30 z-10";
+                        badge.innerText = `${error.severity}`;
+                        targetCard.appendChild(badge);
                     }
 
                     const card = document.createElement('div');
                     card.id = `sidebar-card-${error.error_id}`;
-                    card.className = "bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-3 shadow-md hover:border-gray-600 transition-colors";
+                    card.className = "bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-3 shadow-md hover:border-gray-500 transition-all duration-200 cursor-pointer";
+
                     card.innerHTML = `
                         <div class="flex justify-between items-start">
                             <span class="text-xs font-mono text-gray-400 font-bold bg-gray-900 px-2 py-0.5 rounded border border-gray-700">${error.error_id}</span>
@@ -301,18 +277,49 @@
                         </div>
                         <p class="text-xs text-gray-200 leading-relaxed">${error.issue_explanation}</p>
                         <div class="grid grid-cols-2 gap-2 bg-gray-950 p-2.5 rounded-lg border border-gray-800 text-xs font-mono">
-                            <div><span class="text-[10px] text-gray-500 block font-sans font-semibold uppercase">Source (IT)</span><span class="text-red-300 line-through">${error.source_text_snippet}</span></div>
-                            <div><span class="text-[10px] text-gray-500 block font-sans font-semibold uppercase">Flawed Target</span><span class="text-red-400 font-bold">${error.target_text_snippet}</span></div>
+                            <div><span class="text-[10px] text-gray-500 block font-sans font-semibold uppercase">Source (IT)</span><span class="text-red-300 line-through target-src-text"></span></div>
+                            <div><span class="text-[10px] text-gray-500 block font-sans font-semibold uppercase">Flawed Target</span><span class="text-red-400 font-bold target-flaw-text"></span></div>
                         </div>
-                        <div class="bg-emerald-950/30 border border-emerald-500/20 p-2.5 rounded-lg text-xs">
-                            <span class="text-[10px] text-emerald-400 block font-sans font-bold uppercase tracking-wider mb-0.5">🚀 Recommended Hotfix</span>
-                            <span class="font-mono text-emerald-300 font-bold">${error.suggested_fix}</span>
+                        <div class="bg-emerald-950/30 border border-emerald-500/20 p-2.5 rounded-lg text-xs hover:border-emerald-500/40 transition-colors">
+                            <div class="text-[10px] text-emerald-400 font-sans font-bold uppercase tracking-wider mb-1 flex justify-between items-center select-none">
+                                <span>🚀 Recommended Hotfix</span>
+                                <span class="text-[9px] text-emerald-500/60 font-mono font-normal lowercase italic">✏️ click text to edit</span>
+                            </div>
+                            <span contenteditable="true" class="font-mono text-emerald-300 font-bold target-fix-text block w-full cursor-text focus:outline-none focus:bg-emerald-900/40 focus:ring-1 focus:ring-emerald-500 rounded px-1.5 py-0.5 transition-all"></span>
                         </div>
-                        <button onclick="applyHotfix('${error.error_id}', '${error.dom_path}', '${error.source_text_snippet.replace(/'/g, "\\'")}', '${error.suggested_fix.replace(/'/g, "\\'")}', '${error.html_element_id}')"
-                                class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded-lg text-xs tracking-wide transition-all shadow-md flex items-center justify-center gap-1.5">
+                        <button class="action-hotfix-btn w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded-lg text-xs tracking-wide transition-all shadow-md flex items-center justify-center gap-1.5">
                             ⚡ Apply Hotfix & Sync
                         </button>
                     `;
+
+                    card.querySelector('.target-src-text').innerText = error.source_text_snippet;
+                    card.querySelector('.target-flaw-text').innerText = error.target_text_snippet;
+                    card.querySelector('.target-fix-text').innerText = error.suggested_fix;
+
+                    // Read custom modifications dynamically from DOM when clicked
+                    card.querySelector('.action-hotfix-btn').onclick = () => {
+                        const modifiedFixText = card.querySelector('.target-fix-text').innerText.trim();
+                        applyHotfix(error.error_id, error.dom_path, error.source_text_snippet, modifiedFixText, error.html_element_id, error.severity);
+                    };
+
+                    // Dynamic Highlighting & Auto-Scroll Listeners
+                    card.addEventListener('mouseenter', () => {
+                        const targetComponent = document.getElementById(targetElementId);
+                        if (targetComponent) {
+                            const scaleClass = targetElementId === "emulated-promo-banner" ? "scale-[1.01]" : "scale-[1.03]";
+                            targetComponent.classList.add('ring-4', 'ring-amber-500', scaleClass, 'z-20', 'shadow-xl');
+                            targetComponent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        const targetComponent = document.getElementById(targetElementId);
+                        if (targetComponent) {
+                            const scaleClass = targetElementId === "emulated-promo-banner" ? "scale-[1.01]" : "scale-[1.03]";
+                            targetComponent.classList.remove('ring-4', 'ring-amber-500', scaleClass, 'z-20', 'shadow-xl');
+                        }
+                    });
+
                     feed.appendChild(card);
                 });
 
@@ -321,7 +328,14 @@
             }
         }
 
-        async function applyHotfix(errorId, domPath, srcText, suggestedFix, htmlElementId) {
+        function updateSummaryMetrics() {
+            const scoreDisplay = document.getElementById('score-display');
+            scoreDisplay.innerText = currentGlobalScore + "/100";
+            scoreDisplay.className = currentGlobalScore >= 90 ? "text-xl font-black text-green-400" : "text-xl font-black text-red-400";
+            document.getElementById('total-errors').innerText = currentErrorsCount;
+        }
+
+        async function applyHotfix(errorId, domPath, srcText, suggestedFix, htmlElementId, severity) {
             try {
                 const response = await fetch('/api/approve', {
                     method: 'POST',
@@ -336,40 +350,49 @@
                 });
 
                 if (response.ok) {
-                    let containerElement = null;
-                    if (htmlElementId === "global_banner") {
-                        if (domPath.includes('div') || errorId === "ERR_003") {
-                            document.getElementById("live-promo-text").innerHTML = `Special early bird offer valid until: <span class="bg-emerald-600 text-white px-2 py-0.5 rounded font-mono font-bold">${suggestedFix}</span>`;
-                            containerElement = document.getElementById("global_banner_strip");
-                        } else {
-                            document.getElementById("live-webpage-title").innerText = suggestedFix;
-                            containerElement = document.getElementById("global_banner");
+                    const actualId = htmlElementId === "global_banner" ? "emulated-promo-banner" : htmlElementId;
+                    const targetComponent = document.getElementById(actualId);
+
+                    if (actualId === "emulated-promo-banner") {
+                        if (targetComponent) {
+                            targetComponent.innerText = suggestedFix;
+                            targetComponent.classList.remove('border-red-500', 'ring-2', 'ring-red-400', 'ring-4', 'ring-amber-500', 'scale-[1.01]');
+                            targetComponent.classList.add('border-b-4', 'border-emerald-500', 'ring-1', 'ring-emerald-400');
                         }
                     } else {
-                        containerElement = document.getElementById(htmlElementId);
-                        const innerHeadingElement = containerElement ? containerElement.querySelector('h3') : null;
-                        if (innerHeadingElement) innerHeadingElement.innerText = suggestedFix;
-                    }
-
-                    if (containerElement) {
-                        if (containerElement.id === "global_banner_strip") {
-                            containerElement.className = "bg-emerald-100 text-emerald-900 text-center py-3 px-4 font-bold text-sm tracking-wide transition-all duration-300 relative border-b border-emerald-400 shadow-sm";
-                        } else {
-                            containerElement.classList.remove('border-red-500', 'bg-red-50/70', 'ring-1', 'ring-red-500/20');
-                            containerElement.classList.add('border-emerald-500', 'bg-emerald-50/40', 'ring-1', 'ring-emerald-500/20');
+                        const headingElement = document.querySelector(`#${actualId} h3`);
+                        if (headingElement) {
+                            headingElement.innerText = suggestedFix;
+                            headingElement.classList.remove('text-red-800');
+                            headingElement.classList.add('text-emerald-700');
                         }
-
-                        const diagnosticBadge = document.getElementById(`badge-${errorId}`);
-                        if (diagnosticBadge) {
-                            diagnosticBadge.className = "absolute top-2 right-3 text-[9px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-emerald-600 text-white shadow z-10 font-sans";
-                            diagnosticBadge.innerText = "VERIFIED";
+                        if (targetComponent) {
+                            targetComponent.classList.remove('border-red-500', 'bg-red-50/70', 'ring-1', 'ring-red-400', 'ring-4', 'ring-amber-500', 'scale-[1.03]');
+                            targetComponent.classList.add('border-emerald-500', 'bg-emerald-50/50', 'ring-1', 'ring-emerald-400');
                         }
                     }
+
+                    const diagnosticBadge = document.getElementById(`badge-${errorId}`);
+                    if (diagnosticBadge) {
+                        diagnosticBadge.className = "absolute top-3 right-3 text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-emerald-600 text-white shadow z-10";
+                        diagnosticBadge.innerText = "VERIFIED";
+                    }
+
+                    currentErrorsCount = Math.max(0, currentErrorsCount - 1);
+                    const penaltyPoints = severity === "Critical" ? 10 : (severity === "Major" ? 5 : 1);
+                    currentGlobalScore = Math.min(100, currentGlobalScore + penaltyPoints);
+                    updateSummaryMetrics();
 
                     const sidebarCard = document.getElementById(`sidebar-card-${errorId}`);
                     if (sidebarCard) {
                         sidebarCard.className = "bg-gray-800 border border-emerald-500/50 rounded-xl p-4 opacity-0 scale-95 transition-all duration-300";
-                        setTimeout(() => sidebarCard.remove(), 300);
+                        setTimeout(() => {
+                            sidebarCard.remove();
+                            const feed = document.getElementById('sidebar-feed');
+                            if (feed && feed.children.length === 0) {
+                                feed.innerHTML = `<div class="text-center py-12 text-sm text-gray-500 font-medium">✨ Document context clean. Zero flaws found.</div>`;
+                            }
+                        }, 300);
                     }
                 }
             } catch (err) {

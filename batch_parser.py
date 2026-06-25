@@ -4,17 +4,22 @@ import glob
 from bs4 import BeautifulSoup
 
 
-def get_dom_path(element):
-    """
-    Recursively builds a unique CSS selector path for an element
-    so the downstream TMX alignment engine knows exactly where it lives.
-    """
+# Inside batch_parser.py, pass the actual text_node or tag to track sibling positions uniquely
+def get_dom_path(element, is_text=False):
     path = []
     current = element
+
+    # If it's a raw text node, compute its relative position among sibling text nodes first
+    if is_text:
+        sidebar_text_siblings = [s for s in element.contents if isinstance(s, str) or getattr(s, 'name', None) is None]
+        idx = sidebar_text_siblings.index(current) + 1
+        path.append(f"text():nth-of-type({idx})")
+
     while current and current.name != '[document]':
-        siblings = current.find_previous_siblings(current.name)
-        index = len(siblings) + 1
-        path.append(f"{current.name}:nth-of-type({index})")
+        if current.name:
+            siblings = current.find_previous_siblings(current.name)
+            index = len(siblings) + 1
+            path.append(f"{current.name}:nth-of-type({index})")
         current = current.parent
     return " > ".join(reversed(path))
 
@@ -43,7 +48,8 @@ def get_structural_context(element):
         }
 
     # 2. Bubble up to find the nearest structural ID context (e.g., <article id="palio">)
-    ancestor = parent
+    # Corrected loop start inside get_structural_context()
+    ancestor = element
     while ancestor and ancestor.name != '[document]':
         if ancestor.get('id'):
             metadata["closest_anchor_id"] = {

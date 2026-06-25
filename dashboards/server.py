@@ -56,7 +56,6 @@ def get_available_locales():
 def get_lqa_combined_data(locale: str):
     report_file = os.path.join(OUTPUT_DIR, f"lqa_audit_report_it-IT_{locale}.json")
 
-    # Try to find the matching raw text layout file extracted by batch_parser.py
     content_file = os.path.join(OUTPUT_DIR, f"index_{locale}.json")
     if not os.path.exists(content_file):
         content_file = os.path.join(EXTRACTED_DIR, f"index_{locale}.json")
@@ -67,27 +66,36 @@ def get_lqa_combined_data(locale: str):
         with open(content_file, "r", encoding="utf-8") as f:
             webpage_strings = json.load(f)
     else:
-        # High-fidelity fallback layout so your demo looks beautiful even without content files
+        # High-fidelity fallback layout ensuring both content grid and global components adapt
         if locale == "de-DE":
             webpage_strings = [
                 {"tag": "h1", "content": "Boutique Italia - Tolle Erlebnisse", "closest_anchor_id": None},
-                {"tag": "p", "content": "Entdecken Sie die Seele Italiens.", "closest_anchor_id": None},
-                {"tag": "h3", "content": "Siena Palio Erlebnisse", "closest_anchor_id": {"id": "palio"}},
+                {"tag": "p", "content": "Entdecken Sie die Seele Italiens.", "closest_anchor_id": None,
+                 "parent_node": {"tag": "header"}},
+                {"tag": "h2", "content": "Besonderes Frühbucherangebot gültig bis",
+                 "closest_anchor_id": {"id": "global_banner"}},
+                {"tag": "span", "content": "15.08.2026", "closest_anchor_id": {"id": "global_banner"}},
+                {"tag": "h2", "content": "Siena Palio Erlebnisse", "closest_anchor_id": {"id": "palio"}},
                 {"tag": "p", "content": "Erleben Sie das traditionelle Pferderennen.",
-                 "closest_anchor_id": {"id": "palio"}},
-                {"tag": "h3", "content": "Automobil-Valley-Superautos", "closest_anchor_id": {"id": "macchine"}},
-                {"tag": "p", "content": "Besuchen Sie Luxus-Fertigungsräume.", "closest_anchor_id": {"id": "macchine"}}
+                 "closest_anchor_id": {"id": "palio"}, "parent_node": {"tag": "div"}},
+                {"tag": "h2", "content": "Automobil-Valley-Superautos", "closest_anchor_id": {"id": "macchine"}},
+                {"tag": "p", "content": "Besuchen Sie Luxus-Fertigungsräume.", "closest_anchor_id": {"id": "macchine"},
+                 "parent_node": {"tag": "div"}}
             ]
         else:
             webpage_strings = [
                 {"tag": "h1", "content": "Boutique Italia - Grand Experiences", "closest_anchor_id": None},
                 {"tag": "p", "content": "Explore the authentic soul of the Italian peninsula.",
-                 "closest_anchor_id": None},
-                {"tag": "h3", "content": "Siena Palio Experience", "closest_anchor_id": {"id": "palio"}},
-                {"tag": "p", "content": "Experience the thrilling horse race.", "closest_anchor_id": {"id": "palio"}},
-                {"tag": "h3", "content": "Historical Calcium Match", "closest_anchor_id": {"id": "calcio"}},
+                 "closest_anchor_id": None, "parent_node": {"tag": "header"}},
+                {"tag": "h2", "content": "Special early bird offer valid until",
+                 "closest_anchor_id": {"id": "global_banner"}},
+                {"tag": "span", "content": "15/08/2026", "closest_anchor_id": {"id": "global_banner"}},
+                {"tag": "h2", "content": "Siena Palio Experience", "closest_anchor_id": {"id": "palio"}},
+                {"tag": "p", "content": "Experience the thrilling horse race.", "closest_anchor_id": {"id": "palio"},
+                 "parent_node": {"tag": "div"}},
+                {"tag": "h2", "content": "Historical Calcium Match", "closest_anchor_id": {"id": "calcio"}},
                 {"tag": "p", "content": "Watch the brutal elegance of early historic football.",
-                 "closest_anchor_id": {"id": "calcio"}}
+                 "closest_anchor_id": {"id": "calcio"}, "parent_node": {"tag": "div"}}
             ]
 
     # 2. Load LQA Issue Metrics
@@ -96,7 +104,6 @@ def get_lqa_combined_data(locale: str):
         with open(report_file, "r", encoding="utf-8") as f:
             lqa_report = json.load(f)
     else:
-        # Automatic mock injection matching your project tokens if report file isn't built yet
         if locale == "de-DE":
             lqa_report = {
                 "global_score": 94, "summary": {"total_errors": 1},
@@ -147,4 +154,4 @@ def approve_fix(payload: ApprovalPayload):
 
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", reload=True)
+    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)
