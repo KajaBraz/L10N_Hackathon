@@ -12,14 +12,11 @@
         .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-        /* Two-column layout grid to look professional for judges */
         .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
         .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
 
-        /* New Image Styling */
         .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
-
         .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
         .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
         .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
@@ -34,8 +31,9 @@
         <p>{{META_SUBTITLE}}</p>
     </header>
 
-    <div class="promo-banner">
-        {{PROMO_LABEL}} <span class="date-highlight">{{PROMO_DATE}}</span>
+    <div class="promo-banner" id="promo-container">
+        <span id="promo-label">{{PROMO_LABEL}}</span>
+        <span id="promo-date" class="date-highlight">{{PROMO_DATE}}</span>
     </div>
 
     <div class="container">
@@ -49,8 +47,8 @@
                     </div>
                     <img class="card-img" src="images/palio_siena.jpg" alt="{{PALIO_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{PALIO_ALT}}"</em></span>
-                        <span class="meta-price">{{PALIO_PRICE}}</span>
+                        <span class="meta-item" id="palio_alt"><em>"{{PALIO_ALT}}"</em></span>
+                        <span class="meta-price" id="palio_price">{{PALIO_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -63,8 +61,8 @@
                     </div>
                     <img class="card-img" src="images/calcio_san_siro.jpg" alt="{{CALCIO_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{CALCIO_ALT}}"</em></span>
-                        <span class="meta-price">{{CALCIO_PRICE}}</span>
+                        <span class="meta-item" id="calcio_alt"><em>"{{CALCIO_ALT}}"</em></span>
+                        <span class="meta-price" id="calcio_price">{{CALCIO_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -77,8 +75,8 @@
                     </div>
                     <img class="card-img" src="images/eolie_islands.jpg" alt="{{NATURA_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{NATURA_ALT}}"</em></span>
-                        <span class="meta-price">{{NATURA_PRICE}}</span>
+                        <span class="meta-item" id="natura_alt"><em>"{{NATURA_ALT}}"</em></span>
+                        <span class="meta-price" id="natura_price">{{NATURA_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -91,8 +89,8 @@
                     </div>
                     <img class="card-img" src="images/fellini_rimini.jpg" alt="{{FILM_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{FILM_ALT}}"</em></span>
-                        <span class="meta-price">{{FILM_PRICE}}</span>
+                        <span class="meta-item" id="film_alt"><em>"{{FILM_ALT}}"</em></span>
+                        <span class="meta-price" id="film_price">{{FILM_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -105,8 +103,8 @@
                     </div>
                     <img class="card-img" src="images/ferragosto_beach.jpg" alt="{{FESTE_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{FESTE_ALT}}"</em></span>
-                        <span class="meta-price">{{FESTE_PRICE}}</span>
+                        <span class="meta-item" id="feste_alt"><em>"{{FESTE_ALT}}"</em></span>
+                        <span class="meta-price" id="feste_price">{{FESTE_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -119,8 +117,8 @@
                     </div>
                     <img class="card-img" src="images/naples_coffee.jpg" alt="{{ESPERIENZE_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{ESPERIENZE_ALT}}"</em></span>
-                        <span class="meta-price">{{ESPERIENZE_PRICE}}</span>
+                        <span class="meta-item" id="esperienze_alt"><em>"{{ESPERIENZE_ALT}}"</em></span>
+                        <span class="meta-price" id="esperienze_price">{{ESPERIENZE_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -133,8 +131,8 @@
                     </div>
                     <img class="card-img" src="images/modena_motors.jpg" alt="{{MACCHINE_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{MACCHINE_ALT}}"</em></span>
-                        <span class="meta-price">{{MACCHINE_PRICE}}</span>
+                        <span class="meta-item" id="macchine_alt"><em>"{{MACCHINE_ALT}}"</em></span>
+                        <span class="meta-price" id="macchine_price">{{MACCHINE_PRICE}}</span>
                     </div>
                 </div>
             </article>
@@ -147,8 +145,8 @@
                     </div>
                     <img class="card-img" src="images/sanremo_ariston.jpg" alt="{{MUSICA_ALT}}">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"{{MUSICA_ALT}}"</em></span>
-                        <span class="meta-price">{{MUSICA_PRICE}}</span>
+                        <span class="meta-item" id="musica_alt"><em>"{{MUSICA_ALT}}"</em></span>
+                        <span class="meta-price" id="musica_price">{{MUSICA_PRICE}}</span>
                     </div>
                 </div>
             </article>

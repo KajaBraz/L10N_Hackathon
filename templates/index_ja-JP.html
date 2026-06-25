@@ -12,14 +12,11 @@
         .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-        /* Two-column layout grid to look professional for judges */
         .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
         .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
 
-        /* New Image Styling */
         .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
-
         .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
         .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
         .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
@@ -34,8 +31,9 @@
         <p>文化的なバッジを通じて半島の本格的な魂を探索してください。</p>
     </header>
 
-    <div class="promo-banner">
-        早期予約特別オファーの有効期限： <span class="date-highlight">15/08/2026</span>
+    <div class="promo-banner" id="promo-container">
+        <span id="promo-label">早期予約特別オファーの有効期限：</span>
+        <span id="promo-date" class="date-highlight">15/08/2026</span>
     </div>
 
     <div class="container">
@@ -49,8 +47,8 @@
                     </div>
                     <img class="card-img" src="images/palio_siena.jpg" alt="歴史的なパレード中のフィールド広場のパーティー群衆">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"歴史的なパレード中のフィールド広場のパーティー群衆"</em></span>
-                        <span class="meta-price">€2500,00</span>
+                        <span class="meta-item" id="palio_alt"><em>"歴史的なパレード中のフィールド広場のパーティー群衆"</em></span>
+                        <span class="meta-price" id="palio_price">€2500,00</span>
                     </div>
                 </div>
             </article>
@@ -63,8 +61,8 @@
                     </div>
                     <img class="card-img" src="images/calcio_san_siro.jpg" alt="壮大な振り付けを露出しているスタジアムのファン">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"壮大な振り付けを露出しているスタジアムのファン"</em></span>
-                        <span class="meta-price">€120,00</span>
+                        <span class="meta-item" id="calcio_alt"><em>"壮大な振り付けを露出しているスタジアムのファン"</em></span>
+                        <span class="meta-price" id="calcio_price">€120,00</span>
                     </div>
                 </div>
             </article>
@@ -77,8 +75,8 @@
                     </div>
                     <img class="card-img" src="images/eolie_islands.jpg" alt="シチリアの前の島々の結晶の海に沈む夕日">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"シチリアの前の島々の結晶の海に沈む夕日"</em></span>
-                        <span class="meta-price">€1450,00</span>
+                        <span class="meta-item" id="natura_alt"><em>"シチリアの前の島々の結晶の海に沈む夕日"</em></span>
+                        <span class="meta-price" id="natura_price">€1450,00</span>
                     </div>
                 </div>
             </article>
@@ -91,8 +89,8 @@
                     </div>
                     <img class="card-img" src="images/fellini_rimini.jpg" alt="街の中心部に復元された有名なフルゴール・シネマ">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"街の中心部に復元された有名なフルゴール・シネマ"</em></span>
-                        <span class="meta-price">€450,00</span>
+                        <span class="meta-item" id="film_alt"><em>"街の中心部に復元された有名なフルゴール・シネマ"</em></span>
+                        <span class="meta-price" id="film_price">€450,00</span>
                     </div>
                 </div>
             </article>
@@ -105,8 +103,8 @@
                     </div>
                     <img class="card-img" src="images/ferragosto_beach.jpg" alt="真夏のパーティー中の満員のビーチと色付きの傘">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"真夏のパーティー中の満員のビーチと色付きの傘"</em></span>
-                        <span class="meta-price">€320,00</span>
+                        <span class="meta-item" id="feste_alt"><em>"真夏のパーティー中の満員のビーチと色付きの傘"</em></span>
+                        <span class="meta-price" id="feste_price">€320,00</span>
                     </div>
                 </div>
             </article>
@@ -119,8 +117,8 @@
                     </div>
                     <img class="card-img" src="images/naples_coffee.jpg" alt="バーのカウンターにある、濃いクリームが入った湯気の立つコーヒーカップ">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"バーのカウンターにある、濃いクリームが入った湯気の立つコーヒーカップ"</em></span>
-                        <span class="meta-price">€1,20</span>
+                        <span class="meta-item" id="esperienze_alt"><em>"バーのカウンターにある、濃いクリームが入った湯気の立つコーヒーカップ"</em></span>
+                        <span class="meta-price" id="esperienze_price">€1,20</span>
                     </div>
                 </div>
             </article>
@@ -133,8 +131,8 @@
                     </div>
                     <img class="card-img" src="images/modena_motors.jpg" alt="エンツォ・フェラーリ博物館の前に展示された燃えるような赤いスポーツカー">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"エンツォ・フェラーリ博物館の前に展示された燃えるような赤いスポーツカー"</em></span>
-                        <span class="meta-price">€1850,00</span>
+                        <span class="meta-item" id="macchine_alt"><em>"エンツォ・フェラーリ博物館の前に展示された燃えるような赤いスポーツカー"</em></span>
+                        <span class="meta-price" id="macchine_price">€1850,00</span>
                     </div>
                 </div>
             </article>
@@ -147,8 +145,8 @@
                     </div>
                     <img class="card-img" src="images/sanremo_ariston.jpg" alt="フェスティバルウィーク中のアリストン劇場の照らされたファサード">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"フェスティバルウィーク中のアリストン劇場の照らされたファサード"</em></span>
-                        <span class="meta-price">€950,00</span>
+                        <span class="meta-item" id="musica_alt"><em>"フェスティバルウィーク中のアリストン劇場の照らされたファサード"</em></span>
+                        <span class="meta-price" id="musica_price">€950,00</span>
                     </div>
                 </div>
             </article>

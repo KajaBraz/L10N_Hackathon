@@ -12,14 +12,11 @@
         .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-        /* Two-column layout grid to look professional for judges */
         .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
         .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
 
-        /* New Image Styling */
         .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
-
         .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
         .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
         .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
@@ -34,8 +31,9 @@
         <p>Odkryj autentyczną duszę półwyspu poprzez jego kulturowe odznaki.</p>
     </header>
 
-    <div class="promo-banner">
-        Specjalna oferta dla wczesnego ptaszka ważna do: <span class="date-highlight">15/08/2026</span>
+    <div class="promo-banner" id="promo-container">
+        <span id="promo-label">Specjalna oferta dla wczesnego ptaszka ważna do:</span>
+        <span id="promo-date" class="date-highlight">15/08/2026</span>
     </div>
 
     <div class="container">
@@ -49,8 +47,8 @@
                     </div>
                     <img class="card-img" src="images/palio_siena.jpg" alt="Imprezujący tłum na Placu Pola podczas historycznej parady">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Imprezujący tłum na Placu Pola podczas historycznej parady"</em></span>
-                        <span class="meta-price">€2500,00</span>
+                        <span class="meta-item" id="palio_alt"><em>"Imprezujący tłum na Placu Pola podczas historycznej parady"</em></span>
+                        <span class="meta-price" id="palio_price">€2500,00</span>
                     </div>
                 </div>
             </article>
@@ -63,8 +61,8 @@
                     </div>
                     <img class="card-img" src="images/calcio_san_siro.jpg" alt="Fani na stadionie eksponujący spektakularną choreografię">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Fani na stadionie eksponujący spektakularną choreografię"</em></span>
-                        <span class="meta-price">€120,00</span>
+                        <span class="meta-item" id="calcio_alt"><em>"Fani na stadionie eksponujący spektakularną choreografię"</em></span>
+                        <span class="meta-price" id="calcio_price">€120,00</span>
                     </div>
                 </div>
             </article>
@@ -77,8 +75,8 @@
                     </div>
                     <img class="card-img" src="images/eolie_islands.jpg" alt="Zachód słońca nad krystalicznym morzem wysp przed Sycylią">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Zachód słońca nad krystalicznym morzem wysp przed Sycylią"</em></span>
-                        <span class="meta-price">€1450,00</span>
+                        <span class="meta-item" id="natura_alt"><em>"Zachód słońca nad krystalicznym morzem wysp przed Sycylią"</em></span>
+                        <span class="meta-price" id="natura_price">€1450,00</span>
                     </div>
                 </div>
             </article>
@@ -91,8 +89,8 @@
                     </div>
                     <img class="card-img" src="images/fellini_rimini.jpg" alt="Słynne Kino Fulgor odrestaurowane w sercu miasta">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Słynne Kino Fulgor odrestaurowane w sercu miasta"</em></span>
-                        <span class="meta-price">€450,00</span>
+                        <span class="meta-item" id="film_alt"><em>"Słynne Kino Fulgor odrestaurowane w sercu miasta"</em></span>
+                        <span class="meta-price" id="film_price">€450,00</span>
                     </div>
                 </div>
             </article>
@@ -105,8 +103,8 @@
                     </div>
                     <img class="card-img" src="images/ferragosto_beach.jpg" alt="Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata"</em></span>
-                        <span class="meta-price">€320,00</span>
+                        <span class="meta-item" id="feste_alt"><em>"Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata"</em></span>
+                        <span class="meta-price" id="feste_price">€320,00</span>
                     </div>
                 </div>
             </article>
@@ -119,8 +117,8 @@
                     </div>
                     <img class="card-img" src="images/naples_coffee.jpg" alt="Parująca filiżanka kawy z gęstą śmietanką na ladzie baru">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Parująca filiżanka kawy z gęstą śmietanką na ladzie baru"</em></span>
-                        <span class="meta-price">€1,20</span>
+                        <span class="meta-item" id="esperienze_alt"><em>"Parująca filiżanka kawy z gęstą śmietanką na ladzie baru"</em></span>
+                        <span class="meta-price" id="esperienze_price">€1,20</span>
                     </div>
                 </div>
             </article>
@@ -133,8 +131,8 @@
                     </div>
                     <img class="card-img" src="images/modena_motors.jpg" alt="Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari"</em></span>
-                        <span class="meta-price">€1850,00</span>
+                        <span class="meta-item" id="macchine_alt"><em>"Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari"</em></span>
+                        <span class="meta-price" id="macchine_price">€1850,00</span>
                     </div>
                 </div>
             </article>
@@ -147,8 +145,8 @@
                     </div>
                     <img class="card-img" src="images/sanremo_ariston.jpg" alt="Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu">
                     <div class="meta-box">
-                        <span class="meta-item"><em>"Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu"</em></span>
-                        <span class="meta-price">€950,00</span>
+                        <span class="meta-item" id="musica_alt"><em>"Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu"</em></span>
+                        <span class="meta-price" id="musica_price">€950,00</span>
                     </div>
                 </div>
             </article>
