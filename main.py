@@ -1,6 +1,6 @@
 import json
 import os
-from typing import List, Literal
+from typing import List, Literal, Optional
 
 from openai import OpenAI
 from pydantic import BaseModel, Field
@@ -10,11 +10,21 @@ from align_elements import align_localization_payloads
 from batch_parser import process_localization_templates
 from prompt.compile_prompt import compile_generic_prompt
 from prompt.locale_profiles import LOCALE_PROFILES
+from tmx_matcher import enrich_lqa_report_with_tmx
 
 
 # ==========================================
 # 1. DEFINE STRUCTURED OUTPUT SCHEMAS
 # ==========================================
+class TMXMatchInfo(BaseModel):
+    tuid: str = Field(description="Translation Memory Unit ID from TMX file")
+    similarity_score: float = Field(description="Fuzzy match score between 0.0 and 1.0")
+    match_type: str = Field(description="Type of match: 'source', 'target', 'both', or 'fuzzy'")
+    tmx_source_text: str = Field(description="Source text from TMX entry")
+    tmx_target_text: str = Field(description="Target text from TMX entry")
+    available_locales: List[str] = Field(description="List of available locales in this TMX entry")
+
+
 class ErrorDetail(BaseModel):
     error_id: str = Field(description="Unique error sequence string, e.g., ERR_001")
     html_element_id: str = Field(description="The structural HTML ID anchor from the input, e.g., 'calcio'")
@@ -27,6 +37,7 @@ class ErrorDetail(BaseModel):
     issue_explanation: str = Field(
         description="Clear architectural evaluation of why this fails for the target locale context.")
     suggested_fix: str = Field(description="Corrected text ready for live production hotfix deployment.")
+    tmx_match: Optional[TMXMatchInfo] = Field(default=None, description="TMX translation memory match information")
 
 
 class LqaSummary(BaseModel):
@@ -46,7 +57,7 @@ class LqaReportSchema(BaseModel):
 # ==========================================
 # 2. RUN EXTRACTION AND ALIGNMENT CORRIDOR
 # ==========================================
-def run_lqa_pipeline(target_locale_key: str = "en-US"):
+def run_lqa_pipeline(target_locale_key: str = "en-US", enable_tmx_matching: bool = True, tmx_file: str = "memory.xml"):
     print(f"--- 🚀 Initializing Universal LQA Ingestion Pipeline [{target_locale_key}] ---")
 
     # 1. Fetch the target configuration profile
@@ -130,7 +141,25 @@ def run_lqa_pipeline(target_locale_key: str = "en-US"):
         validated_report = LqaReportSchema.model_validate_json(raw_json_string)
 
         # ==========================================
-        # 5. SAVE RUNTIME ARTIFACTS
+        # 5. TMX MATCHING AND ENRICHMENT (NEW!)
+        # ==========================================
+        if enable_tmx_matching and os.path.exists(tmx_file):
+            print(f"\n--- 🔍 Running TMX Sync & Alignment ---")
+            report_dict = validated_report.model_dump()
+            enriched_report_dict = enrich_lqa_report_with_tmx(
+                report_dict,
+                tmx_file,
+                source_locale="it-IT",
+                target_locale=target_locale_key,
+                threshold=0.4  # Adjust threshold as needed (0.4 = 40% similarity minimum)
+            )
+            # Re-validate with enriched data
+            validated_report = LqaReportSchema.model_validate(enriched_report_dict)
+        elif enable_tmx_matching:
+            print(f"\n[TMX WARNING] TMX file not found at: {tmx_file}")
+
+        # ==========================================
+        # 6. SAVE RUNTIME ARTIFACTS
         # ==========================================
         output_dir = "output"
         os.makedirs(output_dir, exist_ok=True)
@@ -150,6 +179,15 @@ def run_lqa_pipeline(target_locale_key: str = "en-US"):
 
 
 if __name__ == "__main__":
+    import sys
+
+    # Fix encoding issues on Windows console
+    if sys.platform == 'win32':
+        import io
+
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
     target_locale = 'en-US'
 
-    run_lqa_pipeline(target_locale)
+    run_lqa_pipeline(target_locale, enable_tmx_matching=True, tmx_file="memory.xml")

@@ -356,6 +356,34 @@
                     card.id = `sidebar-card-${error.error_id}`;
                     card.className = "bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-3 shadow-md hover:border-gray-500 transition-all duration-200 cursor-pointer";
 
+                    // Build TMX match section - always show it
+                    const tmxMatchHTML = error.tmx_match ? `
+                        <div class="bg-blue-950/30 border border-blue-500/20 p-2.5 rounded-lg text-xs">
+                            <div class="text-[10px] text-blue-400 font-sans font-bold uppercase tracking-wider mb-1.5 flex justify-between items-center">
+                                <span>🔗 TMX Match Found</span>
+                                <span class="text-[9px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded font-mono">${Math.round(error.tmx_match.similarity_score * 100)}% ${error.tmx_match.match_type}</span>
+                            </div>
+                            <div class="space-y-1 text-[10px] font-mono">
+                                <div>
+                                    <span class="text-blue-400 font-semibold">TUID:</span>
+                                    <span class="text-blue-200 ml-1">${error.tmx_match.tuid}</span>
+                                </div>
+                                <div class="bg-blue-900/30 p-1.5 rounded border border-blue-500/10">
+                                    <span class="text-blue-300">${error.tmx_match.tmx_target_text}</span>
+                                </div>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="bg-gray-950/30 border border-gray-700/50 p-2.5 rounded-lg text-xs">
+                            <div class="text-[10px] text-gray-500 font-sans font-bold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                                <span>🔗 TMX Memory</span>
+                            </div>
+                            <div class="text-[10px] text-gray-500 italic">
+                                No TMX Match Found
+                            </div>
+                        </div>
+                    `;
+
                     card.innerHTML = `
                         <div class="flex justify-between items-start">
                             <span class="text-xs font-mono text-gray-400 font-bold bg-gray-900 px-2 py-0.5 rounded border border-gray-700">${error.error_id}</span>
@@ -368,6 +396,7 @@
                             <div><span class="text-[10px] text-gray-500 block font-sans font-semibold uppercase">Source (IT)</span><span class="text-red-300 line-through target-src-text"></span></div>
                             <div><span class="text-[10px] text-gray-500 block font-sans font-semibold uppercase">Flawed Target</span><span class="text-red-400 font-bold target-flaw-text"></span></div>
                         </div>
+                        ${tmxMatchHTML}
                         <div class="bg-emerald-950/30 border border-emerald-500/20 p-2.5 rounded-lg text-xs hover:border-emerald-500/40 transition-colors">
                             <div class="text-[10px] text-emerald-400 font-sans font-bold uppercase tracking-wider mb-1 flex justify-between items-center select-none">
                                 <span>🚀 Recommended Hotfix</span>
@@ -661,7 +690,7 @@
                 const result = await response.json();
 
                 if (response.ok) {
-                    alert(`🎉 Success!\n\n✅ Updated ${result.patched_elements} translations in: ${result.locale_file_updated}\n✅ Regenerated templates\n\nOutput:\n${result.template_generation_output}`);
+                    alert(`🎉 Success!\n\n✅ Updated ${result.patched_elements} translations\n✅ Locale: ${currentActiveLocale}\n✅ Regenerated templates\n\n${result.template_generation_output}`);
                 } else {
                     alert(`❌ Rebuild error: ${result.detail || "Verification failed."}`);
                 }

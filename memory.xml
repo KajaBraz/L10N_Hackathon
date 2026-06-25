@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="1.4">
+  <header creationtool="HackathonLQA" creationtoolversion="1.0" datatype="PlainText" segtype="sentence" adminlang="en-US" srclang="it-IT"/>
+  <body>
+
+    <!-- Meta Information -->
+    <tu tuid="meta_title">
+      <tuv xml:lang="it-IT"><seg>Boutique Italia - Grandi Esperienze e Tradizioni</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Boutique Italia - Grand Experiences and Traditions</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>ブティック・イタリア - 偉大なる体験と伝統</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Boutique Italia - Wielkie doświadczenia i tradycje</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Boutique Italia - Große Erlebnisse und Traditionen</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Boutique Italia - Grandes Experiências e Tradições</seg></tuv>
+    </tu>
+
+    <tu tuid="meta_subtitle">
+      <tuv xml:lang="it-IT"><seg>Esplora l'anima autentica della penisola attraverso i suoi simboli culturali.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Explore the authentic soul of the peninsula through its cultural symbols.</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>その文化的シンボルを通して、半島の真の魂を探求してください。</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Odkryj autentyczną duszę półwyspu poprzez jego symbole kulturowe.</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Erkunden Sie die authentische Seele der Halbinsel anhand ihrer kulturellen Symbole.</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Explore a alma autêntica da península através de seus símbolos culturais.</seg></tuv>
+    </tu>
+
+    <!-- Sections: Palio -->
+    <tu tuid="palio_title">
+      <tuv xml:lang="it-IT"><seg>Eventi: Il Palio di Siena</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Events: The Palio of Siena</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>イベント：シエナのパリオ</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Wydarzenia: Palio di Siena</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Veranstaltungen: Il Palio di Siena</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Eventos: O Palio di Siena</seg></tuv>
+    </tu>
+
+    <tu tuid="palio_desc">
+      <tuv xml:lang="it-IT"><seg>Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Discover the timeless magic of Siena. Experience the historic rivalry between the Contrade, walk through the festive medieval districts, and witness the legendary horse race.</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>シエナの時代を超越した魔法を発見してください。コントラーデ間の歴史的なライバル関係を体験し、祝祭の雰囲気漂う中世の地区を歩き、伝説的な競馬を目撃してください。</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Odkryj ponadczasową magię Sieny. Przeżyj historyczną rywalizację między Contrade, przespaceruj się po świątecznych średniowiecznych dzielnicach i zobacz legendarny wyścig konny.</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Entdecken Sie die zeitlose Magie von Siena. Erleben Sie die historische Rivalität zwischen den Contrade, spazieren Sie durch die festlichen mittelalterlichen Viertel und erleben Sie das legendäre Pferderennen.</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Descubra a magia atemporal de Siena. Vivencie a histórica rivalidade entre as Contrade, caminhe pelos bairros medievais festivos e testemunhe a lendária corrida de cavalos.</seg></tuv>
+    </tu>
+
+    <!-- Sections: Calcio -->
+    <tu tuid="calcio_title">
+      <tuv xml:lang="it-IT"><seg>Sport: Calcio &amp; Passione Italiana</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Sport: Calcio &amp; Italian Passion</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>スポーツ：サッカーとイタリアの情熱</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Sport: Piłka nożna i włoska pasja</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Sport: Fußball &amp; italienische Leidenschaft</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Esporte: Futebol e Paixão Italiana</seg></tuv>
+    </tu>
+
+    <tu tuid="calcio_desc">
+      <tuv xml:lang="it-IT"><seg>Vivi l'atmosfera elettrizzante della Serie A a San Siro. Segui i rossoneri e i bianconeri mentre si sfidano sul rettangolo di gioco in una partita mozzafiato, decisa all'ultimo secondo in piena Zona Cesarini!</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Experience the electrifying atmosphere of Serie A at San Siro. Follow the teams as they face off in a breathtaking match, decided at the very last second!</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>サン・シーロでセリエAの熱狂的な雰囲気を体験してください。チームが息をのむような試合で対戦する様子を追いかけ、最後の最後で決着がつきました！</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Poczuj elektryzującą atmosferę Serie A na San Siro. Śledź drużyny, które mierzą się w zapierającym dech w piersiach meczu, rozstrzygniętym w ostatniej sekundzie!</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Erleben Sie die elektrisierende Atmosphäre der Serie A im San Siro. Verfolgen Sie die Teams, wie sie in einem atemberaubenden Spiel gegeneinander antreten, das in der allerletzten Sekunde entschieden wurde!</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Experimente a atmosfera eletrizante da Serie A em San Siro. Acompanhe os times enquanto se enfrentam em uma partida de tirar o fôlego, decidida no último segundo!</seg></tuv>
+    </tu>
+
+    <!-- Sections: Natura -->
+    <tu tuid="natura_title">
+      <tuv xml:lang="it-IT"><seg>Natura: Le Meraviglie delle Isole Eolie</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Nature: The Wonders of the Aeolian Islands</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>自然：エオリア諸島の驚異</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Natura: Cuda Wysp Liparyjskich</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Natur: Die Wunder der Liparischen Inseln</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Natureza: As Maravilhas das Ilhas Eólias</seg></tuv>
+    </tu>
+
+    <tu tuid="natura_desc">
+      <tuv xml:lang="it-IT"><seg>Un arcipelago vulcanico unico al mondo. Esplora Lipari, ammira le spettacolari esplorazioni notturne dello Stromboli e immergiti nei fanghi sulfurei di Vulcano per un'esperienza rigenerante.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>A volcanic archipelago unique in the world. Explore Lipari, admire the spectacular night explorations of Stromboli, and immerse yourself in the sulfurous mud of Vulcano for a regenerating experience.</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>世界でも類を見ない火山群島。リパリを探索し、ストロンボリ山の壮観な夜の探検を眺め、ヴルカーノ島の硫黄泥に浸かってリフレッシュ体験を。</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Wulkaniczny archipelag unikalny na skalę światową. Odkryj Lipari, podziwiaj spektakularne nocne eksploracje Stromboli i zanurz się w siarkowych błotach Vulcano, aby przeżyć regenerujące doświadczenie.</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Ein vulkanischer Archipel, der weltweit einzigartig ist. Erkunden Sie Lipari, bewundern Sie die spektakulären nächtlichen Erkundungen des Stromboli und tauchen Sie in den Schwefelschlamm von Vulcano ein, um ein regenerierendes Erlebnis zu genießen.</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Um arquipélago vulcânico único no mundo. Explore Lipari, admire as espetaculares explorações noturnas de Stromboli e mergulhe na lama sulfurosa de Vulcano para uma experiência regeneradora.</seg></tuv>
+    </tu>
+
+    <!-- Sections: Macchine -->
+    <tu tuid="macchine_title">
+      <tuv xml:lang="it-IT"><seg>Motori: La Motor Valley di Modena</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Motors: The Motor Valley of Modena</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>モーター：モデナのモーターバレー</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Motoryzacja: Motor Valley w Modenie</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Motoren: Das Motor Valley von Modena</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Motores: O Motor Valley de Modena</seg></tuv>
+    </tu>
+
+    <tu tuid="macchine_desc">
+      <tuv xml:lang="it-IT"><seg>Entra nel cuore pulsante dell'ingegneria automobilistica globale. A Modena potrai ascoltare il rombo dei motori dei bolidi del Cavallino Rampante ed esplorare i musei delle supercar più veloci del pianeta.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Enter the beating heart of global automotive engineering. In Modena, you can hear the roar of the engines of the Prancing Horse and explore the museums of the fastest supercars on the planet.</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>グローバルな自動車工学の鼓動の中心へ。モデナでは、跳ね馬のエンジンの轟音を聞き、地球上で最も速いスーパーカーの博物館を探索できます。</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Wejdź do bijącego serca globalnej inżynierii motoryzacyjnej. W Modenie usłyszysz ryk silników Prancing Horse i zwiedzisz muzea najszybszych supersamochodów na planecie.</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Treten Sie ein in das pulsierende Herz der globalen Automobiltechnik. In Modena können Sie das Dröhnen der Motoren des Prancing Horse hören und die Museen der schnellsten Supersportwagen des Planeten erkunden.</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>Entre no coração pulsante da engenharia automotiva global. Em Modena, você pode ouvir o rugido dos motores do Cavallino Rampante e explorar os museus dos supercarros mais rápidos do planeta.</seg></tuv>
+    </tu>
+
+    <!-- Miscellaneous -->
+    <tu tuid="ferragosto_desc">
+      <tuv xml:lang="it-IT"><seg>Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>August 15th in Italy means mountain barbecues, beach bonfires, day trips to Riccione, and total relaxation under the Mediterranean sun.</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>イタリアの8月15日は、山でのバーベキュー、ビーチでの焚き火、リッチョーネへの日帰り旅行、そして地中海の太陽の下での完全なリラクゼーションを意味します。</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>15 sierpnia we Włoszech oznacza grillowanie w górach, ogniska na plaży, wycieczki do Riccione i całkowity relaks w słońcu Morza Śródziemnego.</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Der 15. August in Italien bedeutet Grillen in den Bergen, Lagerfeuer am Strand, Tagesausflüge nach Riccione und totale Entspannung unter der mediterranen Sonne.</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>O dia 15 de agosto na Itália significa churrascos nas montanhas, fogueiras na praia, viagens a Riccione e relaxamento total sob o sol do Mediterrâneo.</seg></tuv>
+    </tu>
+
+    <tu tuid="term_soccer_match">
+      <tuv xml:lang="it-IT"><seg>partita di calcio</seg></tuv>
+      <tuv xml:lang="en-US"><seg>soccer match</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>サッカーの試合</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>mecz piłki nożnej</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>Fußballspiel</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>partida de futebol</seg></tuv>
+    </tu>
+
+    <tu tuid="term_zona_cesarini">
+      <tuv xml:lang="it-IT"><seg>in piena Zona Cesarini</seg></tuv>
+      <tuv xml:lang="en-US"><seg>in the dying moments</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>試合終了間際に</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>w doliczonym czasie gry</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>in der Nachspielzeit</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>nos acréscimos</seg></tuv>
+    </tu>
+
+    <tu tuid="term_rossoneri">
+      <tuv xml:lang="it-IT"><seg>i rossoneri</seg></tuv>
+      <tuv xml:lang="en-US"><seg>the Rossoneri</seg></tuv>
+      <tuv xml:lang="ja-JP"><seg>ロッソネリ</seg></tuv>
+      <tuv xml:lang="pl-PL"><seg>Rossoneri</seg></tuv>
+      <tuv xml:lang="de-DE"><seg>die Rossoneri</seg></tuv>
+      <tuv xml:lang="pt-BR"><seg>os rossoneri</seg></tuv>
+    </tu>
+
+  </body>
+</tmx>

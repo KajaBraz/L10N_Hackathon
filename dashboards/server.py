@@ -2,12 +2,18 @@ import glob
 import json
 import os
 import subprocess
+import sys
+
+# Add parent directory to path to import tmx_matcher
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
+
+from tmx_matcher import TMXParser, TMXMatcher, enrich_lqa_report_with_tmx
 
 app = FastAPI(title="Boutique Italia - Content-Aware LQA Gateway")
 
@@ -19,11 +25,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-OUTPUT_DIR = "../outputs"
-EXTRACTED_DIR = "../extracted_data"
-TEMPLATES_DIR = "../templates"  # Directory where index_*.html lives
-LOCALES_DIR = "../locales"  # Directory where locale JSON resource files live
-GENERATE_SCRIPT = "../generate_pages.py"  # Template generation script
+# Get absolute path to project root (parent of dashboards directory)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "outputs")
+EXTRACTED_DIR = os.path.join(PROJECT_ROOT, "extracted_data")
+TEMPLATES_DIR = os.path.join(PROJECT_ROOT, "templates")  # Directory where index_*.html lives
+LOCALES_DIR = os.path.join(PROJECT_ROOT, "locales")  # Directory where locale JSON resource files live
+GENERATE_SCRIPT = os.path.join(PROJECT_ROOT, "generate_pages.py")  # Template generation script
+TMX_FILE = os.path.join(PROJECT_ROOT, "memory.xml")  # TMX translation memory file
+
+# Global TMX parser instance (loaded once at startup)
+_tmx_parser = None
+_tmx_matcher = None
 
 
 class ApprovalPayload(BaseModel):
@@ -34,6 +48,19 @@ class ApprovalPayload(BaseModel):
     approved_translation: str
     html_element_id: str = ""
     target_text_snippet: str = ""
+
+
+def get_tmx_parser():
+    """Get or initialize the TMX parser (singleton pattern)"""
+    global _tmx_parser, _tmx_matcher
+    if _tmx_parser is None and os.path.exists(TMX_FILE):
+        try:
+            _tmx_parser = TMXParser(TMX_FILE)
+            _tmx_matcher = TMXMatcher(_tmx_parser)
+            print(f"[TMX] Loaded {len(_tmx_parser.entries)} translation units")
+        except Exception as e:
+            print(f"[TMX ERROR] Failed to load TMX file: {e}")
+    return _tmx_parser, _tmx_matcher
 
 
 @app.get("/")
@@ -60,8 +87,10 @@ def get_available_locales():
 
 @app.get("/api/report/{locale}")
 def get_lqa_combined_data(locale: str):
+    print(f"[API] get_lqa_combined_data called for locale: {locale}")
     report_file = os.path.join(OUTPUT_DIR, f"lqa_audit_report_it-IT_{locale}.json")
     locale_json_file = os.path.join(LOCALES_DIR, f"{locale}.json")
+    print(f"[API] Report file: {report_file}, exists: {os.path.exists(report_file)}")
 
     # 1. Load Locale JSON data (the source of truth for translations)
     locale_data = None
@@ -163,8 +192,30 @@ def get_lqa_combined_data(locale: str):
     # 2. Load LQA Issue Metrics
     lqa_report = {"global_score": 100, "summary": {"total_errors": 0}, "detected_errors": []}
     if os.path.exists(report_file):
+        print(f"[DEBUG] Loading report from: {report_file}")
         with open(report_file, "r", encoding="utf-8") as f:
             lqa_report = json.load(f)
+        print(f"[DEBUG] Loaded {len(lqa_report.get('detected_errors', []))} errors")
+
+        # 3. Automatically enrich with TMX data if TMX is available
+        print(
+            f"[DEBUG] TMX_FILE exists: {os.path.exists(TMX_FILE)}, has errors: {bool(lqa_report.get('detected_errors'))}")
+        if os.path.exists(TMX_FILE) and lqa_report.get("detected_errors"):
+            try:
+                print(f"[DEBUG] Starting TMX enrichment for {locale}...")
+                lqa_report = enrich_lqa_report_with_tmx(
+                    lqa_report,
+                    TMX_FILE,
+                    source_locale="it-IT",
+                    target_locale=locale,
+                    threshold=0.4
+                )
+                print(
+                    f"[TMX] Enriched {locale} report: {lqa_report.get('tmx_metadata', {}).get('errors_matched', 0)}/{lqa_report.get('tmx_metadata', {}).get('errors_total', 0)} matches")
+            except Exception as e:
+                print(f"[TMX WARNING] Failed to enrich report for {locale}: {e}")
+                import traceback
+                traceback.print_exc()
     else:
         if locale == "de-DE":
             lqa_report = {
@@ -322,6 +373,133 @@ def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: 
     return None, None
 
 
+@app.get("/api/tmx/info")
+def get_tmx_info():
+    """Get information about the loaded TMX translation memory"""
+    parser, matcher = get_tmx_parser()
+
+    if parser is None:
+        return {
+            "loaded": False,
+            "error": "TMX file not found or failed to load"
+        }
+
+    return {
+        "loaded": True,
+        "total_entries": len(parser.entries),
+        "source_locale": parser.source_locale,
+        "sample_tuids": [entry.tuid for entry in parser.entries[:10]],
+        "tmx_file": TMX_FILE
+    }
+
+
+@app.get("/api/tmx/entry/{tuid}")
+def get_tmx_entry(tuid: str):
+    """Get a specific TMX entry by its translation unit ID"""
+    parser, matcher = get_tmx_parser()
+
+    if parser is None:
+        raise HTTPException(status_code=503, detail="TMX not loaded")
+
+    entry = parser.find_entry_by_tuid(tuid)
+
+    if entry is None:
+        raise HTTPException(status_code=404, detail=f"TMX entry '{tuid}' not found")
+
+    return {
+        "tuid": entry.tuid,
+        "translations": entry.translations
+    }
+
+
+@app.get("/api/tmx/match")
+def find_tmx_match(
+        source_text: str = Query(..., description="Source language text"),
+        target_text: str = Query(..., description="Target language text"),
+        source_locale: str = Query("it-IT", description="Source locale code"),
+        target_locale: str = Query("en-US", description="Target locale code"),
+        threshold: float = Query(0.5, ge=0.0, le=1.0, description="Similarity threshold")
+):
+    """Find the best TMX match for given source and target texts"""
+    parser, matcher = get_tmx_parser()
+
+    if matcher is None:
+        raise HTTPException(status_code=503, detail="TMX matcher not initialized")
+
+    match_result = matcher.find_best_match(
+        source_text,
+        target_text,
+        source_locale,
+        target_locale,
+        threshold
+    )
+
+    if match_result is None:
+        return {
+            "match_found": False,
+            "message": f"No match found above threshold {threshold}"
+        }
+
+    tmx_entry, similarity, match_type = match_result
+
+    return {
+        "match_found": True,
+        "tuid": tmx_entry.tuid,
+        "similarity_score": round(similarity, 3),
+        "match_type": match_type,
+        "tmx_source_text": tmx_entry.get_translation(source_locale),
+        "tmx_target_text": tmx_entry.get_translation(target_locale),
+        "all_translations": tmx_entry.translations
+    }
+
+
+@app.post("/api/tmx/enrich/{locale}")
+def enrich_report_with_tmx(
+        locale: str,
+        threshold: float = Query(0.4, ge=0.0, le=1.0, description="Matching threshold")
+):
+    """
+    Enrich an existing LQA report with TMX match data.
+    This can be run on-demand to add/update TMX matches.
+    """
+    report_file = os.path.join(OUTPUT_DIR, f"lqa_audit_report_it-IT_{locale}.json")
+
+    if not os.path.exists(report_file):
+        raise HTTPException(status_code=404, detail=f"Report file not found for locale '{locale}'")
+
+    if not os.path.exists(TMX_FILE):
+        raise HTTPException(status_code=404, detail="TMX file not found")
+
+    try:
+        # Load existing report
+        with open(report_file, 'r', encoding='utf-8') as f:
+            report = json.load(f)
+
+        # Enrich with TMX data
+        enriched_report = enrich_lqa_report_with_tmx(
+            report,
+            TMX_FILE,
+            source_locale="it-IT",
+            target_locale=locale,
+            threshold=threshold
+        )
+
+        # Save enriched report
+        enriched_file = report_file.replace('.json', '_tmx_enriched.json')
+        with open(enriched_file, 'w', encoding='utf-8') as f:
+            json.dump(enriched_report, f, indent=2, ensure_ascii=False)
+
+        return {
+            "status": "success",
+            "enriched_file": enriched_file,
+            "tmx_metadata": enriched_report.get('tmx_metadata', {}),
+            "message": f"Report enriched with TMX data. Matched {enriched_report['tmx_metadata']['errors_matched']} out of {enriched_report['tmx_metadata']['errors_total']} errors."
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to enrich report: {str(e)}")
+
+
 @app.post("/api/rebuild/{locale}")
 def rebuild_localization_template(locale: str):
     """
@@ -396,7 +574,7 @@ def rebuild_localization_template(locale: str):
             return {
                 "status": "success",
                 "patched_elements": applied_count,
-                "locale_file_updated": locale_json_path,
+                "locale": locale,
                 "template_generation_output": result.stdout.strip()
             }
         else:
