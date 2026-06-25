@@ -61,16 +61,72 @@ def get_available_locales():
 @app.get("/api/report/{locale}")
 def get_lqa_combined_data(locale: str):
     report_file = os.path.join(OUTPUT_DIR, f"lqa_audit_report_it-IT_{locale}.json")
+    locale_json_file = os.path.join(LOCALES_DIR, f"{locale}.json")
 
-    content_file = os.path.join(OUTPUT_DIR, f"index_{locale}.json")
-    if not os.path.exists(content_file):
-        content_file = os.path.join(EXTRACTED_DIR, f"index_{locale}.json")
+    # 1. Load Locale JSON data (the source of truth for translations)
+    locale_data = None
+    if os.path.exists(locale_json_file):
+        with open(locale_json_file, "r", encoding="utf-8") as f:
+            locale_data = json.load(f)
 
-    # 1. Load Webpage Content Layout Structure
+    # 2. Convert locale JSON to page_content structure for dashboard rendering
     webpage_strings = []
-    if os.path.exists(content_file):
-        with open(content_file, "r", encoding="utf-8") as f:
-            webpage_strings = json.load(f)
+    if locale_data:
+        # Add meta fields (header)
+        webpage_strings.append({
+            "tag": "h1",
+            "content": locale_data["meta"]["title"],
+            "closest_anchor_id": None
+        })
+        webpage_strings.append({
+            "tag": "p",
+            "content": locale_data["meta"]["subtitle"],
+            "closest_anchor_id": None,
+            "parent_node": {"tag": "header"}
+        })
+
+        # Add promo banner fields
+        webpage_strings.append({
+            "tag": "span",
+            "content": locale_data["meta"]["promo_label"],
+            "closest_anchor_id": {"id": "global_banner"},
+            "parent_node": {"tag": "div", "attributes": {"class": "promo-banner"}}
+        })
+        webpage_strings.append({
+            "tag": "span",
+            "content": locale_data["meta"]["promo_date"],
+            "closest_anchor_id": {"id": "global_banner"},
+            "parent_node": {"tag": "div", "attributes": {"class": "promo-banner"}}
+        })
+
+        # Add section cards
+        for section_id, section_data in locale_data["sections"].items():
+            webpage_strings.append({
+                "tag": "h2",
+                "content": section_data["title"],
+                "closest_anchor_id": {"id": section_id}
+            })
+            webpage_strings.append({
+                "tag": "p",
+                "content": section_data["description"],
+                "closest_anchor_id": {"id": section_id},
+                "parent_node": {"tag": "div"}
+            })
+            webpage_strings.append({
+                "tag": "img",
+                "content": section_data["img_alt"],
+                "attributes": {"alt": section_data["img_alt"]},
+                "closest_anchor_id": {"id": section_id}
+            })
+            # Add price (formatted)
+            currency_format = locale_data["meta"]["currency_format"]
+            price_formatted = currency_format.format(price=section_data["price_value"])
+            webpage_strings.append({
+                "tag": "span",
+                "content": price_formatted,
+                "attributes": {"class": "meta-price"},
+                "closest_anchor_id": {"id": section_id}
+            })
     else:
         # High-fidelity fallback layout ensuring both content grid and global components adapt
         if locale == "de-DE":
@@ -163,6 +219,35 @@ def approve_fix(payload: ApprovalPayload):
     return {"status": "success"}
 
 
+@app.post("/api/reject")
+def reject_issue(payload: dict):
+    """
+    Track rejected issues for reporting/analytics purposes.
+    These are NOT applied to templates - they're just logged.
+    """
+    locale = payload.get("locale")
+    error_id = payload.get("error_id")
+
+    rejections_path = os.path.join(OUTPUT_DIR, f"rejected_issues_{locale}.json")
+    rejections = []
+    if os.path.exists(rejections_path):
+        with open(rejections_path, "r", encoding="utf-8") as f:
+            try:
+                rejections = json.load(f)
+            except json.JSONDecodeError:
+                rejections = []
+
+    # Avoid duplicates
+    rejections = [r for r in rejections if r.get('error_id') != error_id]
+    rejections.append(payload)
+
+    with open(rejections_path, "w", encoding="utf-8") as f:
+        json.dump(rejections, f, indent=2, ensure_ascii=False)
+
+    print(f"[LIVE AUDIT] [{locale}] Issue rejected: {error_id}")
+    return {"status": "success"}
+
+
 def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: str, approved_translation: str,
                               locale_data: dict):
     """
@@ -180,16 +265,16 @@ def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: 
     if html_element_id == "global_banner":
         # Check if it's the promo label or date based on content
         if any(char.isdigit() for char in target_text) and any(char.isdigit() for char in approved_translation):
-            return ("meta", "promo_date")
+            return "meta", "promo_date"
         else:
-            return ("meta", "promo_label")
+            return "meta", "promo_label"
 
     # Handle header elements
     if not html_element_id or html_element_id in ["live-webpage-title", "emulated-site-title"]:
-        return ("meta", "title")
+        return "meta", "title"
 
     if not html_element_id or html_element_id in ["live-webpage-subtitle", "emulated-site-subtitle"]:
-        return ("meta", "subtitle")
+        return "meta", "subtitle"
 
     # Handle section-specific elements
     section_ids = ["palio", "calcio", "natura", "film", "feste", "esperienze", "macchine", "musica"]
@@ -197,12 +282,12 @@ def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: 
         section_data = locale_data.get("sections", {}).get(html_element_id, {})
 
         if not section_data:
-            return (None, None)
+            return None, None
 
         # Use DOM path to determine field type
         # h2/h3 tags are typically titles
         if "h2" in dom_path.lower() or "h3" in dom_path.lower():
-            return (html_element_id, "title")
+            return html_element_id, "title"
 
         # p tags are typically descriptions
         elif "p" in dom_path.lower():
@@ -211,12 +296,12 @@ def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: 
                 current_desc = section_data["description"]
                 # Check if significant overlap with current description
                 if target_text.lower() in current_desc.lower() or current_desc.lower() in target_text.lower():
-                    return (html_element_id, "description")
-            return (html_element_id, "description")
+                    return html_element_id, "description"
+            return html_element_id, "description"
 
         # img tags with alt attributes
         elif "img" in dom_path.lower():
-            return (html_element_id, "img_alt")
+            return html_element_id, "img_alt"
 
         # Fallback: try to match based on target text content
         for field_key in ["title", "description", "img_alt"]:
@@ -228,13 +313,13 @@ def map_element_to_locale_key(html_element_id: str, dom_path: str, target_text: 
 
                 # Exact match
                 if normalized_target == normalized_field:
-                    return (html_element_id, field_key)
+                    return html_element_id, field_key
 
                 # Substring match (either direction)
                 if normalized_target in normalized_field or normalized_field in normalized_target:
-                    return (html_element_id, field_key)
+                    return html_element_id, field_key
 
-    return (None, None)
+    return None, None
 
 
 @app.post("/api/rebuild/{locale}")
