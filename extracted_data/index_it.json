@@ -1,286 +1,850 @@
 [
   {
     "type": "text",
-    "content": "html",
-    "tag": "[document]",
-    "dom_path": ""
-  },
-  {
-    "type": "text",
     "content": "Boutique Italia - Grandi Esperienze e Tradizioni",
     "tag": "title",
-    "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "head",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": null
   },
   {
     "type": "text",
     "content": "Boutique Italia - Grandi Esperienze e Tradizioni",
     "tag": "h1",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "header",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": null
   },
   {
     "type": "text",
     "content": "Esplora l'anima autentica della penisola attraverso i suoi simboli culturali.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "header",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": null
   },
   {
     "type": "text",
     "content": "Offerta speciale prenotazioni anticipate valida fino al:",
     "tag": "div",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "promo-banner"
+    },
+    "parent_node": {
+      "tag": "body",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": null
   },
   {
     "type": "text",
     "content": "15/08/2026",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "date-highlight"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "promo-banner"
+    },
+    "closest_anchor_id": null
   },
   {
     "type": "text",
     "content": "Eventi: Il Palio di Siena",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
   },
   {
     "type": "text",
     "content": "Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
   },
   {
     "type": "text",
     "content": "\"La folla festante in Piazza del Campo durante il corteo storico\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
   },
   {
     "type": "text",
     "content": "€2500,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
   },
   {
     "type": "text",
     "content": "Sport: Calcio & Passione Italiana",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
   },
   {
     "type": "text",
     "content": "Vivi l'atmosfera elettrizzante della Serie A a San Siro. Segui i rossoneri e i bianconeri mentre si sfidano sul rettangolo di gioco in una partita mozzafiato, decisa all'ultimo secondo in piena Zona Cesarini!",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
   },
   {
     "type": "text",
     "content": "\"I tifosi allo stadio che espongono una coreografia spettacolare\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
   },
   {
     "type": "text",
     "content": "€120,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
   },
   {
     "type": "text",
     "content": "Natura: Le Meraviglie delle Isole Eolie",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "natura"
+    }
   },
   {
     "type": "text",
     "content": "Un arcipelago vulcanico unico al mondo. Esplora Lipari, ammira le spettacolari esplorazioni notturne dello Stromboli e immergiti nei fanghi sulfurei di Vulcano per un'esperienza rigenerante.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "natura"
+    }
   },
   {
     "type": "text",
     "content": "\"Il tramonto sul mare cristallino delle isole di fronte alla Sicilia\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "natura"
+    }
   },
   {
     "type": "text",
     "content": "€1450,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "natura"
+    }
   },
   {
     "type": "text",
     "content": "Cinema: La Rimini di Federico Fellini",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "film"
+    }
   },
   {
     "type": "text",
     "content": "Ripercorri i luoghi dell'immaginario felliniano a Rimini. Rivivi le atmosfere oniriche del capolavoro '8 e 1/2' e quell'amarcord nostalgico della giovinezza romagnola che ha segnato la storia del cinema mondiale.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "film"
+    }
   },
   {
     "type": "text",
     "content": "\"Il celebre Cinema Fulgor restaurato nel cuore della città\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "film"
+    }
   },
   {
     "type": "text",
     "content": "€450,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "film"
+    }
   },
   {
     "type": "text",
     "content": "Feste: Il Rito del Ferragosto",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "feste"
+    }
   },
   {
     "type": "text",
     "content": "Unisciti alla festa estiva per eccellenza. Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "feste"
+    }
   },
   {
     "type": "text",
     "content": "\"Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "feste"
+    }
   },
   {
     "type": "text",
     "content": "€320,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "feste"
+    }
   },
   {
     "type": "text",
     "content": "Esperienze: L'Espresso Napoletano",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
   },
   {
     "type": "text",
     "content": "Molto più di una bevanda, un vero e proprio culto sociale. Scopri il segreto del caffè a Napoli, estratto a regola d'arte con la classica cuccumella o la moka tradizionale. Un espresso corto, denso e servito bollente.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
   },
   {
     "type": "text",
     "content": "\"Una tazzina di caffè fumante con una crema densa sul bancone di un bar\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
   },
   {
     "type": "text",
     "content": "€1,20",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
   },
   {
     "type": "text",
     "content": "Motori: La Motor Valley di Modena",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "macchine"
+    }
   },
   {
     "type": "text",
     "content": "Entra nel cuore pulsante dell'ingegneria automobilistica globale. A Modena potrai ascoltare il rombo dei motori dei bolidi del Cavallino Rampante ed esplorare i musei delle supercar più veloci del pianeta.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "macchine"
+    }
   },
   {
     "type": "text",
     "content": "\"Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "macchine"
+    }
   },
   {
     "type": "text",
     "content": "€1850,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "macchine"
+    }
   },
   {
     "type": "text",
     "content": "Musica: Il Festival di Sanremo",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "musica"
+    }
   },
   {
     "type": "text",
     "content": "Il tempio della canzone italiana. Vivi la settimana più attesa dell'anno al Teatro Ariston, dove i big della musica italiana e le nuove proposte si sfidano sul palco che ha lanciato miti internazionali.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "musica"
+    }
   },
   {
     "type": "text",
     "content": "\"La facciata illuminata del Teatro Ariston durante la settimana del Festival\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": null,
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "musica"
+    }
   },
   {
     "type": "text",
     "content": "€950,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "musica"
+    }
   },
   {
     "type": "image",
     "src": "images/palio_siena.jpg",
     "alt": "La folla festante in Piazza del Campo durante il corteo storico",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
   },
   {
     "type": "image",
     "src": "images/calcio_san_siro.jpg",
     "alt": "I tifosi allo stadio che espongono una coreografia spettacolare",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
   },
   {
     "type": "image",
     "src": "images/eolie_islands.jpg",
     "alt": "Il tramonto sul mare cristallino delle isole di fronte alla Sicilia",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "natura"
+    }
   },
   {
     "type": "image",
     "src": "images/fellini_rimini.jpg",
     "alt": "Il celebre Cinema Fulgor restaurato nel cuore della città",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "film"
+    }
   },
   {
     "type": "image",
     "src": "images/ferragosto_beach.jpg",
     "alt": "Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "feste"
+    }
   },
   {
     "type": "image",
     "src": "images/naples_coffee.jpg",
     "alt": "Una tazzina di caffè fumante con una crema densa sul bancone di un bar",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
   },
   {
     "type": "image",
     "src": "images/modena_motors.jpg",
     "alt": "Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "macchine"
+    }
   },
   {
     "type": "image",
     "src": "images/sanremo_ariston.jpg",
     "alt": "La facciata illuminata del Teatro Ariston durante la settimana del Festival",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > img:nth-of-type(1)"
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "musica"
+    }
   }
 ]

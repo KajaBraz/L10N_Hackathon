@@ -1,0 +1,99 @@
+{
+  "global_score": 70,
+  "summary": {
+    "total_errors": 8,
+    "critical": 2,
+    "major": 4,
+    "minor": 2
+  },
+  "detected_errors": [
+    {
+      "error_id": "ERR_001",
+      "html_element_id": "global_banner",
+      "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Critical",
+      "source_text_snippet": "Boutique Italia - Grandi Esperienze e Tradizioni",
+      "target_text_snippet": "Boutique Italy - Big Experiences and Traditions",
+      "issue_explanation": "The translation of 'Italia' to 'Italy' is correct, but 'Grandi Esperienze' translates to 'Big Experiences', which is not a natural expression in English.",
+      "suggested_fix": "Boutique Italy - Great Experiences and Traditions"
+    },
+    {
+      "error_id": "ERR_002",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Critical",
+      "source_text_snippet": "Sport: Calcio & Passione Italiana",
+      "target_text_snippet": "Sport: Italian Passion Calcium",
+      "issue_explanation": "'Calcio' refers to soccer in Italian, and translating it to 'Calcium' is a critical error that misrepresents the context.",
+      "suggested_fix": "Sport: Soccer & Italian Passion"
+    },
+    {
+      "error_id": "ERR_003",
+      "html_element_id": "global_banner",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "mqm_category": "Locale Convention",
+      "severity": "Major",
+      "source_text_snippet": "15/08/2026",
+      "target_text_snippet": "15/08/2026",
+      "issue_explanation": "The date format does not match US conventions (MM/DD/YYYY).",
+      "suggested_fix": "08/15/2026"
+    },
+    {
+      "error_id": "ERR_004",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Fluency",
+      "severity": "Major",
+      "source_text_snippet": "Esplora l'anima autentica della penisola attraverso i suoi simboli culturali.",
+      "target_text_snippet": "Explore the authentic soul of the peninsula through its cultural badges.",
+      "issue_explanation": "The term 'cultural badges' is awkward and does not convey the intended meaning.",
+      "suggested_fix": "Explore the authentic soul of the peninsula through its cultural symbols."
+    },
+    {
+      "error_id": "ERR_005",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+      "mqm_category": "Visual/Alt Text",
+      "severity": "Minor",
+      "source_text_snippet": "I tifosi allo stadio che espongono una coreografia spettacolare",
+      "target_text_snippet": "The fans at the stadium exposing a spectacular choreography",
+      "issue_explanation": "The phrase 'exposing a spectacular choreography' is not natural in English.",
+      "suggested_fix": "The fans at the stadium showcasing a spectacular choreography."
+    },
+    {
+      "error_id": "ERR_006",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Fluency",
+      "severity": "Minor",
+      "source_text_snippet": "Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.",
+      "target_text_snippet": "August 15th in Italy means barbecues in the mountain, bonfires on the beach, trips outside the door to Riccione and total relax under the Mediterranean sun.",
+      "issue_explanation": "The phrase 'trips outside the door' is awkward and does not convey the intended meaning.",
+      "suggested_fix": "August 15th in Italy means barbecues in the mountains, bonfires on the beach, trips to Riccione, and total relaxation under the Mediterranean sun."
+    },
+    {
+      "error_id": "ERR_007",
+      "html_element_id": "esperienze",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Fluency",
+      "severity": "Major",
+      "source_text_snippet": "Molto più di una bevanda, un vero e proprio culto sociale.",
+      "target_text_snippet": "Much more than a drink, a real social cult.",
+      "issue_explanation": "The term 'social cult' is not idiomatic in English and may confuse readers.",
+      "suggested_fix": "Much more than a drink, a true social ritual."
+    },
+    {
+      "error_id": "ERR_008",
+      "html_element_id": "esperienze",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+      "mqm_category": "Meta Price",
+      "severity": "Minor",
+      "source_text_snippet": "€1,20",
+      "target_text_snippet": "€1,20",
+      "issue_explanation": "The price format does not match US conventions (should use a period for decimals).",
+      "suggested_fix": "$1.20"
+    }
+  ]
+}
