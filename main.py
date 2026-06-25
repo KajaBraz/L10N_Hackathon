@@ -63,21 +63,31 @@ def run_lqa_pipeline():
     # ==========================================
     system_prompt = (
         "You are an enterprise-grade Localization Quality Assurance (LQA) Engine.\n"
-        "Your task is to evaluate an array of pre-aligned source and target UI segments, "
-        "identify localization flaws, calculate an MQM score, and report findings.\n\n"
+        "Your task is to evaluate an array of pre-aligned source (Italian) and target (US English) UI segments, "
+        "identify localization flaws, calculate an MQM (Multidimensional Quality Metrics) score, and report findings.\n\n"
 
-        "CRITICAL REQUIREMENT:\n"
+        "CRITICAL RESPONSE REQUIREMENT:\n"
         "You must respond with a single, well-formed JSON object. "
+        "Do not include markdown blocks (like ```json). "
         f"The architecture of your JSON output MUST strictly match this JSON Schema:\n{pure_json_schema}\n\n"
 
-        "INSPECTION CRITERIA:\n"
+        "INSPECTION DIRECTIVES & CRITERIA:\n"
         "1. Global Banners: Look for segments where html_element_id is 'global_banner' and css_class contains 'promo-banner'. "
         "Ensure dates match US conventions (MM/DD/YYYY).\n"
-        "2. Price Conventions: Look for segments where css_class contains 'meta-price'. Check that numbers use US layout punctuation "
-        "(commas for thousands, periods for decimals).\n"
-        "3. Visual/Alt Text: Evaluate elements where element_tag is 'img'. Ensure the target_text (alt text) represents natural, "
-        "localized phrasing instead of literal translations.\n"
-        "4. Context Accuracy: Catch critical drops (e.g. 'Calcio' -> 'Calcium')."
+        "2. Section Component Cards: Evaluate elements mapped by their structural html_element_id tokens "
+        "(palio, calcio, natura, film, feste, esperienze, macchine, musica).\n"
+        "3. Price Conventions: Look for segments where css_class contains 'meta-price'. Check that numbers use US layout punctuation "
+        "(commas for thousands, periods for decimals) and match target preferences (e.g., '$1,200.00').\n"
+        "4. Visual/Alt Text: Evaluate elements where element_tag is 'img'. Ensure the target_text (alt text) represents natural, "
+        "localized phrasing instead of literal translations of local landmarks.\n\n"
+
+        "MQM SEVERITY & SCORING GUIDE:\n"
+        "- Minor (1 pt penalty): Awkward phrasing, minor punctuation layout error, or natural but slightly un-localized terms.\n"
+        "- Major (5 pts penalty): Highly unnatural terms, literal translations of idioms, or incorrect date/currency structures that confuse a US user.\n"
+        "- Critical (10 pts penalty): Catastrophic domain mistranslations that break reality (e.g., translating 'Calcio' as the chemical element 'Calcium').\n\n"
+
+        "Scoring formula: global_score = Max(0, 100 - Total_Penalties_Accumulated)\n"
+        "Ensure your summary count matches the array of detected_errors exactly."
     )
 
     user_content = f"### Input Segments to Evaluate:\n```json\n{serialized_payload}\n```"
