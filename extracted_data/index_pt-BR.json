@@ -1,7 +1,7 @@
 [
   {
     "type": "text",
-    "content": "Boutique Italia - Grandi Esperienze e Tradizioni",
+    "content": "Boutique Itália - Grandes Experiências e Tradições",
     "tag": "title",
     "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
     "attributes": {
@@ -54,7 +54,7 @@
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
     "attributes": {
       "id": null,
-      "class": "locale-btn active"
+      "class": "locale-btn"
     },
     "parent_node": {
       "tag": "div",
@@ -102,7 +102,7 @@
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(6)",
     "attributes": {
       "id": null,
-      "class": "locale-btn"
+      "class": "locale-btn active"
     },
     "parent_node": {
       "tag": "div",
@@ -113,7 +113,7 @@
   },
   {
     "type": "text",
-    "content": "Boutique Italia - Grandi Esperienze e Tradizioni",
+    "content": "Boutique Itália - Grandes Experiências e Tradições",
     "tag": "h1",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)",
     "attributes": {
@@ -129,7 +129,7 @@
   },
   {
     "type": "text",
-    "content": "Esplora l'anima autentica della penisola attraverso i suoi simboli culturali.",
+    "content": "Explore a alma autêntica da península através de seus crachás culturais.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -145,7 +145,7 @@
   },
   {
     "type": "text",
-    "content": "Offerta speciale prenotazioni anticipate valida fino al:",
+    "content": "Oferta especial de pássaro madrugador válida até:",
     "tag": "span",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
     "attributes": {
@@ -183,7 +183,7 @@
   },
   {
     "type": "text",
-    "content": "Natura: Le Meraviglie delle Isole Eolie",
+    "content": "Natureza: As Maravilhas das Ilhas Eólias",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -202,7 +202,7 @@
   },
   {
     "type": "text",
-    "content": "Un arcipelago vulcanico unico al mondo. Esplora Lipari, ammira le spettacolari esplorazioni notturne dello Stromboli e immergiti nei fanghi sulfurei di Vulcano per un'esperienza rigenerante.",
+    "content": "Um arquipélago vulcânico único no mundo. Explore Lipari, admire as espetaculares explorações noturnas do vulcão e mergulhe nas lamas sulfúricas do vulcão para uma experiência regeneradora.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -221,7 +221,7 @@
   },
   {
     "type": "text",
-    "content": "\"Il tramonto sul mare cristallino delle isole di fronte alla Sicilia\"",
+    "content": "\"O pôr do sol no mar cristalino das ilhas em frente à Sicília\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -259,7 +259,7 @@
   },
   {
     "type": "text",
-    "content": "Eventi: Il Palio di Siena",
+    "content": "Eventos: O Palio de Siena",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -278,7 +278,7 @@
   },
   {
     "type": "text",
-    "content": "Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
+    "content": "Descubra a magia atemporal de Siena. Viva a rivalidade histórica entre os Distritos-Loja, caminhe entre os bairros medievais em festa e testemunhe a lendária corrida dos barbeiros, guiada pela autoridade do movedor no grande vidro.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -297,7 +297,7 @@
   },
   {
     "type": "text",
-    "content": "\"La folla festante in Piazza del Campo durante il corteo storico\"",
+    "content": "\"A multidão em festa na Praça do Campo durante o desfile histórico\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -335,7 +335,7 @@
   },
   {
     "type": "text",
-    "content": "Sport: Calcio & Passione Italiana",
+    "content": "Esporte: Cálcio e Paixão Italiana",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -354,7 +354,7 @@
   },
   {
     "type": "text",
-    "content": "Vivi l'atmosfera elettrizzante della Serie A a San Siro. Segui i rossoneri e i bianconeri mentre si sfidano sul rettangolo di gioco in una partita mozzafiato, decisa all'ultimo secondo in piena Zona Cesarini!",
+    "content": "Viva a atmosfera eletrizante da Série A no San Siro. Siga os vermelhos-e-pretos e os brancos-e-pretos enquanto eles se desafiam no retângulo de jogo em uma partida de tirar o fôlego, decidida no último segundo em plena Zona Cesarini!",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -373,7 +373,7 @@
   },
   {
     "type": "text",
-    "content": "\"I tifosi allo stadio che espongono una coreografia spettacolare\"",
+    "content": "\"Os torcedores no estádio expondo uma coreografia espetacular\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -411,7 +411,7 @@
   },
   {
     "type": "text",
-    "content": "Cinema: La Rimini di Federico Fellini",
+    "content": "Cinema: A Rimini de Federico Fellini",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -430,7 +430,7 @@
   },
   {
     "type": "text",
-    "content": "Ripercorri i luoghi dell'immaginario felliniano a Rimini. Rivivi le atmosfere oniriche del capolavoro '8 e 1/2' e quell'amarcord nostalgico della giovinezza romagnola che ha segnato la storia del cinema mondiale.",
+    "content": "Rastreie os lugares do imaginário felliniano em Rimini. Relembre as atmosferas oníricas da obra-prima '8 e meio' e aquele arcord nostálgico da juventude romagnola que marcou a história do cinema mundial.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -449,7 +449,7 @@
   },
   {
     "type": "text",
-    "content": "\"Il celebre Cinema Fulgor restaurato nel cuore della città\"",
+    "content": "\"O famoso Cinema Fulgor restaurado no coração da cidade\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -487,7 +487,7 @@
   },
   {
     "type": "text",
-    "content": "Scienza: Bologna, hub europeo di AI e Big Data",
+    "content": "Ciência: Bolonha, hub europeu de IA e Big Data",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -506,7 +506,7 @@
   },
   {
     "type": "text",
-    "content": "Scopri il motore tecnologico che sta plasmando il futuro. Visita l'avveniristico Tecnopolo di Bologna, sede del supercomputer Leonardo, dove l'antica tradizione accademica della 'Dotta' si unisce alla ricerca d'avanguardia su scala globale.",
+    "content": "Descubra o motor tecnológico que está gessando o futuro. Visite o futurista Tecnopolo de Bolonha, sede do supercomputador Leonardo, onde a antiga tradição acadêmica da 'Douta' se une à pesquisa de vanguarda em escala global.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -525,7 +525,7 @@
   },
   {
     "type": "text",
-    "content": "\"I corridoi tecnologici e le luci dei server del supercomputer all'interno del Tecnopolo\"",
+    "content": "\"Os corredores tecnológicos e as locais dos servidores do supercomputador dentro do Tecnopolo\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -563,7 +563,7 @@
   },
   {
     "type": "text",
-    "content": "Motori: La Motor Valley di Modena",
+    "content": "Motores: O Vale do Motor de Modena",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -582,7 +582,7 @@
   },
   {
     "type": "text",
-    "content": "Entra nel cuore pulsante dell'ingegneria automobilistica globale. A Modena potrai ascoltare il rombo dei motori dei bolidi del Cavallino Rampante ed esplorare i musei delle supercar più veloci del pianeta.",
+    "content": "Entre no coração pulsante da engenharia automotiva global. Em Modena você pode ouvir o rugido dos motores dos carros de corrida do Pônei Saltitante e explorar os museums dos supercarros mais rápidos do planeta.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -601,7 +601,7 @@
   },
   {
     "type": "text",
-    "content": "\"Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari\"",
+    "content": "\"Um carro esportivo vermelho flamejante exibido em frente ao museu Enzo Ferrari\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -639,7 +639,7 @@
   },
   {
     "type": "text",
-    "content": "Artigianato: I presepi di Napoli",
+    "content": "Artesanato: Os presépios de Nápoles",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -658,7 +658,7 @@
   },
   {
     "type": "text",
-    "content": "Immergiti nell'atmosfera magica e senza tempo di via San Gregorio Armeno. Scopri i segreti delle storiche botteghe dove i maestri presepiali modellano a mano pastori in terracotta, fondendo mirabilmente la devozione sacra con l'ironia del folklore partenopeo.",
+    "content": "Mergulhe na atmosfera mágica e atemporal da rua São Gregório Armênio. Descubra os segredos das lojas históricas onde os mestres presépios moldam à mão pastores em terra cozida, fundindo admiravelmente a devoção sagrada com a ironia do folclore partenopeu.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -677,7 +677,7 @@
   },
   {
     "type": "text",
-    "content": "\"I dettagli colorati delle statuine artigianali esposte in una storica bottega di Spaccanapoli\"",
+    "content": "\"Os detalhes coloridos das estatuetas artesanais exibidas em uma loja histórica do Quebra-Nápoles\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -715,7 +715,7 @@
   },
   {
     "type": "text",
-    "content": "Esperienze: I grattacieli di Milano",
+    "content": "Experiências: Os arranha-céus de Milão",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -734,7 +734,7 @@
   },
   {
     "type": "text",
-    "content": "Ammira il volto futuristico della capitale del design e della moda. Passeggia tra le torri avveniristiche di CityLife, lasciati incantare dal pluripremiato Bosco Verticale e goditi un aperitivo glamour ammirando lo skyline che ridefinisce la città all'ombra della Madonnina.",
+    "content": "Admire a face futurista da capital do design e da moda. Passeie entre as torres futuristas do CityLife, deixe-se encantar pelo premiado Bosque Vertical e desfrute de um aperitivo glamour admirando o horizonte que redefine a cidade à sombra da Pequena Madona.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -753,7 +753,7 @@
   },
   {
     "type": "text",
-    "content": "\"I moderni grattacieli di Piazza Gae Aulenti illuminati nel cielo del tramonto milanese\"",
+    "content": "\"Os modernos arranha-céus da Praça Gae Aulenti iluminados no céu do pôr do sol milanês\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -791,7 +791,7 @@
   },
   {
     "type": "text",
-    "content": "Musica: Il Festival di Sanremo",
+    "content": "Música: O Festival de Sanremo",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -810,7 +810,7 @@
   },
   {
     "type": "text",
-    "content": "Il tempio della canzone italiana. Vivi la settimana più attesa dell'anno al Teatro Ariston, dove i big della musica italiana e le nuove proposte si sfidano sul palco che ha lanciato miti internazionali.",
+    "content": "O templo da canção italiana. Viva a semana mais esperada do ano no Teatro Ariston, onde os bigs da música italiana e novas propostas se desafiam no palco que lançou mitos internacionais.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -829,7 +829,7 @@
   },
   {
     "type": "text",
-    "content": "\"La facciata illuminata del Teatro Ariston durante la settimana del Festival\"",
+    "content": "\"A fachada iluminada do Teatro Ariston durante a semana do Festival\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -867,7 +867,7 @@
   },
   {
     "type": "text",
-    "content": "Feste: Il Rito del Ferragosto",
+    "content": "Feriados: O Ritual do Agosto de Ferro",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -886,7 +886,7 @@
   },
   {
     "type": "text",
-    "content": "Unisciti alla festa estiva per eccellenza. Il 15 Agosto in Italia significa grigliate in montagna, falò in spiaggia, gite fuori porta a Riccione e relax totale sotto il sole del Mediterraneo.",
+    "content": "Junte-se à festa de verão por excelência. 15 de agosto na Itália significa churrascos na montanha, fogueiras na praia, viagens fora da porta para Riccione e relaxamento total sob o sol do Mediterrâneo.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -905,7 +905,7 @@
   },
   {
     "type": "text",
-    "content": "\"Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate\"",
+    "content": "\"Praia lotada e guarda-sóis coloridos durante a festa de meio de verão\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -944,7 +944,7 @@
   {
     "type": "image",
     "src": "images/isole_eolie.png",
-    "alt": "Il tramonto sul mare cristallino delle isole di fronte alla Sicilia",
+    "alt": "O pôr do sol no mar cristalino das ilhas em frente à Sicília",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -964,7 +964,7 @@
   {
     "type": "image",
     "src": "images/palio_siena.png",
-    "alt": "La folla festante in Piazza del Campo durante il corteo storico",
+    "alt": "A multidão em festa na Praça do Campo durante o desfile histórico",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -984,7 +984,7 @@
   {
     "type": "image",
     "src": "images/calcio_san_siro.png",
-    "alt": "I tifosi allo stadio che espongono una coreografia spettacolare",
+    "alt": "Os torcedores no estádio expondo uma coreografia espetacular",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1004,7 +1004,7 @@
   {
     "type": "image",
     "src": "images/rimini_cinema.png",
-    "alt": "Il celebre Cinema Fulgor restaurato nel cuore della città",
+    "alt": "O famoso Cinema Fulgor restaurado no coração da cidade",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1024,7 +1024,7 @@
   {
     "type": "image",
     "src": "images/bologna_hub.png",
-    "alt": "I corridoi tecnologici e le luci dei server del supercomputer all'interno del Tecnopolo",
+    "alt": "Os corredores tecnológicos e as locais dos servidores do supercomputador dentro do Tecnopolo",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1044,7 +1044,7 @@
   {
     "type": "image",
     "src": "images/modena_macchine.png",
-    "alt": "Una fiammante vettura sportiva rossa esposta davanti al museo Enzo Ferrari",
+    "alt": "Um carro esportivo vermelho flamejante exibido em frente ao museu Enzo Ferrari",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1064,7 +1064,7 @@
   {
     "type": "image",
     "src": "images/napoli_presepe.png",
-    "alt": "I dettagli colorati delle statuine artigianali esposte in una storica bottega di Spaccanapoli",
+    "alt": "Os detalhes coloridos das estatuetas artesanais exibidas em uma loja histórica do Quebra-Nápoles",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1084,7 +1084,7 @@
   {
     "type": "image",
     "src": "images/milano_grattacieli.png",
-    "alt": "I moderni grattacieli di Piazza Gae Aulenti illuminati nel cielo del tramonto milanese",
+    "alt": "Os modernos arranha-céus da Praça Gae Aulenti iluminados no céu do pôr do sol milanês",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1104,7 +1104,7 @@
   {
     "type": "image",
     "src": "images/sanremo.png",
-    "alt": "La facciata illuminata del Teatro Ariston durante la settimana del Festival",
+    "alt": "A fachada iluminada do Teatro Ariston durante a semana do Festival",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -1124,7 +1124,7 @@
   {
     "type": "image",
     "src": "images/ferragosto.png",
-    "alt": "Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate",
+    "alt": "Praia lotada e guarda-sóis coloridos durante a festa de meio de verão",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {

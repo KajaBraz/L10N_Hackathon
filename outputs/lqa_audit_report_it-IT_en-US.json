@@ -1,132 +1,221 @@
 {
-  "global_score": 60,
+  "global_score": 52,
   "summary": {
-    "total_errors": 12,
-    "critical": 5,
+    "total_errors": 11,
+    "critical": 1,
     "major": 7,
-    "minor": 0
+    "minor": 3
   },
   "detected_errors": [
     {
       "error_id": "ERR_001",
-      "html_element_id": "global_banner",
-      "dom_path": "html:nth-of-type(1) > head:nth-of-type(1) > title:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
-      "severity": "Major",
-      "source_text_snippet": "Boutique Italia - Grandi Esperienze e Tradizioni",
-      "target_text_snippet": "Boutique Italy - Big Experiences and Traditions",
-      "issue_explanation": "The term 'Big Experiences' is a literal translation that does not resonate with American audiences. The phrase lacks the cultural nuance of 'Great Experiences'.",
-      "suggested_fix": "Boutique Italy - Great Experiences and Traditions"
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Terminology",
+      "severity": "Critical",
+      "source_text_snippet": "Sport: Calcio & Passione Italiana",
+      "target_text_snippet": "Sport: Italian Passion Calcium",
+      "issue_explanation": "Severe literal mistranslation of the sport 'Calcio' (Soccer/Football) as the chemical element 'Calcium'. This is a catastrophic domain error that completely destroys brand credibility and user trust.",
+      "suggested_fix": "Sports: Soccer & Italian Passion",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_002",
-      "html_element_id": "global_banner",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
-      "severity": "Major",
-      "source_text_snippet": "Boutique Italia - Grandi Esperienze e Tradizioni",
-      "target_text_snippet": "Boutique Italy - Big Experiences and Traditions",
-      "issue_explanation": "Similar to the title, 'Big Experiences' is not a culturally appropriate term for the target audience.",
-      "suggested_fix": "Boutique Italy - Great Experiences and Traditions"
-    },
-    {
-      "error_id": "ERR_003",
-      "html_element_id": "global_banner",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
-      "mqm_category": "Accuracy",
+      "html_element_id": "promo-date",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)",
+      "mqm_category": "Locale Convention",
       "severity": "Major",
       "source_text_snippet": "15/08/2026",
       "target_text_snippet": "15/08/2026",
-      "issue_explanation": "The date format does not comply with US conventions. The correct format should be MM/DD/YYYY.",
-      "suggested_fix": "08/15/2026"
+      "issue_explanation": "The date string fails to follow the strict US regional layout constraint (MM/DD/YYYY) and was left unlocalized in European format.",
+      "suggested_fix": "08/15/2026",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_003",
+      "html_element_id": "natura_price",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+      "mqm_category": "Locale Convention",
+      "severity": "Major",
+      "source_text_snippet": "€1450,00",
+      "target_text_snippet": "€1450,00",
+      "issue_explanation": "Violates explicit en-US price formatting guidelines. Numbers must use commas for thousands separators and periods for decimal points.",
+      "suggested_fix": "€1,450.00",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_004",
-      "html_element_id": "calcio",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": "Sport: Calcio & Passione Italiana",
-      "target_text_snippet": "Sport: Italian Passion Calcium",
-      "issue_explanation": "The term 'Calcium' is a literal translation of 'Calcio' and does not convey the intended meaning of 'Soccer' in American English.",
-      "suggested_fix": "Sport: Soccer & Italian Passion"
+      "source_text_snippet": "Scopri la magia senza tempo di Siena. Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
+      "target_text_snippet": "Discover the timeless magic of Siena. Live the historic rivalry between the Shop-Districts, walk among the medieval neighborhoods in party and witness the legendary race of the barbers, guided by the authority of the mover on the big glass.",
+      "issue_explanation": "Severe literal machine translation of highly specific cultural terminology: 'Contrade' became 'Shop-Districts', 'barberi' (the unridden racehorses) became 'barbers', and 'mossiere sul verrocchio' (the official race starter on his platform) became 'mover on the big glass'. This renders the text completely nonsensical to a US audience.",
+      "suggested_fix": "Discover the timeless magic of Siena. Experience the historic rivalry between the Contrade, walk through festive medieval neighborhoods, and witness the legendary race of the unridden horses, guided by the starter from his platform.",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_005",
-      "html_element_id": "calcio",
+      "html_element_id": "palio_alt",
       "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
+      "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": "\"I tifosi allo stadio che espongono una coreografia spettacolare\"",
-      "target_text_snippet": "\"The fans at the stadium exposing a spectacular choreography\"",
-      "issue_explanation": "The phrase 'exposing a spectacular choreography' is awkward and does not reflect natural American English usage.",
-      "suggested_fix": "\"The fans at the stadium showcasing a spectacular choreography\""
+      "source_text_snippet": ""
+      La
+      folla
+      festante
+      in
+      Piazza
+      del
+      Campo
+      durante
+      il
+      corteo
+      storico
+      "",
+      "target_text_snippet": ""
+      The
+      partying
+      crowd
+      in
+      Field
+      Square
+      during
+      the
+      historical
+      parade
+      "",
+      "issue_explanation": "The proper noun of the famous historical square 'Piazza del Campo' has been translated literally as 'Field Square', which is incorrect and highly unnatural for geographical landmarks.",
+      "suggested_fix": ""
+      The
+      festive
+      crowd
+      in
+      Piazza
+      del
+      Campo
+      during
+      the
+      historical
+      parade
+      "",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_006",
-      "html_element_id": "natura",
+      "html_element_id": "calcio",
       "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
+      "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": "Un arcipelago vulcanico unico al mondo.",
-      "target_text_snippet": "A unique volcanic archipelago in the world.",
-      "issue_explanation": "The phrase 'in the world' is overly literal and does not capture the poetic nature of the original text.",
-      "suggested_fix": "A one-of-a-kind volcanic archipelago."
+      "source_text_snippet": "rettangolo di gioco... in piena Zona Cesarini!",
+      "target_text_snippet": "game rectangle... in full Cesarini Zone!",
+      "issue_explanation": "Highly literal and awkward translation of sports idioms. 'Rettangolo di gioco' translates naturally to 'pitch' or 'field', while the iconic idiom 'Zona Cesarini' means 'at the death', 'in the final seconds', or 'during injury time'.",
+      "suggested_fix": "Experience the electrifying atmosphere of Serie A at San Siro. Follow the Rossoneri and the Bianconeri as they battle on the pitch in a breathtaking match, decided at the very last second in the dying moments of the game!",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_007",
-      "html_element_id": "feste",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
+      "html_element_id": "tradizione_alt",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": "Feste: Il Rito del Ferragosto",
-      "target_text_snippet": "Holidays: The Ritual of Iron August",
-      "issue_explanation": "The term 'Iron August' is a literal translation that does not resonate with American audiences. 'Ferragosto' is a significant holiday in Italy and should be retained.",
-      "suggested_fix": "Holidays: The Ritual of Ferragosto"
+      "source_text_snippet": ""
+      I
+      dettagli
+      colorati
+      delle
+      statuine
+      artigianali
+      esposte
+      in
+      una
+      storica
+      bottega
+      di
+      Spaccanapoli
+      "",
+      "target_text_snippet": ""
+      The
+      colored
+      details
+      of
+      the
+      artisanal
+      figurines
+      displayed
+      in
+      a
+      historical
+      shop
+      of
+      Naples-Splitter
+      "",
+      "issue_explanation": "The proper noun of the famous historical street 'Spaccanapoli' has been translated literally as 'Naples-Splitter', which breaks natural expression guidelines for localized alt-text and titles.",
+      "suggested_fix": ""
+      The
+      colorful
+      details
+      of
+      handcrafted
+      figurines
+      displayed
+      in
+      a
+      historic
+      shop
+      in
+      Spaccanapoli
+      "",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_008",
-      "html_element_id": "esperienze",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": "Molto più di una bevanda, un vero e proprio culto sociale.",
-      "target_text_snippet": "Much more than a drink, a real social cult.",
-      "issue_explanation": "The phrase 'social cult' is awkward and does not convey the intended meaning in American English.",
-      "suggested_fix": "Much more than a drink, a true social phenomenon."
+      "source_text_snippet": "Feste: Il Rito del Ferragosto",
+      "target_text_snippet": "Holidays: The Ritual of Iron August",
+      "issue_explanation": "Absurd literal translation of the traditional Italian holiday 'Ferragosto' as 'Iron August'. The proper cultural name should be retained or localized contextually.",
+      "suggested_fix": "Holidays: The Tradition of Ferragosto",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_009",
-      "html_element_id": "esperienze",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
-      "mqm_category": "Price Conventions",
-      "severity": "Major",
-      "source_text_snippet": "€1,20",
-      "target_text_snippet": "€1,20",
-      "issue_explanation": "The currency format does not comply with US conventions. The correct format should use a period for decimals.",
-      "suggested_fix": "$1.20"
+      "html_element_id": "macchine",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Terminology",
+      "severity": "Minor",
+      "source_text_snippet": "Cavallino Rampante",
+      "target_text_snippet": "Prancing Pony",
+      "issue_explanation": "Inaccurate corporate branding terminology. Ferrari's historical trademark emblem is globally recognized in US English as the 'Prancing Horse', not 'Prancing Pony'.",
+      "suggested_fix": "Enter the beating heart of global automotive engineering. In Modena, you can listen to the roar of the engines of the Prancing Horse racing cars and explore the museums of the fastest supercars on the planet.",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_010",
-      "html_element_id": "macchine",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
-      "severity": "Major",
-      "source_text_snippet": "Motori: La Motor Valley di Modena",
-      "target_text_snippet": "Engines: The Motor Valley of Modena",
-      "issue_explanation": "The term 'Engines' is a literal translation and does not resonate with the American audience. 'Motor' is more appropriate.",
-      "suggested_fix": "Motors: The Motor Valley of Modena"
+      "html_element_id": "esperienze",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
+      "severity": "Minor",
+      "source_text_snippet": "Bosco Verticale... Madonnina",
+      "target_text_snippet": "Vertical Wood... Little Madonna",
+      "issue_explanation": "Unlocalized landmark literalisms. The award-winning architectural complex is globally recognized in English as the 'Vertical Forest' (not Wood), and the cathedral statue 'Madonnina' shouldn't be rendered as 'Little Madonna'.",
+      "suggested_fix": "Admire the futuristic face of the design and fashion capital. Stroll among the futuristic towers of CityLife, marvel at the award-winning Vertical Forest, and enjoy a glamorous aperitivo while admiring the skyline that redefines the city under the shadow of the Madonnina.",
+      "tmx_match": null
     },
     {
       "error_id": "ERR_011",
-      "html_element_id": "musica",
-      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-      "mqm_category": "Cultural Adaptability",
-      "severity": "Major",
-      "source_text_snippet": "Il tempio della canzone italiana.",
-      "target_text_snippet": "The temple of the Italian song.",
-      "issue_explanation": "The phrase 'the temple of the Italian song' is awkward and does not reflect natural American English usage.",
-      "suggested_fix": "The heart of Italian music."
+      "html_element_id": "natura",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Fluency",
+      "severity": "Minor",
+      "source_text_snippet": "Un arcipelago vulcanico unico al mondo. Esplora Lipari, ammira le spettacolari esplorazioni notturne dello Stromboli e immergiti nei fanghi sulfurei di Vulcano per un'esperienza rigenerante.",
+      "target_text_snippet": "A unique volcanic archipelago in the world. Explore Lipari, admire the spetacular nightly explorations of the volcano and dive into the sulfur muds of volcano for a regenerating experience.",
+      "issue_explanation": "Contains a typographical spelling error ('spetacular' instead of 'spectacular') and strips away the distinct capitalized names of the volcanoes Stromboli and Vulcano, rendering them simply as 'the volcano'.",
+      "suggested_fix": "A volcanic archipelago unique in the world. Explore Lipari, admire the spectacular nightly eruptions of Stromboli, and immerse yourself in the sulfur mud baths of Vulcano for a rejuvenating experience.",
+      "tmx_match": null
     }
   ]
 }

@@ -17,6 +17,102 @@
   },
   {
     "type": "text",
+    "content": "🇩🇪 DE",
+    "tag": "a",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "locale-btn"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "locale-switcher"
+    },
+    "closest_anchor_id": null
+  },
+  {
+    "type": "text",
+    "content": "🇺🇸 EN",
+    "tag": "a",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2)",
+    "attributes": {
+      "id": null,
+      "class": "locale-btn"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "locale-switcher"
+    },
+    "closest_anchor_id": null
+  },
+  {
+    "type": "text",
+    "content": "🇮🇹 IT",
+    "tag": "a",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(3)",
+    "attributes": {
+      "id": null,
+      "class": "locale-btn"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "locale-switcher"
+    },
+    "closest_anchor_id": null
+  },
+  {
+    "type": "text",
+    "content": "🇯🇵 JA",
+    "tag": "a",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(4)",
+    "attributes": {
+      "id": null,
+      "class": "locale-btn"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "locale-switcher"
+    },
+    "closest_anchor_id": null
+  },
+  {
+    "type": "text",
+    "content": "🇵🇱 PL",
+    "tag": "a",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(5)",
+    "attributes": {
+      "id": null,
+      "class": "locale-btn active"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "locale-switcher"
+    },
+    "closest_anchor_id": null
+  },
+  {
+    "type": "text",
+    "content": "🇧🇷 PT",
+    "tag": "a",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(6)",
+    "attributes": {
+      "id": null,
+      "class": "locale-btn"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "locale-switcher"
+    },
+    "closest_anchor_id": null
+  },
+  {
+    "type": "text",
     "content": "Butik Włochy - Wielkie Doświadczenia i Tradycje",
     "tag": "h1",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > header:nth-of-type(1) > h1:nth-of-type(1)",
@@ -87,161 +183,9 @@
   },
   {
     "type": "text",
-    "content": "Wydarzenia: Palio w Sienie",
-    "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": null
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "palio"
-    }
-  },
-  {
-    "type": "text",
-    "content": "Odkryj ponadczasową magię Sieny. Żyj historyczną rywalizacją między Sklepowymi Dzielnicami, spaceruj wśród średniowiecznych sąsiedztw w imprezie i bądź świadkiem legendarnego wyścigu fryzjerów, prowadzonego przez autorytet poruszacza na dużym szkle.",
-    "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": null
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "palio"
-    }
-  },
-  {
-    "type": "text",
-    "content": "\"Imprezujący tłum na Placu Pola podczas historycznej parady\"",
-    "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "span",
-      "id": "palio_alt",
-      "class": "meta-item"
-    },
-    "closest_anchor_id": {
-      "tag": "span",
-      "id": "palio_alt"
-    }
-  },
-  {
-    "type": "text",
-    "content": "€2500,00",
-    "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
-    "attributes": {
-      "id": "palio_price",
-      "class": "meta-price"
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": "meta-box"
-    },
-    "closest_anchor_id": {
-      "tag": "span",
-      "id": "palio_price"
-    }
-  },
-  {
-    "type": "text",
-    "content": "Sport: Włoska Pasja Wapń",
-    "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": null
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "calcio"
-    }
-  },
-  {
-    "type": "text",
-    "content": "Żyj elektryzującą atmosferą Serii A na San Siro. Śledź czerwono-czarnych i biało-czarnych, gdy wyzywają się na prostokącie gry w zapierającym dech w piersiach meczu, rozstrzygniętym w ostatniej sekundzie w pełnej Strefie Cesarini!",
-    "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": null
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "calcio"
-    }
-  },
-  {
-    "type": "text",
-    "content": "\"Fani na stadionie eksponujący spektakularną choreografię\"",
-    "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "span",
-      "id": "calcio_alt",
-      "class": "meta-item"
-    },
-    "closest_anchor_id": {
-      "tag": "span",
-      "id": "calcio_alt"
-    }
-  },
-  {
-    "type": "text",
-    "content": "€120,00",
-    "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
-    "attributes": {
-      "id": "calcio_price",
-      "class": "meta-price"
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": "meta-box"
-    },
-    "closest_anchor_id": {
-      "tag": "span",
-      "id": "calcio_price"
-    }
-  },
-  {
-    "type": "text",
     "content": "Natura: Cuda Wysp Eolskich",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -260,7 +204,7 @@
     "type": "text",
     "content": "Unikalny archipelag wulkaniczny na świecie. Eksploruj Lipari, podziwiaj spektakularne nocne eksploracje wulkanu i zanurkuj w siarkowych błotach wulkanu dla regenerującego doświadczenia.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -279,7 +223,7 @@
     "type": "text",
     "content": "\"Zachód słońca nad krystalicznym morzem wysp przed Sycylią\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -298,7 +242,7 @@
     "type": "text",
     "content": "€1450,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
     "attributes": {
       "id": "natura_price",
       "class": "meta-price"
@@ -311,6 +255,158 @@
     "closest_anchor_id": {
       "tag": "span",
       "id": "natura_price"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Wydarzenia: Palio w Sienie",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Odkryj ponadczasową magię Sieny. Żyj historyczną rywalizacją między Sklepowymi Dzielnicami, spaceruj wśród średniowiecznych sąsiedztw w imprezie i bądź świadkiem legendarnego wyścigu fryzjerów, prowadzonego przez autorytet poruszacza na dużym szkle.",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
+  },
+  {
+    "type": "text",
+    "content": "\"Imprezujący tłum na Placu Pola podczas historycznej parady\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": "palio_alt",
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "palio_alt"
+    }
+  },
+  {
+    "type": "text",
+    "content": "€2500,00",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": "palio_price",
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "palio_price"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Sport: Włoska Pasja Wapń",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Żyj elektryzującą atmosferą Serii A na San Siro. Śledź czerwono-czarnych i biało-czarnych, gdy wyzywają się na prostokącie gry w zapierającym dech w piersiach meczu, rozstrzygniętym w ostatniej sekundzie w pełnej Strefie Cesarini!",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
+  },
+  {
+    "type": "text",
+    "content": "\"Fani na stadionie eksponujący spektakularną choreografię\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": "calcio_alt",
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "calcio_alt"
+    }
+  },
+  {
+    "type": "text",
+    "content": "€120,00",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": "calcio_price",
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "calcio_price"
     }
   },
   {
@@ -391,7 +487,7 @@
   },
   {
     "type": "text",
-    "content": "Święta: Rytuał Żelaznego Sierpnia",
+    "content": "Nauka: Bolonia, europejski hub AI i Big Data",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
@@ -405,12 +501,12 @@
     },
     "closest_anchor_id": {
       "tag": "article",
-      "id": "feste"
+      "id": "scienza"
     }
   },
   {
     "type": "text",
-    "content": "Dołącz do letniej imprezy par excellence. 15 sierpnia we Włoszech oznacza grille w górze, ogniska na plaży, wycieczki poza drzwi do Riccione i całkowity relaks pod śródziemnomorskim słońcem.",
+    "content": "Odkryj silnik technologiczny, który gipsuje przyszłość. Odwiedź futurystyczny Technobiegun w Bolonii, siedzibę superkomputera Leonardo, gdzie starożytna tradycja akademicka 'Uczonej' łączy się ze strażniczymi badaniami na skalę globalną.",
     "tag": "p",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
@@ -424,12 +520,12 @@
     },
     "closest_anchor_id": {
       "tag": "article",
-      "id": "feste"
+      "id": "scienza"
     }
   },
   {
     "type": "text",
-    "content": "\"Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata\"",
+    "content": "\"Korytarze technologiczne i światła serwerów superkomputera wewnątrz Technobieguna\"",
     "tag": "em",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
@@ -438,21 +534,21 @@
     },
     "parent_node": {
       "tag": "span",
-      "id": "feste_alt",
+      "id": "scienza_alt",
       "class": "meta-item"
     },
     "closest_anchor_id": {
       "tag": "span",
-      "id": "feste_alt"
+      "id": "scienza_alt"
     }
   },
   {
     "type": "text",
-    "content": "€320,00",
+    "content": "€150,00",
     "tag": "span",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
     "attributes": {
-      "id": "feste_price",
+      "id": "scienza_price",
       "class": "meta-price"
     },
     "parent_node": {
@@ -462,90 +558,14 @@
     },
     "closest_anchor_id": {
       "tag": "span",
-      "id": "feste_price"
-    }
-  },
-  {
-    "type": "text",
-    "content": "Doświadczenia: Neapolitański Ekspres",
-    "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": null
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "esperienze"
-    }
-  },
-  {
-    "type": "text",
-    "content": "Dużo więcej niż napój, prawdziwy kult społeczny. Odkryj tajemnicę kawy w Neapolu, wyciśniętej do reguły sztuki z klasyczną cuccumella lub tradycyjną moka. Krótki, gęsty ekspres podawany wrzący.",
-    "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": null
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "esperienze"
-    }
-  },
-  {
-    "type": "text",
-    "content": "\"Parująca filiżanka kawy z gęstą śmietanką na ladzie baru\"",
-    "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": null
-    },
-    "parent_node": {
-      "tag": "span",
-      "id": "esperienze_alt",
-      "class": "meta-item"
-    },
-    "closest_anchor_id": {
-      "tag": "span",
-      "id": "esperienze_alt"
-    }
-  },
-  {
-    "type": "text",
-    "content": "€1,20",
-    "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
-    "attributes": {
-      "id": "esperienze_price",
-      "class": "meta-price"
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": "meta-box"
-    },
-    "closest_anchor_id": {
-      "tag": "span",
-      "id": "esperienze_price"
+      "id": "scienza_price"
     }
   },
   {
     "type": "text",
     "content": "Silniki: Dolina Motorowa Modeny",
     "tag": "h2",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -564,7 +584,7 @@
     "type": "text",
     "content": "Wejdź do bijącego serca globalnej inżynierii motoryzacyjcznej. W Modenie możesz słuchać ryku silników samochodów wyścigowych Rozbrykanego Kucyka i odkrywać muzea najszybszych supersamochodów na planecie.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -583,7 +603,7 @@
     "type": "text",
     "content": "\"Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -602,7 +622,7 @@
     "type": "text",
     "content": "€1850,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
     "attributes": {
       "id": "macchine_price",
       "class": "meta-price"
@@ -619,9 +639,161 @@
   },
   {
     "type": "text",
-    "content": "Muzyka: Festiwal w Sanremo",
+    "content": "Rzemiosło: Żłobki w Neapolu",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "tradizione"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Zanurz się w magicznej i ponadczasowej atmosferze ulicy Świętego Grzegorza Ormiańskiego. Odkryj sekrety historycznych sklepów, w których mistrzowie żłobkowi ręcznie modelują pasterzy z ugotowanej ziemi, podziwiająco stapiając świętą dewocję z ironią partyzanckiego folkloru.",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "tradizione"
+    }
+  },
+  {
+    "type": "text",
+    "content": "\"Kolorowe detale rzemieślniczych figurek wystawionych w historycznym sklepie w Rozpruwaczu Neapolu\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": "tradizione_alt",
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "tradizione_alt"
+    }
+  },
+  {
+    "type": "text",
+    "content": "€950,00",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": "tradizione_price",
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "tradizione_price"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Doświadczenia: Drapacze chmur w Mediolanie",
     "tag": "h2",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Podziwiaj futurystyczną twarz stolicy designu i mody. Spaceruj wśród futurystycznych wież CityLife, daj się oczarować nagradzanemu Pionowemu Lasowi i ciesz się glamourowym aperitifem podziwiając panoramę, która na nowo definiuje miasto w cieniu Małej Madonny.",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": null
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "esperienze"
+    }
+  },
+  {
+    "type": "text",
+    "content": "\"Nowoczesne drapacze chmur na Placu Gae Aulenti oświetlone na niebie mediolańskiego zachodu słońca\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": "esperienze_alt",
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "esperienze_alt"
+    }
+  },
+  {
+    "type": "text",
+    "content": "€180,00",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": "esperienze_price",
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "esperienze_price"
+    }
+  },
+  {
+    "type": "text",
+    "content": "Muzyka: Festiwal w Sanremo",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -640,7 +812,7 @@
     "type": "text",
     "content": "Świątynia włoskiej piosenki. Żyj najbardziej oczekiwanym tygodniem roku w Teatrze Ariston, gdzie wielcy włoskiej muzyki i nowe propozycje wyzywają się na scenie, która lansowała międzynarodowe mity.",
     "tag": "p",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -659,7 +831,7 @@
     "type": "text",
     "content": "\"Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu\"",
     "tag": "em",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": null
@@ -678,7 +850,7 @@
     "type": "text",
     "content": "€950,00",
     "tag": "span",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
     "attributes": {
       "id": "musica_price",
       "class": "meta-price"
@@ -694,51 +866,87 @@
     }
   },
   {
-    "type": "image",
-    "src": "images/palio_siena.jpg",
-    "alt": "Imprezujący tłum na Placu Pola podczas historycznej parady",
-    "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "type": "text",
+    "content": "Święta: Rytuał Żelaznego Sierpnia",
+    "tag": "h2",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
     "attributes": {
       "id": null,
-      "class": "card-img"
+      "class": null
     },
     "parent_node": {
       "tag": "div",
       "id": null,
-      "class": "card-content"
+      "class": null
     },
     "closest_anchor_id": {
       "tag": "article",
-      "id": "palio"
+      "id": "feste"
     }
   },
   {
-    "type": "image",
-    "src": "images/calcio_san_siro.jpg",
-    "alt": "Fani na stadionie eksponujący spektakularną choreografię",
-    "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "type": "text",
+    "content": "Dołącz do letniej imprezy par excellence. 15 sierpnia we Włoszech oznacza grille w górze, ogniska na plaży, wycieczki poza drzwi do Riccione i całkowity relaks pod śródziemnomorskim słońcem.",
+    "tag": "p",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
     "attributes": {
       "id": null,
-      "class": "card-img"
+      "class": null
     },
     "parent_node": {
       "tag": "div",
       "id": null,
-      "class": "card-content"
+      "class": null
     },
     "closest_anchor_id": {
       "tag": "article",
-      "id": "calcio"
+      "id": "feste"
+    }
+  },
+  {
+    "type": "text",
+    "content": "\"Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata\"",
+    "tag": "em",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": null
+    },
+    "parent_node": {
+      "tag": "span",
+      "id": "feste_alt",
+      "class": "meta-item"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "feste_alt"
+    }
+  },
+  {
+    "type": "text",
+    "content": "€320,00",
+    "tag": "span",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "attributes": {
+      "id": "feste_price",
+      "class": "meta-price"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "meta-box"
+    },
+    "closest_anchor_id": {
+      "tag": "span",
+      "id": "feste_price"
     }
   },
   {
     "type": "image",
-    "src": "images/eolie_islands.jpg",
+    "src": "images/isole_eolie.png",
     "alt": "Zachód słońca nad krystalicznym morzem wysp przed Sycylią",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": "card-img"
@@ -755,7 +963,47 @@
   },
   {
     "type": "image",
-    "src": "images/fellini_rimini.jpg",
+    "src": "images/palio_siena.png",
+    "alt": "Imprezujący tłum na Placu Pola podczas historycznej parady",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "palio"
+    }
+  },
+  {
+    "type": "image",
+    "src": "images/calcio_san_siro.png",
+    "alt": "Fani na stadionie eksponujący spektakularną choreografię",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "calcio"
+    }
+  },
+  {
+    "type": "image",
+    "src": "images/rimini_cinema.png",
     "alt": "Słynne Kino Fulgor odrestaurowane w sercu miasta",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(4) > div:nth-of-type(1) > img:nth-of-type(1)",
@@ -775,8 +1023,8 @@
   },
   {
     "type": "image",
-    "src": "images/ferragosto_beach.jpg",
-    "alt": "Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata",
+    "src": "images/bologna_hub.png",
+    "alt": "Korytarze technologiczne i światła serwerów superkomputera wewnątrz Technobieguna",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -790,35 +1038,15 @@
     },
     "closest_anchor_id": {
       "tag": "article",
-      "id": "feste"
+      "id": "scienza"
     }
   },
   {
     "type": "image",
-    "src": "images/naples_coffee.jpg",
-    "alt": "Parująca filiżanka kawy z gęstą śmietanką na ladzie baru",
-    "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)",
-    "attributes": {
-      "id": null,
-      "class": "card-img"
-    },
-    "parent_node": {
-      "tag": "div",
-      "id": null,
-      "class": "card-content"
-    },
-    "closest_anchor_id": {
-      "tag": "article",
-      "id": "esperienze"
-    }
-  },
-  {
-    "type": "image",
-    "src": "images/modena_motors.jpg",
+    "src": "images/modena_macchine.png",
     "alt": "Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari",
     "tag": "img",
-    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
       "id": null,
       "class": "card-img"
@@ -835,8 +1063,28 @@
   },
   {
     "type": "image",
-    "src": "images/sanremo_ariston.jpg",
-    "alt": "Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu",
+    "src": "images/napoli_presepe.png",
+    "alt": "Kolorowe detale rzemieślniczych figurek wystawionych w historycznym sklepie w Rozpruwaczu Neapolu",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "tradizione"
+    }
+  },
+  {
+    "type": "image",
+    "src": "images/milano_grattacieli.png",
+    "alt": "Nowoczesne drapacze chmur na Placu Gae Aulenti oświetlone na niebie mediolańskiego zachodu słońca",
     "tag": "img",
     "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(8) > div:nth-of-type(1) > img:nth-of-type(1)",
     "attributes": {
@@ -850,7 +1098,47 @@
     },
     "closest_anchor_id": {
       "tag": "article",
+      "id": "esperienze"
+    }
+  },
+  {
+    "type": "image",
+    "src": "images/sanremo.png",
+    "alt": "Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(9) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
       "id": "musica"
+    }
+  },
+  {
+    "type": "image",
+    "src": "images/ferragosto.png",
+    "alt": "Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata",
+    "tag": "img",
+    "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "attributes": {
+      "id": null,
+      "class": "card-img"
+    },
+    "parent_node": {
+      "tag": "div",
+      "id": null,
+      "class": "card-content"
+    },
+    "closest_anchor_id": {
+      "tag": "article",
+      "id": "feste"
     }
   }
 ]

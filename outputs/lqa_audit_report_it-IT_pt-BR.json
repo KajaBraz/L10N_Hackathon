@@ -1,0 +1,77 @@
+{
+  "global_score": 65,
+  "summary": {
+    "total_errors": 6,
+    "critical": 1,
+    "major": 5,
+    "minor": 0
+  },
+  "detected_errors": [
+    {
+      "error_id": "ERR_001",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Terminology",
+      "severity": "Major",
+      "source_text_snippet": "Sport: Calcio & Passione Italiana",
+      "target_text_snippet": "Esporte: Cálcio e Paixão Italiana",
+      "issue_explanation": "The Italian sports term 'Calcio' (football/soccer) was translated as 'Cálcio', which in Portuguese explicitly means the chemical element Calcium. This creates a severe domain terminology error.",
+      "suggested_fix": "Esporte: Futebol e Paixão Italiana"
+    },
+    {
+      "error_id": "ERR_002",
+      "html_element_id": "macchine",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
+      "severity": "Critical",
+      "source_text_snippet": "bolidi del Cavallino Rampante ed esplorare i musei delle supercar",
+      "target_text_snippet": "carros de corrida do Pônei Saltitante e explorar os museums dos supercarros",
+      "issue_explanation": "Translating the iconic Ferrari trademark 'Cavallino Rampante' literally as 'Pônei Saltitante' (Prancing Pony) constitutes severe brand degradation. Additionally, the English word 'museums' was left untranslated instead of using 'museus'.",
+      "suggested_fix": "bólidos do Cavallino Rampante e explorar os museus dos supercarros"
+    },
+    {
+      "error_id": "ERR_003",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
+      "severity": "Major",
+      "source_text_snippet": "rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi, guidata dall'autorità del mossiere sul verrocchio.",
+      "target_text_snippet": "rivalidade histórica entre os Distritos-Loja, caminhe entre os bairros medievais em festa e testemunhe a lendária corrida dos barbeiros, guiada pela autoridade do movedor no grande vidro.",
+      "issue_explanation": "Literal machine translation fails to localize highly specialized historical terms from the Palio di Siena. 'Contrade' became 'Distritos-Loja', 'corsa dei barberi' (Barbary horse race) became 'corrida dos barbeiros' (barbers' race), and 'verrocchio' became 'grande vidro'.",
+      "suggested_fix": "rivalidade histórica entre as Contrade, caminhe pelos bairros medievais em festa e assista à lendária corrida dos cavalos bárbaros, guiada pela autoridade do mossiere no verrocchio."
+    },
+    {
+      "error_id": "ERR_004",
+      "html_element_id": "natura_price",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+      "mqm_category": "Locale Convention",
+      "severity": "Major",
+      "source_text_snippet": "€1450,00",
+      "target_text_snippet": "€1450,00",
+      "issue_explanation": "Violates the explicit price layout criteria which requires numbers to use periods for thousands and a space to separate the currency symbol from the numeric amount.",
+      "suggested_fix": "€ 1.450,00"
+    },
+    {
+      "error_id": "ERR_005",
+      "html_element_id": "promo-label",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
+      "severity": "Major",
+      "source_text_snippet": "Offerta speciale prenotazioni anticipate valida fino al:",
+      "target_text_snippet": "Oferta especial de pássaro madrugador válida até:",
+      "issue_explanation": "The target text uses an awkward literal translation of an English idiom ('early bird' -> 'pássaro madrugador'), completely misinterpreting the source Italian text 'prenotazioni anticipate' (early bookings).",
+      "suggested_fix": "Oferta especial para reservas antecipadas válida até:"
+    },
+    {
+      "error_id": "ERR_006",
+      "html_element_id": "scienza",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Major",
+      "source_text_snippet": "Scopri il motore tecnologico che sta plasmando il futuro.",
+      "target_text_snippet": "Descubra o motor tecnológico que está gessando o futuro.",
+      "issue_explanation": "The translation incorrectly converts 'plasmando' (shaping/molding) to 'gessando' (casting in plaster/immobilizing), causing a severe negative semantic inversion of an otherwise positive context regarding technology and innovation.",
+      "suggested_fix": "Descubra o motor tecnológico que está moldando o futuro."
+    }
+  ]
+}

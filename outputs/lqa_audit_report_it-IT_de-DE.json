@@ -1,0 +1,107 @@
+{
+  "global_score": 45,
+  "summary": {
+    "total_errors": 8,
+    "critical": 3,
+    "major": 5,
+    "minor": 0
+  },
+  "detected_errors": [
+    {
+      "error_id": "ERR_001",
+      "html_element_id": "promo-date",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)",
+      "mqm_category": "Locale Convention",
+      "severity": "Major",
+      "source_text_snippet": "15/08/2026",
+      "target_text_snippet": "15/08/2026",
+      "issue_explanation": "The date layout string violates explicit German target locale criteria. In Germany, dates must strictly use dot separators (DD.MM.YYYY) instead of forward slashes.",
+      "suggested_fix": "15.08.2026",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_002",
+      "html_element_id": "natura_price",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+      "mqm_category": "Locale Convention",
+      "severity": "Major",
+      "source_text_snippet": "€1450,00",
+      "target_text_snippet": "€1450,00",
+      "issue_explanation": "Violates the explicit price convention instruction for de-DE. Numbers must use periods for thousands separators, and the currency symbol must follow the amount separated by a space.",
+      "suggested_fix": "1.450,00 €",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_003",
+      "html_element_id": "calcio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Critical",
+      "source_text_snippet": "Sport: Calcio & Passione Italiana",
+      "target_text_snippet": "Sport: Italienische Leidenschaft Kalzium",
+      "issue_explanation": "Severe homonym mistranslation. In this clear sports context, 'Calcio' means football (soccer), but the engine translated it as the chemical element Calcium ('Kalzium'), catastrophically breaking user trust.",
+      "suggested_fix": "Sport: Fußball & italienische Leidenschaft",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_004",
+      "html_element_id": "macchine",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
+      "severity": "Critical",
+      "source_text_snippet": "A Modena potrai ascoltare il rombo dei motori dei bolidi del Cavallino Rampante",
+      "target_text_snippet": "In Modena können Sie dem Brüllen der Motoren der Rennwagen des Tänzelnden Ponys lauschen",
+      "issue_explanation": "Severe brand degradation. 'Cavallino Rampante' refers to Ferrari's iconic luxury brand emblem. Translating it literally as 'Tänzelndes Pony' (Prancing Pony) sounds childish and unprofessional.",
+      "suggested_fix": "In Modena können Sie dem Aufheulen der Motoren der Boliden des 'Cavallino Rampante' lauschen",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_005",
+      "html_element_id": "tradizione",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Major",
+      "source_text_snippet": "maestri presepiali modellano a mano pastori in terracotta",
+      "target_text_snippet": "Krippenmeister Hirten aus gekochter Erde von Hand modellieren",
+      "issue_explanation": "Highly unnatural literal translation. 'Terracotta' is an established loanword in German, whereas 'gekochte Erde' literally means 'cooked earth/soil', creating an absurd and incorrect description.",
+      "suggested_fix": "Krippenmeister Hirtenfiguren aus Terrakotta von Hand modellieren",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_006",
+      "html_element_id": "palio",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Critical",
+      "source_text_snippet": "Vivi la storica rivalità tra le Contrade, cammina tra i rioni medievali in festa e assisti alla leggendaria corsa dei barberi",
+      "target_text_snippet": "Leben Sie die historische Rivalität zwischen den Laden-Bezirken, gehen Sie inmitten der mittelalterlichen Nachbarschaften in Partei und erleben Sie das legendäre Rennen der Barbiere",
+      "issue_explanation": "Compounded catastrophic machine translation errors. 'Contrade' is translated to 'Laden-Bezirken' (shopping districts), 'in festa' to 'in Partei' (political party), and 'barberi' (racehorses) to 'Barbiere' (barbers). The sentence is absolute gibberish.",
+      "suggested_fix": "Erleben Sie die historische Rivalität zwischen den Stadtteilen (Contraden), spazieren Sie durch die festlichen mittelalterlichen Viertel und erleben Sie das legendäre Pferderennen",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_007",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+      "mqm_category": "Cultural Transcreation",
+      "severity": "Major",
+      "source_text_snippet": "Feste: Il Rito del Ferragosto",
+      "target_text_snippet": "Feiertage: Das Ritual des Eisernen Augusts",
+      "issue_explanation": "Absurd literal mistranslation of a key Italian cultural holiday. 'Ferragosto' stems from 'Feriae Augusti'. The engine mistranslated 'Fer' as 'Ferro' (Iron), yielding 'Eiserner August', which is non-existent.",
+      "suggested_fix": "Feiertage: Das Ferragosto-Ritual",
+      "tmx_match": null
+    },
+    {
+      "error_id": "ERR_008",
+      "html_element_id": "feste",
+      "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(10) > div:nth-of-type(1) > img:nth-of-type(1)",
+      "mqm_category": "Accuracy",
+      "severity": "Major",
+      "source_text_snippet": "Spiaggia gremita e ombrelloni colorati durante la festa di mezza estate",
+      "target_text_snippet": "Gepackter Strand und farbige Regenschirme während der Mittsommerparty",
+      "issue_explanation": "Fails the specific target instruction for image alternative text. 'Ombrelloni' refers to beach sunshades ('Sonnenschirme'), not rain umbrellas ('Regenschirme'). Furthermore, 'gepackter Strand' is an unlocalized literal conversion.",
+      "suggested_fix": "Ein belebter Strand und bunte Sonnenschirme während des Mittsommerfestes",
+      "tmx_match": null
+    }
+  ]
+}
