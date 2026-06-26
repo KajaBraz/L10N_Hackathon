@@ -17,7 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from tmx_matcher import TMXParser, TMXMatcher, enrich_lqa_report_with_tmx
+from tmx_matcher import TMXParser, TMXMatcher, enrich_lqa_report_with_tmx, write_approved_fixes_to_tmx
 from cost_estimator import estimate_evaluation_cost, get_available_models
 
 app = FastAPI(title="Boutique Italia - Content-Aware LQA Gateway")
@@ -646,6 +646,23 @@ def rebuild_localization_template(locale: str):
             json.dump(locale_data, f, indent=2, ensure_ascii=False)
 
         print(f"[LOCALE WRITE-BACK SUCCESS] Updated {applied_count} strings in '{locale_json_path}'")
+
+        # 4.5. Write approved fixes back to TMX (bidirectional sync)
+        print(f"[REBUILD] Syncing approved fixes to TMX...")
+        try:
+            tmx_stats = write_approved_fixes_to_tmx(
+                approved_fixes,
+                TMX_FILE,
+                source_locale="it-IT",
+                create_new_entries=True,
+                similarity_threshold=0.7
+            )
+            print(f"[TMX SYNC] Updated: {tmx_stats['entries_updated']}, "
+                  f"Created: {tmx_stats['entries_created']}, "
+                  f"Errors: {tmx_stats['errors']}")
+        except Exception as e:
+            print(f"[TMX SYNC WARNING] Failed to sync to TMX: {e}")
+            # Don't fail the entire rebuild if TMX sync fails
 
         # 5. Run generate_pages.py to regenerate templates
         print(f"[REBUILD] Running template generation...")

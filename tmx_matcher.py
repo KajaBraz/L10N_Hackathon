@@ -5,13 +5,18 @@ This module provides functionality to:
 1. Parse TMX files (XML format for translation memories)
 2. Match detected LQA issues against TMX entries using fuzzy matching
 3. Expose TMX match IDs to enable translation memory synchronization
+4. Write approved fixes back to TMX file (bidirectional sync)
 """
 
 import json
+import logging
 import re
 import xml.etree.ElementTree as ET
+from datetime import datetime
 from difflib import SequenceMatcher
 from typing import Dict, List, Optional, Tuple
+
+logger = logging.getLogger(__name__)
 
 
 class TMXEntry:
@@ -318,9 +323,306 @@ def enrich_lqa_report_with_tmx(
         return lqa_report
 
 
-if __name__ == "__main__":
-    # Demo/test code
+class TMXWriter:
+    """
+    Writer class for updating TMX files with approved translations.
+    Enables bidirectional TMX synchronization.
+    """
 
+    def __init__(self, tmx_file_path: str):
+        self.tmx_file_path = tmx_file_path
+        self.tree = None
+        self.root = None
+        self._load()
+
+    def _load(self):
+        """Load the TMX file for editing"""
+        try:
+            self.tree = ET.parse(self.tmx_file_path)
+            self.root = self.tree.getroot()
+            logger.info(f"Loaded TMX file for writing: {self.tmx_file_path}")
+        except Exception as e:
+            logger.error(f"Failed to load TMX file for writing: {e}")
+            raise
+
+    def _find_tu_by_tuid(self, tuid: str) -> Optional[ET.Element]:
+        """Find a translation unit element by TUID"""
+        for tu in self.root.findall('.//tu'):
+            if tu.get('tuid') == tuid:
+                return tu
+        return None
+
+    def _find_or_create_tuv(self, tu: ET.Element, locale: str) -> ET.Element:
+        """Find or create a translation unit variant for a specific locale"""
+        # Try to find existing tuv for this locale
+        for tuv in tu.findall('tuv'):
+            if tuv.get('{http://www.w3.org/XML/1998/namespace}lang') == locale:
+                return tuv
+
+        # Create new tuv if not found
+        tuv = ET.SubElement(tu, 'tuv')
+        tuv.set('{http://www.w3.org/XML/1998/namespace}lang', locale)
+        seg = ET.SubElement(tuv, 'seg')
+        return tuv
+
+    def _generate_tuid(self, source_text: str, prefix: str = "approved") -> str:
+        """
+        Generate a unique TUID for new translation units.
+        Format: prefix_hash_timestamp
+        """
+        # Create a simple hash from the source text
+        text_hash = abs(hash(source_text)) % (10 ** 8)
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        return f"{prefix}_{text_hash}_{timestamp}"
+
+    def update_translation(
+            self,
+            tuid: str,
+            locale: str,
+            translation: str
+    ) -> bool:
+        """
+        Update an existing TMX entry with a new translation.
+
+        Args:
+            tuid: Translation unit ID to update
+            locale: Target locale code
+            translation: New translation text
+
+        Returns:
+            True if update successful, False otherwise
+        """
+        try:
+            tu = self._find_tu_by_tuid(tuid)
+            if not tu:
+                logger.warning(f"TUID '{tuid}' not found in TMX file")
+                return False
+
+            # Find or create the tuv for this locale
+            tuv = self._find_or_create_tuv(tu, locale)
+            seg = tuv.find('seg')
+
+            if seg is None:
+                seg = ET.SubElement(tuv, 'seg')
+
+            seg.text = translation
+            logger.info(f"Updated TMX entry {tuid} for locale {locale}")
+            return True
+
+        except Exception as e:
+            logger.error(f"Failed to update TMX entry {tuid}: {e}")
+            return False
+
+    def create_translation_unit(
+            self,
+            source_locale: str,
+            source_text: str,
+            target_locale: str,
+            target_text: str,
+            tuid: Optional[str] = None
+    ) -> Optional[str]:
+        """
+        Create a new translation unit in the TMX file.
+
+        Args:
+            source_locale: Source locale code (e.g., 'it-IT')
+            source_text: Source language text
+            target_locale: Target locale code (e.g., 'en-US')
+            target_text: Target language translation
+            tuid: Optional custom TUID (auto-generated if not provided)
+
+        Returns:
+            The TUID of the created entry, or None if failed
+        """
+        try:
+            # Generate TUID if not provided
+            if not tuid:
+                tuid = self._generate_tuid(source_text)
+
+            # Check if TUID already exists
+            if self._find_tu_by_tuid(tuid):
+                logger.warning(f"TUID '{tuid}' already exists, use update_translation instead")
+                return None
+
+            # Find the body element
+            body = self.root.find('.//body')
+            if body is None:
+                logger.error("TMX file has no body element")
+                return None
+
+            # Create new translation unit
+            tu = ET.SubElement(body, 'tu')
+            tu.set('tuid', tuid)
+
+            # Add source locale variant
+            tuv_source = ET.SubElement(tu, 'tuv')
+            tuv_source.set('{http://www.w3.org/XML/1998/namespace}lang', source_locale)
+            seg_source = ET.SubElement(tuv_source, 'seg')
+            seg_source.text = source_text
+
+            # Add target locale variant
+            tuv_target = ET.SubElement(tu, 'tuv')
+            tuv_target.set('{http://www.w3.org/XML/1998/namespace}lang', target_locale)
+            seg_target = ET.SubElement(tuv_target, 'seg')
+            seg_target.text = target_text
+
+            logger.info(f"Created new TMX entry {tuid} ({source_locale} → {target_locale})")
+            return tuid
+
+        except Exception as e:
+            logger.error(f"Failed to create TMX entry: {e}")
+            return None
+
+    def save(self, backup: bool = True) -> bool:
+        """
+        Save the modified TMX file to disk.
+
+        Args:
+            backup: If True, creates a backup of the original file
+
+        Returns:
+            True if save successful, False otherwise
+        """
+        try:
+            if backup:
+                backup_path = f"{self.tmx_file_path}.backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+                import shutil
+                shutil.copy2(self.tmx_file_path, backup_path)
+                logger.info(f"Created TMX backup: {backup_path}")
+
+            # Write the modified tree
+            self.tree.write(
+                self.tmx_file_path,
+                encoding='utf-8',
+                xml_declaration=True
+            )
+            logger.info(f"Saved TMX file: {self.tmx_file_path}")
+            return True
+
+        except Exception as e:
+            logger.error(f"Failed to save TMX file: {e}")
+            return False
+
+
+def write_approved_fixes_to_tmx(
+        approved_fixes: List[Dict],
+        tmx_file_path: str,
+        source_locale: str = "it-IT",
+        create_new_entries: bool = True,
+        similarity_threshold: float = 0.8
+) -> Dict[str, int]:
+    """
+    Write approved translation fixes back to the TMX file.
+
+    This function enables bidirectional TMX synchronization by:
+    1. Matching approved fixes to existing TMX entries
+    2. Updating existing entries with corrected translations
+    3. Optionally creating new TMX entries for unmatched fixes
+
+    Args:
+        approved_fixes: List of approved fix dictionaries (from approved_fixes_{locale}.json)
+        tmx_file_path: Path to TMX file
+        source_locale: Source locale code
+        create_new_entries: If True, create new TMX entries for unmatched fixes
+        similarity_threshold: Minimum similarity to consider a TMX entry a match
+
+    Returns:
+        Statistics dictionary: {
+            'total_processed': int,
+            'entries_updated': int,
+            'entries_created': int,
+            'errors': int
+        }
+    """
+    stats = {
+        'total_processed': 0,
+        'entries_updated': 0,
+        'entries_created': 0,
+        'errors': 0
+    }
+
+    try:
+        # Load TMX for matching
+        parser = TMXParser(tmx_file_path)
+        matcher = TMXMatcher(parser)
+
+        # Load TMX for writing
+        writer = TMXWriter(tmx_file_path)
+
+        logger.info(f"Processing {len(approved_fixes)} approved fixes for TMX write-back")
+
+        for fix in approved_fixes:
+            stats['total_processed'] += 1
+
+            locale = fix.get('locale')
+            source_text = fix.get('source_text', '')
+            approved_translation = fix.get('approved_translation', '')
+            target_text_original = fix.get('target_text_snippet', '')
+
+            if not locale or not source_text or not approved_translation:
+                logger.warning(f"Skipping incomplete fix: {fix.get('error_id')}")
+                stats['errors'] += 1
+                continue
+
+            # Try to find matching TMX entry
+            match_result = matcher.find_best_match(
+                source_text,
+                target_text_original,
+                source_locale,
+                locale,
+                similarity_threshold
+            )
+
+            if match_result:
+                # Update existing TMX entry
+                tmx_entry, similarity, match_type = match_result
+                tuid = tmx_entry.tuid
+
+                logger.info(f"Matched fix to existing TMX entry: {tuid} (similarity: {similarity:.2f})")
+
+                if writer.update_translation(tuid, locale, approved_translation):
+                    stats['entries_updated'] += 1
+                else:
+                    stats['errors'] += 1
+
+            elif create_new_entries:
+                # Create new TMX entry
+                tuid = writer.create_translation_unit(
+                    source_locale,
+                    source_text,
+                    locale,
+                    approved_translation
+                )
+
+                if tuid:
+                    stats['entries_created'] += 1
+                    logger.info(f"Created new TMX entry: {tuid}")
+                else:
+                    stats['errors'] += 1
+
+            else:
+                logger.info(f"No TMX match found for fix (source: '{source_text[:50]}...'), skipping")
+
+        # Save the modified TMX file
+        if writer.save(backup=True):
+            logger.info(f"TMX write-back complete: {stats}")
+        else:
+            logger.error("Failed to save TMX file")
+            stats['errors'] += 1
+
+        return stats
+
+    except Exception as e:
+        logger.error(f"TMX write-back failed: {e}")
+        stats['errors'] += 1
+        return stats
+
+
+if __name__ == "__main__":
+    # Configure logging for demo
+    logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
+
+    # Demo/test code
     tmx_path = "memory.xml"
     report_path = "outputs/lqa_audit_report_it-IT_en-US.json"
 
@@ -336,4 +638,21 @@ if __name__ == "__main__":
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(enriched_report, f, indent=2, ensure_ascii=False)
 
-    print(f"\n[SUCCESS] Enriched report saved to: {output_path}")
+    logger.info(f"Enriched report saved to: {output_path}")
+
+    # Demo TMX write-back
+    import os
+
+    approved_fixes_path = "outputs/approved_fixes_en-US.json"
+    if os.path.exists(approved_fixes_path):
+        with open(approved_fixes_path, 'r', encoding='utf-8') as f:
+            approved_fixes = json.load(f)
+
+        logger.info("\n=== Testing TMX Write-Back ===")
+        stats = write_approved_fixes_to_tmx(
+            approved_fixes,
+            tmx_path,
+            create_new_entries=True,
+            similarity_threshold=0.7
+        )
+        logger.info(f"Write-back statistics: {stats}")
