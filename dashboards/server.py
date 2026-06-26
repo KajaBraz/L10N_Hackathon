@@ -108,9 +108,19 @@ def get_available_locales():
 @app.get("/api/report/{locale}")
 def get_lqa_combined_data(locale: str):
     print(f"[API] get_lqa_combined_data called for locale: {locale}")
-    report_file = os.path.join(OUTPUT_DIR, f"lqa_audit_report_it-IT_{locale}.json")
-    locale_json_file = os.path.join(LOCALES_DIR, f"{locale}.json")
-    print(f"[API] Report file: {report_file}, exists: {os.path.exists(report_file)}")
+
+    # Special handling for source locale (it-IT) - no LQA report, just show content
+    is_source_locale = (locale == "it-IT")
+
+    if is_source_locale:
+        # Source locale: no LQA report needed
+        report_file = None
+        locale_json_file = os.path.join(LOCALES_DIR, f"{locale}.json")
+    else:
+        # Target locale: load LQA report
+        report_file = os.path.join(OUTPUT_DIR, f"lqa_audit_report_it-IT_{locale}.json")
+        locale_json_file = os.path.join(LOCALES_DIR, f"{locale}.json")
+        print(f"[API] Report file: {report_file}, exists: {os.path.exists(report_file)}")
 
     # 1. Load Locale JSON data (the source of truth for translations)
     locale_data = None
@@ -211,7 +221,17 @@ def get_lqa_combined_data(locale: str):
 
     # 2. Load LQA Issue Metrics
     lqa_report = {"global_score": 100, "summary": {"total_errors": 0}, "detected_errors": []}
-    if os.path.exists(report_file):
+
+    # Source locale (it-IT) has no report - it's the reference, always 100% quality
+    if is_source_locale:
+        lqa_report = {
+            "global_score": 100,
+            "summary": {"total_errors": 0, "critical": 0, "major": 0, "minor": 0},
+            "detected_errors": [],
+            "is_source": True,
+            "message": "Source locale - Italian (it-IT) is the reference language. No quality assessment performed."
+        }
+    elif report_file and os.path.exists(report_file):
         print(f"[DEBUG] Loading report from: {report_file}")
         with open(report_file, "r", encoding="utf-8") as f:
             lqa_report = json.load(f)
