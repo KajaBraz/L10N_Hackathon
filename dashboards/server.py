@@ -39,6 +39,7 @@ TEMPLATES_DIR = os.path.join(PROJECT_ROOT, "templates")  # Directory where index
 LOCALES_DIR = os.path.join(PROJECT_ROOT, "locales")  # Directory where locale JSON resource files live
 GENERATE_SCRIPT = os.path.join(PROJECT_ROOT, "generate_pages.py")  # Template generation script
 TMX_FILE = os.path.join(PROJECT_ROOT, "memory.xml")  # TMX translation memory file
+REVIEW_DIR = os.path.join(PROJECT_ROOT, "review")
 
 # Global TMX parser instance (loaded once at startup)
 _tmx_parser = None
@@ -327,7 +328,8 @@ def get_lqa_combined_data(locale: str):
 
 @app.post("/api/approve")
 def approve_fix(payload: ApprovalPayload):
-    fixes_path = os.path.join(OUTPUT_DIR, f"approved_fixes_{payload.locale}.json")
+    fixes_path = os.path.join(REVIEW_DIR, f"approved_fixes_{payload.locale}.json")
+    os.makedirs(os.path.dirname(fixes_path), exist_ok=True)
     fixes = []
     if os.path.exists(fixes_path):
         with open(fixes_path, "r", encoding="utf-8") as f:
@@ -355,7 +357,8 @@ def reject_issue(payload: dict):
     locale = payload.get("locale")
     error_id = payload.get("error_id")
 
-    rejections_path = os.path.join(OUTPUT_DIR, f"rejected_issues_{locale}.json")
+    rejections_path = os.path.join(REVIEW_DIR, f"rejected_issues_{locale}.json")
+    os.makedirs(os.path.dirname(rejections_path), exist_ok=True)
     rejections = []
     if os.path.exists(rejections_path):
         with open(rejections_path, "r", encoding="utf-8") as f:
@@ -583,7 +586,7 @@ def rebuild_localization_template(locale: str):
     then runs generate_pages.py to regenerate the HTML templates.
     """
     try:
-        fixes_path = os.path.join(OUTPUT_DIR, f"approved_fixes_{locale}.json")
+        fixes_path = os.path.join(REVIEW_DIR, f"approved_fixes_{locale}.json")
         locale_json_path = os.path.join(LOCALES_DIR, f"{locale}.json")
 
         if not os.path.exists(fixes_path):

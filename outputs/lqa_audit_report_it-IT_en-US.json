@@ -61,45 +61,10 @@
       "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
       "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": ""
-      La
-      folla
-      festante
-      in
-      Piazza
-      del
-      Campo
-      durante
-      il
-      corteo
-      storico
-      "",
-      "target_text_snippet": ""
-      The
-      partying
-      crowd
-      in
-      Field
-      Square
-      during
-      the
-      historical
-      parade
-      "",
+      "source_text_snippet": "La folla festante in Piazza del Campo durante il corteo storico ",
+      "target_text_snippet": "The partying crowd in Field Square during the historical parade",
       "issue_explanation": "The proper noun of the famous historical square 'Piazza del Campo' has been translated literally as 'Field Square', which is incorrect and highly unnatural for geographical landmarks.",
-      "suggested_fix": ""
-      The
-      festive
-      crowd
-      in
-      Piazza
-      del
-      Campo
-      during
-      the
-      historical
-      parade
-      "",
+      "suggested_fix": "The festive crowd in Piazza del Campo during the historical parade",
       "tmx_match": null
     },
     {
@@ -120,53 +85,10 @@
       "dom_path": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > main:nth-of-type(1) > article:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > em:nth-of-type(1)",
       "mqm_category": "Cultural Transcreation",
       "severity": "Major",
-      "source_text_snippet": ""
-      I
-      dettagli
-      colorati
-      delle
-      statuine
-      artigianali
-      esposte
-      in
-      una
-      storica
-      bottega
-      di
-      Spaccanapoli
-      "",
-      "target_text_snippet": ""
-      The
-      colored
-      details
-      of
-      the
-      artisanal
-      figurines
-      displayed
-      in
-      a
-      historical
-      shop
-      of
-      Naples-Splitter
-      "",
+      "source_text_snippet": "I dettagli colorati delle statuine artigianali esposte in una storica bottega di Spaccanapoli",
+      "target_text_snippet": "The colored details of the artisanal figurines displayed in a historical shop of Naples-Splitter",
       "issue_explanation": "The proper noun of the famous historical street 'Spaccanapoli' has been translated literally as 'Naples-Splitter', which breaks natural expression guidelines for localized alt-text and titles.",
-      "suggested_fix": ""
-      The
-      colorful
-      details
-      of
-      handcrafted
-      figurines
-      displayed
-      in
-      a
-      historic
-      shop
-      in
-      Spaccanapoli
-      "",
+      "suggested_fix": "The colorful details of handcrafted figurines displayed in a historic shop in Spaccanapoli",
       "tmx_match": null
     },
     {
