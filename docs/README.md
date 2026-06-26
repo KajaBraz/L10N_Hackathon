@@ -4,15 +4,16 @@ End-to-end translation quality management system with AI-powered evaluation, int
 
 ## Features
 
-- ** AI Quality Assessment** - Automated LQA using OpenAI/Mistral/Llama/DeepSeek models
-- ** Interactive Dashboard** - Real-time translation review with error highlighting
-- ** Cost Estimation** - Pre-evaluation cost calculation based on content size
-- ** Translation Memory (TMX)** - Fuzzy matching against existing translations
-- ** On-Demand Evaluation** - Evaluate multiple locales with progress tracking
-- ** One-Click Fixes** - Approve corrections and rebuild templates instantly
-- ** Locale Switcher** - Generated pages include language selection UI
+- **AI Quality Assessment** - Automated LQA using OpenAI/Mistral/Llama/DeepSeek models
+- **Interactive Dashboard** - Real-time translation review with error highlighting
+- **Cost Estimation** - Pre-evaluation cost calculation based on content size
+- **Translation Memory (TMX)** - Fuzzy matching against existing translations
+- **On-Demand Evaluation** - Evaluate multiple locales with progress tracking
+- **One-Click Fixes** - Approve corrections and rebuild templates instantly
+- **Locale Switcher** - Generated pages include language selection UI
 
----
+## Demo
+10-minute live walkthrough: [link](https://drive.google.com/file/d/1hJxETF1zTptPlfZZpG3kATYSpgwiuzDT/view?usp=drive_link).
 
 ## Quick Start
 
@@ -97,11 +98,11 @@ python main.py
 ### Via Dashboard
 
 1. Open dashboard: `http://127.0.0.1:8000`
-2. Click **"⚡ New Evaluation"**
+2. Click **"New Evaluation"**
 3. Select locales to evaluate
 4. Choose AI model (gpt-4o-mini, mistral-large, etc.)
 5. Review estimated cost
-6. Click **"⚡ Start Evaluation"**
+6. Click **"Start Evaluation"**
 7. Monitor real-time progress:
    - Phase 1: Extract Elements (scraping)
    - Phase 2: Evaluate Locales (LQA analysis)
@@ -130,17 +131,17 @@ Output: `outputs/lqa_audit_report_it-IT_xx-XX.json`
 ### Actions
 
 **Approve Fix:**
-- Click **"✓ Approve & Apply"**
+- Click **"Approve & Apply"**
 - Text updated in preview
 - Added to `outputs/approved_fixes_{locale}.json`
 
 **Reject Issue:**
-- Click **"✗ Reject"**
+- Click **"Reject"**
 - Logged to `outputs/rejected_issues_{locale}.json`
 - Card dismissed
 
 **Rebuild Templates:**
-- Click **"⚙️ Update Translations & Rebuild"**
+- Click **"Update Translations & Rebuild"**
 - Applies approved fixes to `locales/{locale}.json`
 - Regenerates `templates/index_{locale}.html`
 
@@ -157,7 +158,7 @@ Output: `outputs/lqa_audit_report_it-IT_xx-XX.json`
 ### TMX Match Display
 
 ```
-📚 Translation Memory Match (85% similarity)
+Translation Memory Match (85% similarity)
 TMX Source: "Calcio Storico Fiorentino"
 TMX Target: "Historic Florentine Football"
 Available in: en-US, de-DE, ja-JP
@@ -184,9 +185,9 @@ Edit `memory.xml`:
 **Before evaluation**, the dashboard shows:
 
 ```
-💰 Estimated Cost: $0.0063
+Estimated Cost: $0.0063
 ~29.8k tokens (25,772 input + 4,000 output)
-⚠️ Scraping phase required (~10s)
+Scraping phase required (~10s)
 ```
 
 **Cost factors:**
@@ -201,25 +202,11 @@ Edit `memory.xml`:
 
 ---
 
-## Model Selection
-
-Available models across providers:
-
-| Provider | Models | Use Case |
-|----------|--------|----------|
-| OpenAI | gpt-4o, gpt-4o-mini, gpt-3.5-turbo | General purpose, high quality |
-| Mistral | mistral-large, mistral-medium, mistral-small | European languages |
-| Meta | llama-3.1-70b, llama-3.1-8b | Open source, good quality/cost |
-| Microsoft | phi-3-medium, phi-3-mini | Fast, lightweight |
-| DeepSeek | deepseek-coder, deepseek-chat | Cheapest option |
-
----
-
 ## Project Structure
 
 ```
 L10N_Hackathon/
-├── locales/                    # Translation JSON files
+├── locales/                   # Translation JSON files
 │   ├── it-IT.json             # Source (Italian)
 │   ├── en-US.json             # Target locales
 │   ├── ja-JP.json
@@ -230,25 +217,25 @@ L10N_Hackathon/
 │   ├── index_it-IT.html       # Generated pages (with locale switcher)
 │   └── index_*.html           # One per locale
 │
-├── outputs/                    # LQA reports and fixes
+├── outputs/                   # LQA reports and fixes
 │   ├── lqa_audit_report_it-IT_en-US.json
 │   ├── approved_fixes_en-US.json
 │   └── rejected_issues_en-US.json
 │
-├── extracted_data/             # Scraped HTML content
+├── extracted_data/            # Scraped HTML content
 │   └── index_*.json
 │
 ├── dashboards/
 │   ├── server.py              # FastAPI backend
 │   └── index.html             # Dashboard UI
 │
-├── main.py                     # LQA evaluation pipeline
-├── generate_pages.py           # HTML template generator
-├── batch_parser.py             # HTML scraper
-├── align_elements.py           # Source-target alignment
-├── tmx_matcher.py              # Translation memory matching
-├── cost_estimator.py           # Token counting & pricing
-└── memory.xml                  # TMX translation memory
+├── main.py                    # LQA evaluation pipeline
+├── generate_pages.py          # HTML template generator
+├── batch_parser.py            # HTML scraper
+├── align_elements.py          # Source-target alignment
+├── tmx_matcher.py             # Translation memory matching
+├── cost_estimator.py          # Token counting & pricing
+└── memory.xml                 # TMX translation memory
 ```
 
 ---
@@ -377,31 +364,9 @@ python generate_pages.py
 
 ---
 
-## Demo Workflow
-
-**Perfect for presentations:**
-
-1. **Show existing reports** - Dashboard with 3 evaluated locales
-2. **Add new locale** - Create `locales/de-DE.json`
-3. **Estimate cost** - Click New Evaluation → see $0.003 estimate
-4. **Run evaluation** - Watch two-phase progress (Extract → Evaluate)
-5. **Review errors** - Click de-DE tab → see error cards with TMX matches
-6. **Approve fix** - "Historical Calcium Match" → "Historic Calcio"
-7. **Rebuild** - Click rebuild → see updated template
-8. **Check source** - Click it-IT (SOURCE) tab → see original Italian
-9. **Switch in browser** - Open generated page → click locale buttons
-
----
-
-## License
-
-MIT License - See LICENSE file
-
----
-
 ## Credits
 
-Built for L10N Hackathon 2026 - AI-powered translation quality assessment demonstration.
+Built for [L10N Hackathon 2026](https://custom.mt/mad-localization-hackathon/) - AI-powered translation quality assessment demonstration.
 
 **Stack:** Python, FastAPI, OpenAI API, TMX, Pydantic, Tailwind CSS
 
