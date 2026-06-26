@@ -1,0 +1,19 @@
+# Core Dependencies
+openai>=1.0.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+
+# HTML Parsing
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# HTTP and File Handling
+python-multipart>=0.0.6
+
+# Testing (optional, for development)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Logging (built-in, no external dependency needed)
+# json, os, sys, logging are all part of Python standard library
