@@ -13,7 +13,7 @@ End-to-end translation quality management system with AI-powered evaluation, int
 - **Locale Switcher** - Generated pages include language selection UI
 
 ## Demo
-10-minute live walkthrough: [link](https://drive.google.com/file/d/1hJxETF1zTptPlfZZpG3kATYSpgwiuzDT/view?usp=drive_link).
+10-minute live walkthrough: [link](https://youtu.be/71iVNqUczwY)
 
 ## Quick Start
 
