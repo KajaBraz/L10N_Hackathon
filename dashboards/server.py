@@ -506,87 +506,112 @@ def rebuild_localization_template(locale: str):
     Updates the locale JSON resource file with approved fixes,
     then runs generate_pages.py to regenerate the HTML templates.
     """
-    fixes_path = os.path.join(OUTPUT_DIR, f"approved_fixes_{locale}.json")
-    locale_json_path = os.path.join(LOCALES_DIR, f"{locale}.json")
-
-    if not os.path.exists(fixes_path):
-        raise HTTPException(status_code=400,
-                            detail=f"No approved fixes found for locale '{locale}'. Please approve at least one fix before rebuilding.")
-
-    if not os.path.exists(locale_json_path):
-        raise HTTPException(status_code=404,
-                            detail=f"Locale resource file not found: {locale_json_path}\nPlease ensure the locale JSON file exists in the locales directory.")
-
-    # 1. Load approved string adjustments
-    with open(fixes_path, "r", encoding="utf-8") as f:
-        approved_fixes = json.load(f)
-
-    # 2. Load current locale JSON data
-    with open(locale_json_path, "r", encoding="utf-8") as f:
-        locale_data = json.load(f)
-
-    applied_count = 0
-
-    # 3. Apply fixes to locale JSON structure
-    for fix in approved_fixes:
-        html_element_id = fix.get("html_element_id", "")
-        dom_path = fix.get("dom_path", "")
-        target_text = fix.get("target_text_snippet", fix.get("source_text", ""))
-        new_text = fix["approved_translation"]
-
-        # Map element to JSON key path
-        section_key, field_key = map_element_to_locale_key(html_element_id, dom_path, target_text, new_text,
-                                                           locale_data)
-
-        if section_key and field_key:
-            if section_key == "meta":
-                locale_data["meta"][field_key] = new_text
-                applied_count += 1
-                print(f"[LOCALE UPDATE] Updated meta.{field_key} = '{new_text}'")
-            elif section_key in locale_data.get("sections", {}):
-                locale_data["sections"][section_key][field_key] = new_text
-                applied_count += 1
-                print(f"[LOCALE UPDATE] Updated sections.{section_key}.{field_key} = '{new_text}'")
-        else:
-            print(
-                f"[LOCALE WARNING] Could not map fix for element '{html_element_id}' with target text '{target_text[:50]}...'")
-
-    # 4. Save updated locale JSON
-    with open(locale_json_path, "w", encoding="utf-8") as f:
-        json.dump(locale_data, f, indent=2, ensure_ascii=False)
-
-    print(f"[LOCALE WRITE-BACK SUCCESS] Updated {applied_count} strings in '{locale_json_path}'")
-
-    # 5. Run generate_pages.py to regenerate templates
     try:
-        # Change to parent directory to run the script
-        parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-        result = subprocess.run(
-            ["python", "generate_pages.py"],
-            cwd=parent_dir,
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
+        fixes_path = os.path.join(OUTPUT_DIR, f"approved_fixes_{locale}.json")
+        locale_json_path = os.path.join(LOCALES_DIR, f"{locale}.json")
 
-        if result.returncode == 0:
-            print(f"[TEMPLATE GENERATION SUCCESS] {result.stdout}")
-            return {
-                "status": "success",
-                "patched_elements": applied_count,
-                "locale": locale,
-                "template_generation_output": result.stdout.strip()
-            }
-        else:
-            print(f"[TEMPLATE GENERATION ERROR] {result.stderr}")
-            raise HTTPException(
-                status_code=500,
-                detail=f"Template generation failed: {result.stderr}"
+        if not os.path.exists(fixes_path):
+            raise HTTPException(status_code=400,
+                                detail=f"No approved fixes found for locale '{locale}'. Please approve at least one fix before rebuilding.")
+
+        if not os.path.exists(locale_json_path):
+            raise HTTPException(status_code=404,
+                                detail=f"Locale resource file not found: {locale_json_path}\nPlease ensure the locale JSON file exists in the locales directory.")
+
+        # 1. Load approved string adjustments
+        print(f"[REBUILD] Loading fixes from: {fixes_path}")
+        with open(fixes_path, "r", encoding="utf-8") as f:
+            approved_fixes = json.load(f)
+        print(f"[REBUILD] Loaded {len(approved_fixes)} fixes")
+
+        # 2. Load current locale JSON data
+        print(f"[REBUILD] Loading locale data from: {locale_json_path}")
+        with open(locale_json_path, "r", encoding="utf-8") as f:
+            locale_data = json.load(f)
+
+        applied_count = 0
+
+        # 3. Apply fixes to locale JSON structure
+        for fix in approved_fixes:
+            html_element_id = fix.get("html_element_id", "")
+            dom_path = fix.get("dom_path", "")
+            target_text = fix.get("target_text_snippet", fix.get("source_text", ""))
+            new_text = fix["approved_translation"]
+
+            print(f"[REBUILD] Processing fix: {fix.get('error_id')} - element: {html_element_id}")
+
+            # Map element to JSON key path
+            try:
+                section_key, field_key = map_element_to_locale_key(html_element_id, dom_path, target_text, new_text,
+                                                                   locale_data)
+            except Exception as e:
+                print(f"[REBUILD ERROR] Failed to map element: {e}")
+                import traceback
+                traceback.print_exc()
+                raise HTTPException(status_code=500, detail=f"Failed to map element for {fix.get('error_id')}: {str(e)}")
+
+            if section_key and field_key:
+                if section_key == "meta":
+                    locale_data["meta"][field_key] = new_text
+                    applied_count += 1
+                    print(f"[LOCALE UPDATE] Updated meta.{field_key} (length: {len(new_text)} chars)")
+                elif section_key in locale_data.get("sections", {}):
+                    locale_data["sections"][section_key][field_key] = new_text
+                    applied_count += 1
+                    print(f"[LOCALE UPDATE] Updated sections.{section_key}.{field_key} (length: {len(new_text)} chars)")
+            else:
+                print(
+                    f"[LOCALE WARNING] Could not map fix for element '{html_element_id}'")
+
+        # 4. Save updated locale JSON
+        print(f"[REBUILD] Saving updated locale data...")
+        with open(locale_json_path, "w", encoding="utf-8") as f:
+            json.dump(locale_data, f, indent=2, ensure_ascii=False)
+
+        print(f"[LOCALE WRITE-BACK SUCCESS] Updated {applied_count} strings in '{locale_json_path}'")
+
+        # 5. Run generate_pages.py to regenerate templates
+        print(f"[REBUILD] Running template generation...")
+        try:
+            # Change to parent directory to run the script
+            parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+            result = subprocess.run(
+                ["python", "generate_pages.py"],
+                cwd=parent_dir,
+                capture_output=True,
+                text=True,
+                timeout=30
             )
-    except subprocess.TimeoutExpired:
-        raise HTTPException(status_code=500, detail="Template generation timed out.")
+
+            if result.returncode == 0:
+                print(f"[TEMPLATE GENERATION SUCCESS] {result.stdout}")
+                return {
+                    "status": "success",
+                    "patched_elements": applied_count,
+                    "locale": locale,
+                    "template_generation_output": result.stdout.strip()
+                }
+            else:
+                print(f"[TEMPLATE GENERATION ERROR] {result.stderr}")
+                raise HTTPException(
+                    status_code=500,
+                    detail=f"Template generation failed: {result.stderr}"
+                )
+        except subprocess.TimeoutExpired:
+            raise HTTPException(status_code=500, detail="Template generation timed out.")
+        except Exception as e:
+            print(f"[REBUILD ERROR] Subprocess exception: {e}")
+            import traceback
+            traceback.print_exc()
+            raise HTTPException(status_code=500, detail=f"Failed to run template generation: {str(e)}")
+
+    except HTTPException:
+        raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to run template generation: {str(e)}")
+        print(f"[REBUILD FATAL ERROR] {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Rebuild failed: {str(e)}")
 
 
 if __name__ == "__main__":
