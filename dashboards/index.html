@@ -228,15 +228,22 @@
 
         async function initDashboard() {
             try {
+                // Get evaluated locales (for tabs)
                 const res = await fetch('/api/locales');
-                const locales = await res.json();
+                const evaluatedLocales = await res.json();
 
-                // Store available locales for evaluation panel
-                availableLocales = locales;
+                // Get all available locales (for evaluation modal)
+                try {
+                    const allRes = await fetch('/api/locales/available');
+                    availableLocales = await allRes.json();
+                } catch (err) {
+                    console.warn("Failed to load available locales, using evaluated locales", err);
+                    availableLocales = evaluatedLocales;
+                }
 
-                renderLocaleTabs(locales);
-                if (locales.length > 0) {
-                    switchToLocale(locales[0]);
+                renderLocaleTabs(evaluatedLocales);
+                if (evaluatedLocales.length > 0) {
+                    switchToLocale(evaluatedLocales[0]);
                 }
             } catch (err) {
                 console.error("Initialization pipeline broken:", err);
@@ -1133,10 +1140,27 @@
             document.getElementById('evaluation-complete').classList.remove('hidden');
         }
 
-        function closeEvaluationAndReload() {
+        async function closeEvaluationAndReload() {
             hideEvaluationPanel();
-            // Reload the dashboard to show new reports
-            location.reload();
+
+            // Re-fetch evaluated locales to pick up newly generated reports
+            try {
+                const res = await fetch('/api/locales');
+                const evaluatedLocales = await res.json();
+
+                // Re-render tabs with new locales
+                renderLocaleTabs(evaluatedLocales);
+
+                // Switch to the first newly evaluated locale if available
+                if (evaluatedLocales.length > 0) {
+                    // Find a locale that wasn't in the previous list (newly evaluated)
+                    const newLocale = evaluatedLocales[evaluatedLocales.length - 1];
+                    switchToLocale(newLocale);
+                }
+            } catch (err) {
+                console.error("Failed to refresh locales, reloading page", err);
+                location.reload();
+            }
         }
 
         document.addEventListener('DOMContentLoaded', initDashboard);

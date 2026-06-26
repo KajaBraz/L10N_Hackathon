@@ -92,6 +92,10 @@ def read_dashboard():
 
 @app.get("/api/locales")
 def get_available_locales():
+    """
+    Get locales that have been evaluated (have LQA reports).
+    Used for displaying tabs in the dashboard.
+    """
     search_pattern = os.path.join(OUTPUT_DIR, "lqa_audit_report_it-IT_*.json")
     found_files = glob.glob(search_pattern)
     locales = []
@@ -102,6 +106,30 @@ def get_available_locales():
             locales.append(parts)
     if not locales:
         return ["en-US", "de-DE"]  # Fallback for demo stability
+    return sorted(locales)
+
+
+@app.get("/api/locales/available")
+def get_all_available_locales():
+    """
+    Get all available target locales from the locales/ directory.
+    Used for evaluation modal to show which locales can be evaluated.
+    Excludes it-IT (source locale).
+    """
+    locales = []
+    search_pattern = os.path.join(LOCALES_DIR, "*.json")
+    found_files = glob.glob(search_pattern)
+
+    for file_path in found_files:
+        filename = os.path.basename(file_path)
+        locale = filename.replace(".json", "")
+        # Exclude source locale (it-IT)
+        if locale != "it-IT":
+            locales.append(locale)
+
+    if not locales:
+        return ["en-US", "ja-JP", "pl-PL"]  # Fallback
+
     return sorted(locales)
 
 

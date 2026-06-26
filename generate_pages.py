@@ -15,7 +15,18 @@ def render_page(locale_json_path, lang_code):
     # 3. Handle Currency Formatting
     currency_template = data['meta']['currency_format']
 
-    # 4. Perform direct string replacements (100% immune to CSS brace errors)
+    # 4. Determine active locale (for highlighting in switcher)
+    active_class = "active"
+    locale_actives = {
+        "{{ACTIVE_DE}}": active_class if lang_code == "de-DE" else "",
+        "{{ACTIVE_IT}}": active_class if lang_code == "it-IT" else "",
+        "{{ACTIVE_EN}}": active_class if lang_code == "en-US" else "",
+        "{{ACTIVE_JA}}": active_class if lang_code == "ja-JP" else "",
+        "{{ACTIVE_PL}}": active_class if lang_code == "pl-PL" else "",
+        "{{ACTIVE_PT}}": active_class if lang_code == "pt-BR" else "",
+    }
+
+    # 5. Perform direct string replacements (100% immune to CSS brace errors)
     replacements = {
         "{{LANG_CODE}}": lang_code,
         "{{META_TITLE}}": data['meta']['title'],
@@ -63,6 +74,9 @@ def render_page(locale_json_path, lang_code):
         "{{MUSICA_ALT}}": data['sections']['musica']['img_alt'],
         "{{MUSICA_PRICE}}": currency_template.format(price=data['sections']['musica']['price_value'])
     }
+
+    # Merge locale active states into replacements
+    replacements.update(locale_actives)
 
     # Apply all values to the code skeleton
     for key, val in replacements.items():

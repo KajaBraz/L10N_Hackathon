@@ -6,11 +6,41 @@
     <title>{{META_TITLE}}</title>
     <style>
         body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2520; }
-        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; }
+        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; position: relative; }
         header h1 { margin: 0; font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
         header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1em; }
-        .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
+        .promo-banner { background-color: #f39c12; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Locale switcher styles */
+        .locale-switcher { position: absolute; top: 20px; right: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+        .locale-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+        .locale-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+        .locale-btn.active {
+            background: rgba(255, 255, 255, 0.95);
+            color: #8a1c14;
+            border-color: rgba(255, 255, 255, 0.95);
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .locale-switcher { position: static; justify-content: center; margin-top: 15px; }
+        }
 
         .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
         .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
@@ -27,6 +57,17 @@
 <body>
 
     <header>
+        <div class="locale-switcher">
+            <a href="index_de-DE.html" class="locale-btn {{ACTIVE_DE}}" title="Deutsch">🇩🇪 DE</a>
+            <a href="index_en-US.html" class="locale-btn {{ACTIVE_EN}}" title="English">🇺🇸 EN</a>
+            <a href="index_it-IT.html" class="locale-btn {{ACTIVE_IT}}" title="Italiano">🇮🇹 IT</a>
+            <a href="index_ja-JP.html" class="locale-btn {{ACTIVE_JA}}" title="日本語">🇯🇵 JA</a>
+            <a href="index_pl-PL.html" class="locale-btn {{ACTIVE_PL}}" title="Polski">🇵🇱 PL</a>
+            <a href="index_pt-BR.html" class="locale-btn {{ACTIVE_PT}}" title="Portugues">🇧🇷 PT</a>
+        </div>
+
+        <br><br>
+
         <h1>{{META_TITLE}}</h1>
         <p>{{META_SUBTITLE}}</p>
     </header>
