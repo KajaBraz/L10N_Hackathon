@@ -32,9 +32,105 @@
     </header>
 
     <nav class="bg-gray-850 border-b border-gray-800 px-6 py-3 flex items-center gap-3 shadow-inner z-20">
-        <span class="text-xs font-mono font-bold uppercase tracking-wider text-gray-400 mr-2">Target Markets:</span>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-gray-400 mr-2">Target Locales:</span>
         <div id="locale-tabs-container" class="flex gap-2"></div>
+        <div class="ml-auto">
+            <button id="show-evaluation-btn" onclick="showEvaluationPanel()" class="bg-green-600 hover:bg-green-500 text-white font-bold px-4 py-1.5 rounded-lg text-xs tracking-wide shadow transition-all flex items-center gap-2 border border-green-400/20 active:scale-95">
+                ⚡ New Evaluation
+            </button>
+        </div>
     </nav>
+
+    <!-- Evaluation Panel (Modal) -->
+    <div id="evaluation-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-gray-800 rounded-xl shadow-2xl border border-gray-700 p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-white">Start New Evaluation</h2>
+                <button onclick="hideEvaluationPanel()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+            </div>
+
+            <div id="evaluation-setup" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-300 mb-2">Select Locales to Evaluate:</label>
+                    <div id="evaluation-locale-checkboxes" class="space-y-2 max-h-32 overflow-y-auto bg-gray-900 p-3 rounded border border-gray-700">
+                        <!-- Checkboxes will be populated here -->
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-300 mb-2">AI Model:</label>
+                    <select id="evaluation-model-select" onchange="updateCostEstimate()" class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-blue-500">
+                        <option value="">Loading models...</option>
+                    </select>
+                </div>
+
+                <div id="cost-estimate-box" class="hidden bg-purple-900/20 border border-purple-500/30 p-3 rounded text-xs">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-purple-300 font-semibold">💰 Estimated Cost:</span>
+                        <span id="cost-estimate-value" class="text-white font-bold text-sm">$0.00</span>
+                    </div>
+                    <div class="text-purple-300/70 text-[10px] mt-1">
+                        <span id="cost-estimate-tokens"></span>
+                    </div>
+                    <div id="cost-estimate-warning" class="hidden text-amber-400 text-[10px] mt-2 font-semibold">
+                        ⚠️ Scraping phase required (~10s)
+                    </div>
+                </div>
+
+                <div class="bg-blue-900/20 border border-blue-500/20 p-3 rounded text-xs text-blue-300">
+                    <strong>Note:</strong> Evaluation includes scraping and LLM analysis. Each locale takes ~30-60 seconds.
+                </div>
+
+                <button onclick="startEvaluation()" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg">
+                    ⚡ Start Evaluation
+                </button>
+            </div>
+
+            <div id="evaluation-progress" class="hidden space-y-4">
+                <div class="text-center">
+                    <div class="text-4xl mb-2" id="progress-icon">⚙️</div>
+                    <h3 class="text-lg font-bold text-white mb-1" id="progress-title">Evaluating...</h3>
+                    <p id="progress-status" class="text-sm text-gray-400">Starting evaluation...</p>
+                </div>
+
+                <!-- Phase indicator -->
+                <div class="flex items-center justify-center gap-3 text-xs">
+                    <div id="phase-scraping" class="flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-gray-600" id="phase-scraping-dot"></span>
+                        <span class="text-gray-500" id="phase-scraping-label">Extract Elements</span>
+                    </div>
+                    <div class="text-gray-600">→</div>
+                    <div id="phase-evaluating" class="flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-gray-600" id="phase-evaluating-dot"></span>
+                        <span class="text-gray-500" id="phase-evaluating-label">Evaluate Locales</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <div class="flex justify-between text-xs text-gray-400 mb-2">
+                        <span id="progress-text">0 / 0 completed</span>
+                        <span id="progress-percent">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3">
+                        <div id="progress-bar" class="bg-green-500 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div id="progress-locales" class="space-y-1 max-h-32 overflow-y-auto">
+                    <!-- Progress items will be added here -->
+                </div>
+            </div>
+
+            <div id="evaluation-complete" class="hidden text-center space-y-4">
+                <div class="text-5xl mb-2">🎉</div>
+                <h3 class="text-xl font-bold text-white">Evaluation Complete!</h3>
+                <p class="text-sm text-gray-400">Reports have been generated for all selected locales.</p>
+                <button onclick="closeEvaluationAndReload()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg">
+                    View Results
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="flex-1 flex overflow-hidden">
 
@@ -124,6 +220,9 @@
             try {
                 const res = await fetch('/api/locales');
                 const locales = await res.json();
+
+                // Store available locales for evaluation panel
+                availableLocales = locales;
 
                 renderLocaleTabs(locales);
                 if (locales.length > 0) {
@@ -690,7 +789,7 @@
                 const result = await response.json();
 
                 if (response.ok) {
-                    alert(`🎉 Success!\n\n✅ Updated ${result.patched_elements} translations\n✅ Locale: ${currentActiveLocale}\n✅ Regenerated templates\n\n${result.template_generation_output}`);
+                    alert(`🎉 Success!\n\n✅ Updated ${result.patched_elements} translation(s)\n✅ Locales: ${currentActiveLocale}\n✅ Regenerated templates`);
                 } else {
                     alert(`❌ Rebuild error: ${result.detail || "Verification failed."}`);
                 }
@@ -701,6 +800,262 @@
                 btn.innerText = originalText;
                 btn.className = "bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-lg text-xs tracking-wide shadow transition-all flex items-center gap-2 border border-blue-400/20 active:scale-95";
             }
+        }
+
+        // ==========================================
+        // EVALUATION PANEL FUNCTIONS
+        // ==========================================
+        let availableLocales = [];
+        let availableModels = [];
+        let evaluationTaskId = null;
+        let evaluationPollInterval = null;
+
+        async function loadAvailableModels() {
+            try {
+                const response = await fetch('/api/models');
+                const data = await response.json();
+                availableModels = data.models;
+
+                const select = document.getElementById('evaluation-model-select');
+                select.innerHTML = '';
+
+                // Group by provider
+                const byProvider = {};
+                availableModels.forEach(model => {
+                    if (!byProvider[model.provider]) byProvider[model.provider] = [];
+                    byProvider[model.provider].push(model);
+                });
+
+                // Add options grouped by provider
+                Object.keys(byProvider).sort().forEach(provider => {
+                    const group = document.createElement('optgroup');
+                    group.label = provider;
+                    byProvider[provider].forEach(model => {
+                        const option = document.createElement('option');
+                        option.value = model.id;
+                        option.textContent = model.name;
+                        group.appendChild(option);
+                    });
+                    select.appendChild(group);
+                });
+
+                // Set default to gpt-4o-mini
+                select.value = 'gpt-4o-mini';
+            } catch (err) {
+                console.error('Failed to load models:', err);
+            }
+        }
+
+        async function updateCostEstimate() {
+            const checkboxes = document.querySelectorAll('#evaluation-locale-checkboxes input[type="checkbox"]:checked');
+            const selectedLocales = Array.from(checkboxes).map(cb => cb.value);
+            const selectedModel = document.getElementById('evaluation-model-select').value;
+
+            if (selectedLocales.length === 0 || !selectedModel) {
+                document.getElementById('cost-estimate-box').classList.add('hidden');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/estimate-cost', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        locales: selectedLocales,
+                        model: selectedModel
+                    })
+                });
+
+                const estimate = await response.json();
+
+                // Show cost estimate
+                document.getElementById('cost-estimate-box').classList.remove('hidden');
+                document.getElementById('cost-estimate-value').textContent = `$${estimate.total_cost.toFixed(4)}`;
+                document.getElementById('cost-estimate-tokens').textContent =
+                    `~${(estimate.total_tokens / 1000).toFixed(1)}k tokens (${estimate.total_input_tokens.toLocaleString()} in + ${estimate.total_output_tokens.toLocaleString()} out)`;
+
+                // Show scraping warning if needed
+                const warningEl = document.getElementById('cost-estimate-warning');
+                if (estimate.scraping_phase_required) {
+                    warningEl.classList.remove('hidden');
+                } else {
+                    warningEl.classList.add('hidden');
+                }
+            } catch (err) {
+                console.error('Cost estimation failed:', err);
+            }
+        }
+
+        async function showEvaluationPanel() {
+            const modal = document.getElementById('evaluation-modal');
+            const setupDiv = document.getElementById('evaluation-setup');
+            const progressDiv = document.getElementById('evaluation-progress');
+            const completeDiv = document.getElementById('evaluation-complete');
+
+            // Reset to setup view
+            setupDiv.classList.remove('hidden');
+            progressDiv.classList.add('hidden');
+            completeDiv.classList.add('hidden');
+
+            // Load models if not already loaded
+            if (availableModels.length === 0) {
+                await loadAvailableModels();
+            }
+
+            // Populate checkboxes with change handler
+            const container = document.getElementById('evaluation-locale-checkboxes');
+            container.innerHTML = '';
+
+            availableLocales.forEach(locale => {
+                const div = document.createElement('div');
+                div.className = 'flex items-center gap-2';
+                div.innerHTML = `
+                    <input type="checkbox" id="eval-${locale}" value="${locale}" class="w-4 h-4" onchange="updateCostEstimate()">
+                    <label for="eval-${locale}" class="text-sm text-gray-300 cursor-pointer">${locale}</label>
+                `;
+                container.appendChild(div);
+            });
+
+            // Trigger initial cost estimate if any locales are checked
+            updateCostEstimate();
+
+            modal.classList.remove('hidden');
+        }
+
+        function hideEvaluationPanel() {
+            document.getElementById('evaluation-modal').classList.add('hidden');
+            if (evaluationPollInterval) {
+                clearInterval(evaluationPollInterval);
+                evaluationPollInterval = null;
+            }
+        }
+
+        async function startEvaluation() {
+            const checkboxes = document.querySelectorAll('#evaluation-locale-checkboxes input[type="checkbox"]:checked');
+            const selectedLocales = Array.from(checkboxes).map(cb => cb.value);
+            const selectedModel = document.getElementById('evaluation-model-select').value;
+
+            if (selectedLocales.length === 0) {
+                alert('Please select at least one locale to evaluate.');
+                return;
+            }
+
+            if (!selectedModel) {
+                alert('Please select a model.');
+                return;
+            }
+
+            // Switch to progress view
+            document.getElementById('evaluation-setup').classList.add('hidden');
+            document.getElementById('evaluation-progress').classList.remove('hidden');
+
+            // Reset phase indicators
+            document.getElementById('phase-scraping-dot').className = 'w-2 h-2 rounded-full bg-blue-500 animate-pulse';
+            document.getElementById('phase-scraping-label').className = 'text-blue-400 font-semibold';
+            document.getElementById('phase-evaluating-dot').className = 'w-2 h-2 rounded-full bg-gray-600';
+            document.getElementById('phase-evaluating-label').className = 'text-gray-500';
+
+            try {
+                const response = await fetch('/api/evaluate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        locales: selectedLocales,
+                        model: selectedModel
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    evaluationTaskId = result.task_id;
+                    // Start polling for progress
+                    pollEvaluationStatus();
+                } else {
+                    alert(`❌ Failed to start evaluation: ${result.detail}`);
+                    hideEvaluationPanel();
+                }
+            } catch (err) {
+                alert('❌ Failed to start evaluation: Network error');
+                hideEvaluationPanel();
+            }
+        }
+
+        async function pollEvaluationStatus() {
+            if (!evaluationTaskId) return;
+
+            try {
+                const response = await fetch(`/api/evaluate/status/${evaluationTaskId}`);
+                const status = await response.json();
+
+                // Update phase indicators
+                if (status.current_phase === 'scraping') {
+                    document.getElementById('phase-scraping-dot').className = 'w-2 h-2 rounded-full bg-blue-500 animate-pulse';
+                    document.getElementById('phase-scraping-label').className = 'text-blue-400 font-semibold';
+                    document.getElementById('progress-icon').textContent = '🔍';
+                    document.getElementById('progress-title').textContent = 'Extracting Elements...';
+                } else if (status.current_phase === 'evaluating' || status.scraping_complete) {
+                    document.getElementById('phase-scraping-dot').className = 'w-2 h-2 rounded-full bg-green-500';
+                    document.getElementById('phase-scraping-label').className = 'text-green-400';
+                    document.getElementById('phase-evaluating-dot').className = 'w-2 h-2 rounded-full bg-blue-500 animate-pulse';
+                    document.getElementById('phase-evaluating-label').className = 'text-blue-400 font-semibold';
+                    document.getElementById('progress-icon').textContent = '⚙️';
+                    document.getElementById('progress-title').textContent = 'Evaluating Locales...';
+                }
+
+                // Update progress bar
+                const progressPercent = Math.round(status.progress * 100);
+                document.getElementById('progress-bar').style.width = progressPercent + '%';
+                document.getElementById('progress-percent').innerText = progressPercent + '%';
+                document.getElementById('progress-text').innerText = `${status.completed} / ${status.total} locales`;
+
+                // Update status text
+                if (status.phase_status) {
+                    document.getElementById('progress-status').innerText = status.phase_status;
+                } else if (status.current_locale) {
+                    document.getElementById('progress-status').innerText = `Evaluating ${status.current_locale}...`;
+                }
+
+                // Update locale list
+                const progressLocales = document.getElementById('progress-locales');
+                progressLocales.innerHTML = '';
+                status.completed_locales.forEach(locale => {
+                    const div = document.createElement('div');
+                    div.className = 'text-xs flex items-center gap-2';
+                    const result = status.results[locale];
+                    const icon = result?.status === 'success' ? '✅' : '❌';
+                    div.innerHTML = `<span>${icon}</span><span class="text-gray-300">${locale}</span>`;
+                    progressLocales.appendChild(div);
+                });
+
+                // Check if complete
+                if (status.status === 'completed') {
+                    clearInterval(evaluationPollInterval);
+                    showEvaluationComplete();
+                } else if (status.status === 'failed') {
+                    clearInterval(evaluationPollInterval);
+                    alert('❌ Evaluation failed. Check server logs for details.');
+                    hideEvaluationPanel();
+                } else {
+                    // Continue polling
+                    if (!evaluationPollInterval) {
+                        evaluationPollInterval = setInterval(pollEvaluationStatus, 2000);
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to poll status:', err);
+            }
+        }
+
+        function showEvaluationComplete() {
+            document.getElementById('evaluation-progress').classList.add('hidden');
+            document.getElementById('evaluation-complete').classList.remove('hidden');
+        }
+
+        function closeEvaluationAndReload() {
+            hideEvaluationPanel();
+            // Reload the dashboard to show new reports
+            location.reload();
         }
 
         document.addEventListener('DOMContentLoaded', initDashboard);

@@ -3,17 +3,22 @@ import json
 import os
 import subprocess
 import sys
+import threading
+import uuid
+from datetime import datetime
+from typing import List, Dict, Optional
 
 # Add parent directory to path to import tmx_matcher
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from tmx_matcher import TMXParser, TMXMatcher, enrich_lqa_report_with_tmx
+from cost_estimator import estimate_evaluation_cost, get_available_models
 
 app = FastAPI(title="Boutique Italia - Content-Aware LQA Gateway")
 
@@ -39,6 +44,10 @@ TMX_FILE = os.path.join(PROJECT_ROOT, "memory.xml")  # TMX translation memory fi
 _tmx_parser = None
 _tmx_matcher = None
 
+# Global evaluation tasks tracker
+evaluation_tasks: Dict[str, Dict] = {}
+evaluation_lock = threading.Lock()
+
 
 class ApprovalPayload(BaseModel):
     locale: str
@@ -48,6 +57,17 @@ class ApprovalPayload(BaseModel):
     approved_translation: str
     html_element_id: str = ""
     target_text_snippet: str = ""
+
+
+class EvaluationRequest(BaseModel):
+    locales: List[str]
+    tmx_threshold: float = 0.4
+    model: Optional[str] = None  # Model selection
+
+
+class CostEstimationRequest(BaseModel):
+    locales: List[str]
+    model: str
 
 
 def get_tmx_parser():
@@ -548,7 +568,8 @@ def rebuild_localization_template(locale: str):
                 print(f"[REBUILD ERROR] Failed to map element: {e}")
                 import traceback
                 traceback.print_exc()
-                raise HTTPException(status_code=500, detail=f"Failed to map element for {fix.get('error_id')}: {str(e)}")
+                raise HTTPException(status_code=500,
+                                    detail=f"Failed to map element for {fix.get('error_id')}: {str(e)}")
 
             if section_key and field_key:
                 if section_key == "meta":
@@ -612,6 +633,240 @@ def rebuild_localization_template(locale: str):
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Rebuild failed: {str(e)}")
+
+
+def run_evaluation_for_locale(locale: str, task_id: str, model: Optional[str] = None, is_first: bool = False):
+    """
+    Run LQA evaluation for a single locale.
+
+    Note: main.py internally calls process_localization_templates() which scrapes
+    the HTML templates and creates extracted_data/index_{locale}.json files.
+    This happens on EVERY call to main.py, but it's fast (~3s) and idempotent.
+
+    For the first locale, we show "scraping" phase briefly, then switch to "evaluating".
+    """
+    try:
+        print(f"[EVALUATION] Starting evaluation for {locale} (task: {task_id})")
+
+        # Show scraping phase for first locale (main.py will do this internally)
+        if is_first:
+            with evaluation_lock:
+                evaluation_tasks[task_id]["current_locale"] = locale
+                evaluation_tasks[task_id]["current_phase"] = "scraping"
+                evaluation_tasks[task_id]["phase_status"] = f"Extracting elements (during {locale} evaluation)..."
+                evaluation_tasks[task_id]["status"] = "running"
+
+        # After a brief moment, switch to evaluating phase
+        with evaluation_lock:
+            evaluation_tasks[task_id]["current_locale"] = locale
+            evaluation_tasks[task_id]["current_phase"] = "evaluating"
+            evaluation_tasks[task_id]["phase_status"] = f"Evaluating {locale}..."
+            evaluation_tasks[task_id]["status"] = "running"
+            if is_first:
+                evaluation_tasks[task_id]["scraping_complete"] = True
+
+        # Run main.py evaluation logic
+        # This internally calls process_localization_templates() + alignment + LLM evaluation
+        parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+        # Build environment with model override if provided
+        env = {**os.environ, "TARGET_LOCALE": locale}
+        if model:
+            env["LLM_MODEL_NAME"] = model
+
+        result = subprocess.run(
+            ["python", "main.py"],
+            cwd=parent_dir,
+            env=env,
+            capture_output=True,
+            text=True,
+            timeout=300  # 5 minutes timeout
+        )
+
+        if result.returncode == 0:
+            print(f"[EVALUATION] Success for {locale}")
+            with evaluation_lock:
+                evaluation_tasks[task_id]["completed_locales"].append(locale)
+                evaluation_tasks[task_id]["results"][locale] = {"status": "success", "output": result.stdout}
+        else:
+            print(f"[EVALUATION] Failed for {locale}: {result.stderr}")
+            with evaluation_lock:
+                evaluation_tasks[task_id]["completed_locales"].append(locale)
+                evaluation_tasks[task_id]["results"][locale] = {"status": "error", "error": result.stderr}
+
+    except Exception as e:
+        print(f"[EVALUATION] Exception for {locale}: {e}")
+        with evaluation_lock:
+            evaluation_tasks[task_id]["completed_locales"].append(locale)
+            evaluation_tasks[task_id]["results"][locale] = {"status": "error", "error": str(e)}
+
+
+def run_evaluation_task(locales: List[str], task_id: str, model: Optional[str] = None):
+    """
+    Background task to evaluate multiple locales.
+
+    Architecture note:
+    - Each call to main.py internally runs process_localization_templates() (scraping)
+    - This extracts HTML content into extracted_data/index_{locale}.json files
+    - Scraping is fast (~3s) and idempotent (safe to run multiple times)
+    - Then main.py does alignment + LLM evaluation (~30-60s per locale)
+
+    We don't need a separate scraping phase because:
+    1. It's already built into main.py (line 70: process_localization_templates())
+    2. It's fast enough to not need separate tracking
+    3. Running it multiple times is safe (it just overwrites the same extracted files)
+
+    For UI purposes, we briefly show "scraping" during the first locale, then "evaluating".
+    """
+    try:
+        with evaluation_lock:
+            evaluation_tasks[task_id]["status"] = "running"
+            evaluation_tasks[task_id]["started_at"] = datetime.now().isoformat()
+
+        # Evaluate each locale
+        # The first locale will show scraping phase briefly (main.py does this internally)
+        for idx, locale in enumerate(locales):
+            is_first = (idx == 0)
+            run_evaluation_for_locale(locale, task_id, model, is_first=is_first)
+
+        with evaluation_lock:
+            evaluation_tasks[task_id]["status"] = "completed"
+            evaluation_tasks[task_id]["completed_at"] = datetime.now().isoformat()
+
+        print(f"[EVALUATION] Task {task_id} completed")
+
+    except Exception as e:
+        print(f"[EVALUATION] Task {task_id} failed: {e}")
+        with evaluation_lock:
+            evaluation_tasks[task_id]["status"] = "failed"
+            evaluation_tasks[task_id]["error"] = str(e)
+
+
+@app.get("/api/models")
+def get_available_models_list():
+    """
+    Get list of available models for evaluation.
+    """
+    try:
+        models = get_available_models()
+        return {
+            "models": models,
+            "total": len(models)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get models: {str(e)}")
+
+
+@app.post("/api/estimate-cost")
+def estimate_cost(request: CostEstimationRequest):
+    """
+    Estimate the cost of evaluating selected locales with a given model.
+    """
+    try:
+        extracted_dir = os.path.join(PROJECT_ROOT, "extracted_data")
+        estimate = estimate_evaluation_cost(
+            request.locales,
+            request.model,
+            extracted_dir
+        )
+        return estimate
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Cost estimation failed: {str(e)}")
+
+
+@app.post("/api/evaluate")
+async def start_evaluation(request: EvaluationRequest, background_tasks: BackgroundTasks):
+    """
+    Start evaluation for selected locales.
+    Runs main.py in the background for each locale.
+    """
+    if not request.locales:
+        raise HTTPException(status_code=400, detail="No locales selected")
+
+    # Generate unique task ID
+    task_id = str(uuid.uuid4())[:8]
+
+    # Initialize task tracking
+    with evaluation_lock:
+        evaluation_tasks[task_id] = {
+            "task_id": task_id,
+            "locales": request.locales,
+            "total": len(request.locales),
+            "completed_locales": [],
+            "current_locale": None,
+            "current_phase": "starting",
+            "phase_status": "Initializing...",
+            "scraping_complete": False,
+            "status": "starting",
+            "model": request.model or os.environ.get("LLM_MODEL_NAME", "gpt-4o-mini"),
+            "created_at": datetime.now().isoformat(),
+            "started_at": None,
+            "completed_at": None,
+            "results": {}
+        }
+
+    # Start background task
+    background_tasks.add_task(run_evaluation_task, request.locales, task_id, request.model)
+
+    print(f"[EVALUATION] Started task {task_id} for locales: {request.locales}, model: {request.model}")
+
+    return {
+        "task_id": task_id,
+        "status": "started",
+        "locales": request.locales,
+        "model": request.model,
+        "message": f"Evaluation started for {len(request.locales)} locale(s)"
+    }
+
+
+@app.get("/api/evaluate/status/{task_id}")
+def get_evaluation_status(task_id: str):
+    """Get the status of an evaluation task"""
+    with evaluation_lock:
+        if task_id not in evaluation_tasks:
+            raise HTTPException(status_code=404, detail="Task not found")
+
+        task = evaluation_tasks[task_id]
+
+        # Calculate progress with two phases
+        # Phase 1 (scraping): 0-10% of total progress
+        # Phase 2 (evaluation): 10-100% of total progress (split equally per locale)
+        if task.get("current_phase") == "scraping":
+            progress = 0.05  # 5% during scraping
+        elif task.get("scraping_complete"):
+            # Scraping done, now evaluating locales
+            locale_progress = len(task["completed_locales"]) / task["total"] if task["total"] > 0 else 0
+            progress = 0.10 + (locale_progress * 0.90)  # 10% base + 90% for locales
+        else:
+            progress = 0.0
+
+        return {
+            "task_id": task_id,
+            "status": task["status"],
+            "progress": round(progress, 2),
+            "current_phase": task.get("current_phase", "starting"),
+            "phase_status": task.get("phase_status", "Initializing..."),
+            "scraping_complete": task.get("scraping_complete", False),
+            "current_locale": task["current_locale"],
+            "completed": len(task["completed_locales"]),
+            "total": task["total"],
+            "completed_locales": task["completed_locales"],
+            "model": task.get("model", "N/A"),
+            "results": task["results"],
+            "created_at": task["created_at"],
+            "started_at": task["started_at"],
+            "completed_at": task["completed_at"]
+        }
+
+
+@app.get("/api/evaluate/tasks")
+def list_evaluation_tasks():
+    """List all evaluation tasks"""
+    with evaluation_lock:
+        return {
+            "tasks": list(evaluation_tasks.values()),
+            "total": len(evaluation_tasks)
+        }
 
 
 if __name__ == "__main__":

@@ -1,3 +1,4 @@
+import io
 import json
 import os
 from typing import List, Literal, Optional
@@ -161,7 +162,7 @@ def run_lqa_pipeline(target_locale_key: str = "en-US", enable_tmx_matching: bool
         # ==========================================
         # 6. SAVE RUNTIME ARTIFACTS
         # ==========================================
-        output_dir = "output"
+        output_dir = "outputs"
         os.makedirs(output_dir, exist_ok=True)
         report_path = os.path.join(output_dir, f"lqa_audit_report_it-IT_{target_locale_key}.json")
 
@@ -183,11 +184,10 @@ if __name__ == "__main__":
 
     # Fix encoding issues on Windows console
     if sys.platform == 'win32':
-        import io
-
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
-    target_locale = 'en-US'
+    # Get target locale from environment variable (for dashboard integration) or default
+    target_locale = os.environ.get('TARGET_LOCALE', 'en-US')
 
     run_lqa_pipeline(target_locale, enable_tmx_matching=True, tmx_file="memory.xml")
