@@ -87,7 +87,15 @@ def get_tmx_parser():
 def read_dashboard():
     if not os.path.exists("index.html"):
         raise HTTPException(status_code=404, detail="index.html not found.")
-    return FileResponse("index.html")
+    # Disable caching to ensure browser always gets latest version
+    return FileResponse(
+        "index.html",
+        headers={
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0"
+        }
+    )
 
 
 @app.get("/api/locales")
@@ -645,7 +653,7 @@ def rebuild_localization_template(locale: str):
             # Change to parent directory to run the script
             parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
             result = subprocess.run(
-                ["python", "generate_pages.py"],
+                [sys.executable, "generate_pages.py"],
                 cwd=parent_dir,
                 capture_output=True,
                 text=True,
@@ -723,7 +731,7 @@ def run_evaluation_for_locale(locale: str, task_id: str, model: Optional[str] = 
             env["LLM_MODEL_NAME"] = model
 
         result = subprocess.run(
-            ["python", "main.py"],
+            [sys.executable, "main.py"],
             cwd=parent_dir,
             env=env,
             capture_output=True,

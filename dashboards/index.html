@@ -161,7 +161,7 @@
                     <p id="emulated-site-subtitle" class="text-xs opacity-90 mt-1 max-w-xl mx-auto font-sans leading-relaxed">Loading context...</p>
                 </div>
 
-                <div id="emulated-promo-banner" class="hidden relative bg-[#f39c12] text-white text-center py-3.5 px-12 font-bold text-[0.95em] shadow-inner select-none transition-all duration-300 border-b border-transparent"></div>
+                <div id="emulated-promo-banner" class="hidden relative bg-[#f39c12] text-black text-center py-3.5 px-12 font-bold text-[0.95em] shadow-inner select-none transition-all duration-300 border-b border-transparent"></div>
 
                 <div class="p-6 grid grid-cols-2 gap-4 flex-1 bg-[#fcfbfa]">
 
@@ -266,7 +266,7 @@
         function clearViewportGrid() {
             const promoBanner = document.getElementById("emulated-promo-banner");
             if (promoBanner) {
-                promoBanner.className = "hidden relative bg-[#f39c12] text-white text-center py-3.5 px-12 font-bold text-[0.95em] shadow-inner select-none transition-all duration-300 border-b border-transparent";
+                promoBanner.className = "hidden relative bg-[#f39c12] text-black text-center py-3.5 px-12 font-bold text-[0.95em] shadow-inner select-none transition-all duration-300 border-b border-transparent";
                 promoBanner.innerText = "";
                 // Clear inline styles (error highlighting)
                 promoBanner.style.backgroundColor = "";
@@ -1141,6 +1141,10 @@
         }
 
         async function closeEvaluationAndReload() {
+            // Store which locales were just evaluated (from the checkboxes that were checked)
+            const checkboxes = document.querySelectorAll('#evaluation-locale-checkboxes input[type="checkbox"]:checked');
+            const justEvaluatedLocales = Array.from(checkboxes).map(cb => cb.value);
+
             hideEvaluationPanel();
 
             // Re-fetch evaluated locales to pick up newly generated reports
@@ -1151,11 +1155,19 @@
                 // Re-render tabs with new locales
                 renderLocaleTabs(evaluatedLocales);
 
-                // Switch to the first newly evaluated locale if available
+                // Switch to one of the newly evaluated locales if available
                 if (evaluatedLocales.length > 0) {
-                    // Find a locale that wasn't in the previous list (newly evaluated)
-                    const newLocale = evaluatedLocales[evaluatedLocales.length - 1];
-                    switchToLocale(newLocale);
+                    // Find the first locale that was just evaluated and is now in the evaluated list
+                    let localeToShow = null;
+                    for (const locale of justEvaluatedLocales) {
+                        if (evaluatedLocales.includes(locale)) {
+                            localeToShow = locale;
+                            break;
+                        }
+                    }
+
+                    // If we found a newly evaluated locale, show it; otherwise show the first available
+                    switchToLocale(localeToShow || evaluatedLocales[0]);
                 }
             } catch (err) {
                 console.error("Failed to refresh locales, reloading page", err);
