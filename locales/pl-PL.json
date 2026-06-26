@@ -38,10 +38,22 @@
       "price_value": "320,00"
     },
     "esperienze": {
-      "title": "Doświadczenia: Neapolitański Ekspres",
-      "description": "Dużo więcej niż napój, prawdziwy kult społeczny. Odkryj tajemnicę kawy w Neapolu, wyciśniętej do reguły sztuki z klasyczną cuccumella lub tradycyjną moka. Krótki, gęsty ekspres podawany wrzący.",
-      "img_alt": "Parująca filiżanka kawy z gęstą śmietanką na ladzie baru",
-      "price_value": "1,20"
+      "title": "Doświadczenia: Drapacze chmur w Mediolanie",
+      "description": "Podziwiaj futurystyczną twarz stolicy designu i mody. Spaceruj wśród futurystycznych wież CityLife, daj się oczarować nagradzanemu Pionowemu Lasowi i ciesz się glamourowym aperitifem podziwiając panoramę, która na nowo definiuje miasto w cieniu Małej Madonny.",
+      "img_alt": "Nowoczesne drapacze chmur na Placu Gae Aulenti oświetlone na niebie mediolańskiego zachodu słońca",
+      "price_value": "180,00"
+    },
+    "tradizione": {
+      "title": "Rzemiosło: Żłobki w Neapolu",
+      "description": "Zanurz się w magicznej i ponadczasowej atmosferze ulicy Świętego Grzegorza Ormiańskiego. Odkryj sekrety historycznych sklepów, w których mistrzowie żłobkowi ręcznie modelują pasterzy z ugotowanej ziemi, podziwiająco stapiając świętą dewocję z ironią partyzanckiego folkloru.",
+      "img_alt": "Kolorowe detale rzemieślniczych figurek wystawionych w historycznym sklepie w Rozpruwaczu Neapolu",
+      "price_value": "350,00"
+    },
+    "scienza": {
+      "title": "Nauka: Bolonia, europejski hub AI i Big Data",
+      "description": "Odkryj silnik technologiczny, który gipsuje przyszłość. Odwiedź futurystyczny Technobiegun w Bolonii, siedzibę superkomputera Leonardo, gdzie starożytna tradycja akademicka 'Uczonej' łączy się ze strażniczymi badaniami na skalę globalną.",
+      "img_alt": "Korytarze technologiczne i światła serwerów superkomputera wewnątrz Technobieguna",
+      "price_value": "150,00"
     },
     "macchine": {
       "title": "Silniki: Dolina Motorowa Modeny",

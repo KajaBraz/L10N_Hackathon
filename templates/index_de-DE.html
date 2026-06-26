@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Italien - Große Erlebnisse und Traditionen</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2520; }
+        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; position: relative; }
+        header h1 { margin: 0; font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
+        header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1em; }
+        .promo-banner { background-color: #f39c12; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Locale switcher styles */
+        .locale-switcher { position: absolute; top: 20px; right: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+        .locale-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+        .locale-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+        .locale-btn.active {
+            background: rgba(255, 255, 255, 0.95);
+            color: #8a1c14;
+            border-color: rgba(255, 255, 255, 0.95);
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .locale-switcher { position: static; justify-content: center; margin-top: 15px; }
+        }
+
+        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .card-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #ebdcd0; }
+        .card h2 { color: #8a1c14; margin-top: 0; font-size: 1.4em; border-bottom: 2px solid #f5ece5; padding-bottom: 8px; }
+        .card p { line-height: 1.6; font-size: 1.02em; color: #4a3f35; margin-bottom: 20px; }
+        .meta-box { background-color: #faf6f2; border-left: 4px solid #b83227; padding: 12px 16px; font-size: 0.9em; box-sizing: border-box; }
+        .meta-item { font-weight: bold; color: #7a6e65; display: block; margin-bottom: 4px; }
+        .meta-price { font-weight: bold; color: #b83227; font-size: 1.15em; display: block; text-align: right; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="locale-switcher">
+            <a href="index_de-DE.html" class="locale-btn active" title="Deutsch">🇩🇪 DE</a>
+            <a href="index_en-US.html" class="locale-btn " title="English">🇺🇸 EN</a>
+            <a href="index_it-IT.html" class="locale-btn " title="Italiano">🇮🇹 IT</a>
+            <a href="index_ja-JP.html" class="locale-btn " title="日本語">🇯🇵 JA</a>
+            <a href="index_pl-PL.html" class="locale-btn " title="Polski">🇵🇱 PL</a>
+            <a href="index_pt-BR.html" class="locale-btn " title="Portugues">🇧🇷 PT</a>
+        </div>
+
+        <br><br>
+
+        <h1>Boutique Italien - Große Erlebnisse und Traditionen</h1>
+        <p>Erkunden Sie die authentische Seele der Halbinsel durch ihre kulturellen Abzeichen.</p>
+    </header>
+
+    <div class="promo-banner" id="promo-container">
+        <span id="promo-label">Spezielles Frühvogel-Angebot gültig bis:</span>
+        <span id="promo-date" class="date-highlight">15/08/2026</span>
+    </div>
+
+    <div class="container">
+        <main class="section-grid">
+
+            <article class="card" id="natura">
+                <div class="card-content">
+                    <div>
+                        <h2>Natur: Die Wunder der Äolischen Inseln</h2>
+                        <p>Ein einzigartiger vulkanischer Archipel auf der Welt. Erkunden Sie Lipari, bewundern Sie die spektakulären nächtlichen Erkundungen des Vulkans und tauchen Sie in die Schwefelschlämme des Vulkans für ein regenerierendes Erlebnis ein.</p>
+                    </div>
+                    <img class="card-img" src="images/isole_eolie.png" alt="Der Sonnenuntergang auf dem kristallinen Meer der Inseln vor Sizilien">
+                    <div class="meta-box">
+                        <span class="meta-item" id="natura_alt"><em>"Der Sonnenuntergang auf dem kristallinen Meer der Inseln vor Sizilien"</em></span>
+                        <span class="meta-price" id="natura_price">€1450,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="palio">
+                <div class="card-content">
+                    <div>
+                        <h2>Events: Das Palio von Siena</h2>
+                        <p>Entdecken Sie die zeitlose Magie von Siena. Leben Sie die historische Rivalität zwischen den Laden-Bezirken, gehen Sie inmitten der mittelalterlichen Nachbarschaften in Partei und erleben Sie das legendäre Rennen der Barbiere, geführt von der Autorität des Movers auf dem großen Glas.</p>
+                    </div>
+                    <img class="card-img" src="images/palio_siena.png" alt="Die parteiende Menge auf dem Feldplatz während der historischen Parade">
+                    <div class="meta-box">
+                        <span class="meta-item" id="palio_alt"><em>"Die parteiende Menge auf dem Feldplatz während der historischen Parade"</em></span>
+                        <span class="meta-price" id="palio_price">€2500,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="calcio">
+                <div class="card-content">
+                    <div>
+                        <h2>Sport: Italienische Leidenschaft Kalzium</h2>
+                        <p>Erleben Sie die elektrisierende Atmosphäre der Serie A im San Siro. Folgen Sie den Rot-und-Schwarzen und den Weiß-und-Schwarzen, während sie sich auf dem Spielrechteck in einem atemberaubenden Match herausfordern, das in der letzten Sekunde in der vollen Cesarini-Zone entschieden wird!</p>
+                    </div>
+                    <img class="card-img" src="images/calcio_san_siro.png" alt="Die Fans im Stadion, die eine spektakuläre Choreografie aussetzen">
+                    <div class="meta-box">
+                        <span class="meta-item" id="calcio_alt"><em>"Die Fans im Stadion, die eine spektakuläre Choreografie aussetzen"</em></span>
+                        <span class="meta-price" id="calcio_price">€120,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="film">
+                <div class="card-content">
+                    <div>
+                        <h2>Kino: Das Rimini von Federico Fellini</h2>
+                        <p>Verfolgen Sie die Orte des fellinischen Imaginären in Rimini zurück. Erleben Sie die traumhaften Atmosphären des Meisterwerks '8 und ein halbes' und jenen nostalgischen Arcord der romagnolischen Jugend wieder, der die Geschichte des Weltkinos markiert hat.</p>
+                    </div>
+                    <img class="card-img" src="images/rimini_cinema.png" alt="Das berühmte Fulgor-Kino, restauriert im Herzen der Stadt">
+                    <div class="meta-box">
+                        <span class="meta-item" id="film_alt"><em>"Das berühmte Fulgor-Kino, restauriert im Herzen der Stadt"</em></span>
+                        <span class="meta-price" id="film_price">€450,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="scienza">
+                <div class="card-content">
+                    <div>
+                        <h2>Wissenschaft: Bologna, europäischer Hub für KI und Big Data</h2>
+                        <p>Entdecken Sie den technologischen Motor, der die Zukunft gipst. Besuchen Sie den futuristischen Techno-Pol von Bologna, Heimat des Supercomputers Leonardo, wo die alte akademische Tradition der 'Gelehrten' sich mit der Avantgarde-Forschung auf globaler Ebene vereint.</p>
+                    </div>
+                    <img class="card-img" src="images/bologna_hub.png" alt="Die technologischen Korridore und die Lichter der Server des Supercomputers innerhalb des Techno-Pols">
+                    <div class="meta-box">
+                        <span class="meta-item" id="scienza_alt"><em>"Die technologischen Korridore und die Lichter der Server des Supercomputers innerhalb des Techno-Pols"</em></span>
+                        <span class="meta-price" id="scienza_price">€150,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="macchine">
+                <div class="card-content">
+                    <div>
+                        <h2>Motoren: Das Motor Valley von Modena</h2>
+                        <p>Treten Sie in das schlagende Herz der globalen Automobiltechnik ein. In Modena können Sie dem Brüllen der Motoren der Rennwagen des Tänzelnden Ponys lauschen und die Museen der schnellsten Superautos des Planeten erkunden.</p>
+                    </div>
+                    <img class="card-img" src="images/modena_macchine.png" alt="Ein flammend rotes Sportauto, ausgestellt vor dem Enzo-Ferrari-Museum">
+                    <div class="meta-box">
+                        <span class="meta-item" id="macchine_alt"><em>"Ein flammend rotes Sportauto, ausgestellt vor dem Enzo-Ferrari-Museum"</em></span>
+                        <span class="meta-price" id="macchine_price">€1850,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="tradizione">
+                <div class="card-content">
+                    <div>
+                        <h2>Handwerk: Die Krippen von Neapel</h2>
+                        <p>Tauchen Sie ein in die magische und zeitlose Atmosphäre der Sankt-Gregor-der-Armenier-Straße. Entdecken Sie die Geheimnisse der historischen Läden, in denen die Krippenmeister Hirten aus gekochter Erde von Hand modellieren und dabei die heilige Hingabe bewundernswert mit der Ironie der parthenopeischen Folklore verschmelzen.</p>
+                    </div>
+                    <img class="card-img" src="images/napoli_presepe.png" alt="Die farbigen Details der handwerklichen Statuen, ausgestellt in einem historischen Laden des Neapel-Spalters">
+                    <div class="meta-box">
+                        <span class="meta-item" id="tradizione_alt"><em>"Die farbigen Details der handwerklichen Statuen, ausgestellt in einem historischen Laden des Neapel-Spalters"</em></span>
+                        <span class="meta-price" id="tradizione_price">€950,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="esperienze">
+                <div class="card-content">
+                    <div>
+                        <h2>Erlebnisse: Die Wolkenkratzer von Mailand</h2>
+                        <p>Bewundern Sie das futuristische Gesicht der Hauptstadt des Designs und der Mode. Spazieren Sie zwischen den zukunftsweisenden Türmen von CityLife, lassen Sie sich vom preisgekrönten Vertikalen Wald verzaubern und genießen Sie einen glamourösen Aperitif, während Sie die Skyline bewundern, die die Stadt im Schatten der kleinen Madonna neu definiert.</p>
+                    </div>
+                    <img class="card-img" src="images/milano_grattacieli.png" alt="Die modernen Wolkenkratzer des Gae-Aulenti-Platzes, erleuchtet im Himmel des mailändischen Sonnenuntergangs">
+                    <div class="meta-box">
+                        <span class="meta-item" id="esperienze_alt"><em>"Die modernen Wolkenkratzer des Gae-Aulenti-Platzes, erleuchtet im Himmel des mailändischen Sonnenuntergangs"</em></span>
+                        <span class="meta-price" id="esperienze_price">€180,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="musica">
+                <div class="card-content">
+                    <div>
+                        <h2>Musik: Das Sanremo-Festival</h2>
+                        <p>Der Tempel des italienischen Liedes. Leben Sie die am meisten erwartete Woche des Jahres im Ariston-Theater, wo die Bigs der italienischen Musik und neue Vorschläge sich auf der Bühne herausfordern, die internationale Mythen gestartet hat.</p>
+                    </div>
+                    <img class="card-img" src="images/sanremo.png" alt="Die beleuchtete Fassade des Ariston-Theaters während der Festivalwoche">
+                    <div class="meta-box">
+                        <span class="meta-item" id="musica_alt"><em>"Die beleuchtete Fassade des Ariston-Theaters während der Festivalwoche"</em></span>
+                        <span class="meta-price" id="musica_price">€950,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="feste">
+                <div class="card-content">
+                    <div>
+                        <h2>Feiertage: Das Ritual des Eisernen Augusts</h2>
+                        <p>Schließen Sie sich der Sommerparty par excellence an. Der 15. August in Italien bedeutet Grills in dem Berg, Lagerfeuer am Strand, Ausflüge außerhalb der Tür nach Riccione und totales Relax unter der Mittelmoorsonne.</p>
+                    </div>
+                    <img class="card-img" src="images/ferragosto.png" alt="Gepackter Strand und farbige Regenschirme während der Mittsommerparty">
+                    <div class="meta-box">
+                        <span class="meta-item" id="feste_alt"><em>"Gepackter Strand und farbige Regenschirme während der Mittsommerparty"</em></span>
+                        <span class="meta-price" id="feste_price">€320,00</span>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+    </div>
+
+</body>
+</html>

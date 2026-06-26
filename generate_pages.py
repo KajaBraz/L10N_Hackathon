@@ -72,7 +72,17 @@ def render_page(locale_json_path, lang_code):
         "{{MUSICA_TITLE}}": data['sections']['musica']['title'],
         "{{MUSICA_DESC}}": data['sections']['musica']['description'],
         "{{MUSICA_ALT}}": data['sections']['musica']['img_alt'],
-        "{{MUSICA_PRICE}}": currency_template.format(price=data['sections']['musica']['price_value'])
+        "{{MUSICA_PRICE}}": currency_template.format(price=data['sections']['musica']['price_value']),
+
+        "{{SCIENZA_TITLE}}": data['sections']['scienza']['title'],
+        "{{SCIENZA_DESC}}": data['sections']['scienza']['description'],
+        "{{SCIENZA_ALT}}": data['sections']['scienza']['img_alt'],
+        "{{SCIENZA_PRICE}}": currency_template.format(price=data['sections']['scienza']['price_value']),
+
+        "{{TRADIZIONE_TITLE}}": data['sections']['tradizione']['title'],
+        "{{TRADIZIONE_DESC}}": data['sections']['tradizione']['description'],
+        "{{TRADIZIONE_ALT}}": data['sections']['tradizione']['img_alt'],
+        "{{TRADIZIONE_PRICE}}": currency_template.format(price=data['sections']['musica']['price_value'])
     }
 
     # Merge locale active states into replacements

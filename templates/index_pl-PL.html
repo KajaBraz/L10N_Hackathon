@@ -6,11 +6,41 @@
     <title>Butik Włochy - Wielkie Doświadczenia i Tradycje</title>
     <style>
         body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfbfa; color: #2c2520; }
-        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; }
+        header { background: linear-gradient(135deg, #8a1c14, #b83227); color: #ffffff; padding: 40px 20px; text-align: center; position: relative; }
         header h1 { margin: 0; font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
         header p { margin: 10px 0 0 0; opacity: 0.9; font-size: 1.1em; }
-        .promo-banner { background-color: #f39c12; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
+        .promo-banner { background-color: #f39c12; text-align: center; padding: 12px; font-weight: bold; font-size: 0.95em; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Locale switcher styles */
+        .locale-switcher { position: absolute; top: 20px; right: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+        .locale-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+        .locale-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+        .locale-btn.active {
+            background: rgba(255, 255, 255, 0.95);
+            color: #8a1c14;
+            border-color: rgba(255, 255, 255, 0.95);
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .locale-switcher { position: static; justify-content: center; margin-top: 15px; }
+        }
 
         .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
         .card { background: #ffffff; border: 1px solid #ebdcd0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
@@ -27,6 +57,17 @@
 <body>
 
     <header>
+        <div class="locale-switcher">
+            <a href="index_de-DE.html" class="locale-btn " title="Deutsch">🇩🇪 DE</a>
+            <a href="index_en-US.html" class="locale-btn " title="English">🇺🇸 EN</a>
+            <a href="index_it-IT.html" class="locale-btn " title="Italiano">🇮🇹 IT</a>
+            <a href="index_ja-JP.html" class="locale-btn " title="日本語">🇯🇵 JA</a>
+            <a href="index_pl-PL.html" class="locale-btn active" title="Polski">🇵🇱 PL</a>
+            <a href="index_pt-BR.html" class="locale-btn " title="Portugues">🇧🇷 PT</a>
+        </div>
+
+        <br><br>
+
         <h1>Butik Włochy - Wielkie Doświadczenia i Tradycje</h1>
         <p>Odkryj autentyczną duszę półwyspu poprzez jego kulturowe odznaki.</p>
     </header>
@@ -39,13 +80,27 @@
     <div class="container">
         <main class="section-grid">
 
+            <article class="card" id="natura">
+                <div class="card-content">
+                    <div>
+                        <h2>Natura: Cuda Wysp Eolskich</h2>
+                        <p>Unikalny archipelag wulkaniczny na świecie. Eksploruj Lipari, podziwiaj spektakularne nocne eksploracje wulkanu i zanurkuj w siarkowych błotach wulkanu dla regenerującego doświadczenia.</p>
+                    </div>
+                    <img class="card-img" src="images/isole_eolie.png" alt="Zachód słońca nad krystalicznym morzem wysp przed Sycylią">
+                    <div class="meta-box">
+                        <span class="meta-item" id="natura_alt"><em>"Zachód słońca nad krystalicznym morzem wysp przed Sycylią"</em></span>
+                        <span class="meta-price" id="natura_price">€1450,00</span>
+                    </div>
+                </div>
+            </article>
+
             <article class="card" id="palio">
                 <div class="card-content">
                     <div>
                         <h2>Wydarzenia: Palio w Sienie</h2>
                         <p>Odkryj ponadczasową magię Sieny. Żyj historyczną rywalizacją między Sklepowymi Dzielnicami, spaceruj wśród średniowiecznych sąsiedztw w imprezie i bądź świadkiem legendarnego wyścigu fryzjerów, prowadzonego przez autorytet poruszacza na dużym szkle.</p>
                     </div>
-                    <img class="card-img" src="images/palio_siena.jpg" alt="Imprezujący tłum na Placu Pola podczas historycznej parady">
+                    <img class="card-img" src="images/palio_siena.png" alt="Imprezujący tłum na Placu Pola podczas historycznej parady">
                     <div class="meta-box">
                         <span class="meta-item" id="palio_alt"><em>"Imprezujący tłum na Placu Pola podczas historycznej parady"</em></span>
                         <span class="meta-price" id="palio_price">€2500,00</span>
@@ -59,24 +114,10 @@
                         <h2>Sport: Włoska Pasja Wapń</h2>
                         <p>Żyj elektryzującą atmosferą Serii A na San Siro. Śledź czerwono-czarnych i biało-czarnych, gdy wyzywają się na prostokącie gry w zapierającym dech w piersiach meczu, rozstrzygniętym w ostatniej sekundzie w pełnej Strefie Cesarini!</p>
                     </div>
-                    <img class="card-img" src="images/calcio_san_siro.jpg" alt="Fani na stadionie eksponujący spektakularną choreografię">
+                    <img class="card-img" src="images/calcio_san_siro.png" alt="Fani na stadionie eksponujący spektakularną choreografię">
                     <div class="meta-box">
                         <span class="meta-item" id="calcio_alt"><em>"Fani na stadionie eksponujący spektakularną choreografię"</em></span>
                         <span class="meta-price" id="calcio_price">€120,00</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card" id="natura">
-                <div class="card-content">
-                    <div>
-                        <h2>Natura: Cuda Wysp Eolskich</h2>
-                        <p>Unikalny archipelag wulkaniczny na świecie. Eksploruj Lipari, podziwiaj spektakularne nocne eksploracje wulkanu i zanurkuj w siarkowych błotach wulkanu dla regenerującego doświadczenia.</p>
-                    </div>
-                    <img class="card-img" src="images/eolie_islands.jpg" alt="Zachód słońca nad krystalicznym morzem wysp przed Sycylią">
-                    <div class="meta-box">
-                        <span class="meta-item" id="natura_alt"><em>"Zachód słońca nad krystalicznym morzem wysp przed Sycylią"</em></span>
-                        <span class="meta-price" id="natura_price">€1450,00</span>
                     </div>
                 </div>
             </article>
@@ -87,7 +128,7 @@
                         <h2>Kino: Rimini Federico Felliniego</h2>
                         <p>Prześledź miejsca felliniowskiej wyobraźni w Rimini. Przeżyj na nowo oniryczne atmosfery arcydzieła 'Osiem i pół' i ten nostalgiczny arkord romaniolskiej młodości, który zapisał się w historii światowego kina.</p>
                     </div>
-                    <img class="card-img" src="images/fellini_rimini.jpg" alt="Słynne Kino Fulgor odrestaurowane w sercu miasta">
+                    <img class="card-img" src="images/rimini_cinema.png" alt="Słynne Kino Fulgor odrestaurowane w sercu miasta">
                     <div class="meta-box">
                         <span class="meta-item" id="film_alt"><em>"Słynne Kino Fulgor odrestaurowane w sercu miasta"</em></span>
                         <span class="meta-price" id="film_price">€450,00</span>
@@ -95,30 +136,16 @@
                 </div>
             </article>
 
-            <article class="card" id="feste">
+            <article class="card" id="scienza">
                 <div class="card-content">
                     <div>
-                        <h2>Święta: Rytuał Żelaznego Sierpnia</h2>
-                        <p>Dołącz do letniej imprezy par excellence. 15 sierpnia we Włoszech oznacza grille w górze, ogniska na plaży, wycieczki poza drzwi do Riccione i całkowity relaks pod śródziemnomorskim słońcem.</p>
+                        <h2>Nauka: Bolonia, europejski hub AI i Big Data</h2>
+                        <p>Odkryj silnik technologiczny, który gipsuje przyszłość. Odwiedź futurystyczny Technobiegun w Bolonii, siedzibę superkomputera Leonardo, gdzie starożytna tradycja akademicka 'Uczonej' łączy się ze strażniczymi badaniami na skalę globalną.</p>
                     </div>
-                    <img class="card-img" src="images/ferragosto_beach.jpg" alt="Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata">
+                    <img class="card-img" src="images/bologna_hub.png" alt="Korytarze technologiczne i światła serwerów superkomputera wewnątrz Technobieguna">
                     <div class="meta-box">
-                        <span class="meta-item" id="feste_alt"><em>"Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata"</em></span>
-                        <span class="meta-price" id="feste_price">€320,00</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card" id="esperienze">
-                <div class="card-content">
-                    <div>
-                        <h2>Doświadczenia: Neapolitański Ekspres</h2>
-                        <p>Dużo więcej niż napój, prawdziwy kult społeczny. Odkryj tajemnicę kawy w Neapolu, wyciśniętej do reguły sztuki z klasyczną cuccumella lub tradycyjną moka. Krótki, gęsty ekspres podawany wrzący.</p>
-                    </div>
-                    <img class="card-img" src="images/naples_coffee.jpg" alt="Parująca filiżanka kawy z gęstą śmietanką na ladzie baru">
-                    <div class="meta-box">
-                        <span class="meta-item" id="esperienze_alt"><em>"Parująca filiżanka kawy z gęstą śmietanką na ladzie baru"</em></span>
-                        <span class="meta-price" id="esperienze_price">€1,20</span>
+                        <span class="meta-item" id="scienza_alt"><em>"Korytarze technologiczne i światła serwerów superkomputera wewnątrz Technobieguna"</em></span>
+                        <span class="meta-price" id="scienza_price">€150,00</span>
                     </div>
                 </div>
             </article>
@@ -129,10 +156,38 @@
                         <h2>Silniki: Dolina Motorowa Modeny</h2>
                         <p>Wejdź do bijącego serca globalnej inżynierii motoryzacyjcznej. W Modenie możesz słuchać ryku silników samochodów wyścigowych Rozbrykanego Kucyka i odkrywać muzea najszybszych supersamochodów na planecie.</p>
                     </div>
-                    <img class="card-img" src="images/modena_motors.jpg" alt="Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari">
+                    <img class="card-img" src="images/modena_macchine.png" alt="Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari">
                     <div class="meta-box">
                         <span class="meta-item" id="macchine_alt"><em>"Płonący czerwony samochód sportowy wystawiony przed muzeum Enzo Ferrari"</em></span>
                         <span class="meta-price" id="macchine_price">€1850,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="tradizione">
+                <div class="card-content">
+                    <div>
+                        <h2>Rzemiosło: Żłobki w Neapolu</h2>
+                        <p>Zanurz się w magicznej i ponadczasowej atmosferze ulicy Świętego Grzegorza Ormiańskiego. Odkryj sekrety historycznych sklepów, w których mistrzowie żłobkowi ręcznie modelują pasterzy z ugotowanej ziemi, podziwiająco stapiając świętą dewocję z ironią partyzanckiego folkloru.</p>
+                    </div>
+                    <img class="card-img" src="images/napoli_presepe.png" alt="Kolorowe detale rzemieślniczych figurek wystawionych w historycznym sklepie w Rozpruwaczu Neapolu">
+                    <div class="meta-box">
+                        <span class="meta-item" id="tradizione_alt"><em>"Kolorowe detale rzemieślniczych figurek wystawionych w historycznym sklepie w Rozpruwaczu Neapolu"</em></span>
+                        <span class="meta-price" id="tradizione_price">€950,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="esperienze">
+                <div class="card-content">
+                    <div>
+                        <h2>Doświadczenia: Drapacze chmur w Mediolanie</h2>
+                        <p>Podziwiaj futurystyczną twarz stolicy designu i mody. Spaceruj wśród futurystycznych wież CityLife, daj się oczarować nagradzanemu Pionowemu Lasowi i ciesz się glamourowym aperitifem podziwiając panoramę, która na nowo definiuje miasto w cieniu Małej Madonny.</p>
+                    </div>
+                    <img class="card-img" src="images/milano_grattacieli.png" alt="Nowoczesne drapacze chmur na Placu Gae Aulenti oświetlone na niebie mediolańskiego zachodu słońca">
+                    <div class="meta-box">
+                        <span class="meta-item" id="esperienze_alt"><em>"Nowoczesne drapacze chmur na Placu Gae Aulenti oświetlone na niebie mediolańskiego zachodu słońca"</em></span>
+                        <span class="meta-price" id="esperienze_price">€180,00</span>
                     </div>
                 </div>
             </article>
@@ -143,10 +198,24 @@
                         <h2>Muzyka: Festiwal w Sanremo</h2>
                         <p>Świątynia włoskiej piosenki. Żyj najbardziej oczekiwanym tygodniem roku w Teatrze Ariston, gdzie wielcy włoskiej muzyki i nowe propozycje wyzywają się na scenie, która lansowała międzynarodowe mity.</p>
                     </div>
-                    <img class="card-img" src="images/sanremo_ariston.jpg" alt="Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu">
+                    <img class="card-img" src="images/sanremo.png" alt="Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu">
                     <div class="meta-box">
                         <span class="meta-item" id="musica_alt"><em>"Podświetlona fasada Teatru Ariston podczas tygodnia Festiwalu"</em></span>
                         <span class="meta-price" id="musica_price">€950,00</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" id="feste">
+                <div class="card-content">
+                    <div>
+                        <h2>Święta: Rytuał Żelaznego Sierpnia</h2>
+                        <p>Dołącz do letniej imprezy par excellence. 15 sierpnia we Włoszech oznacza grille w górze, ogniska na plaży, wycieczki poza drzwi do Riccione i całkowity relaks pod śródziemnomorskim słońcem.</p>
+                    </div>
+                    <img class="card-img" src="images/ferragosto.png" alt="Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata">
+                    <div class="meta-box">
+                        <span class="meta-item" id="feste_alt"><em>"Zapakowana plaża i kolorowe parasole podczas imprezy w środku lata"</em></span>
+                        <span class="meta-price" id="feste_price">€320,00</span>
                     </div>
                 </div>
             </article>

@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Boutique Itália - Grandes Experiências e Tradições",
+    "subtitle": "Explore a alma autêntica da península através de seus crachás culturais.",
+    "promo_label": "Oferta especial de pássaro madrugador válida até:",
+    "promo_date": "15/08/2026",
+    "currency_format": "€{price}"
+  },
+  "sections": {
+    "palio": {
+      "title": "Eventos: O Palio de Siena",
+      "description": "Descubra a magia atemporal de Siena. Viva a rivalidade histórica entre os Distritos-Loja, caminhe entre os bairros medievais em festa e testemunhe a lendária corrida dos barbeiros, guiada pela autoridade do movedor no grande vidro.",
+      "img_alt": "A multidão em festa na Praça do Campo durante o desfile histórico",
+      "price_value": "2500,00"
+    },
+    "calcio": {
+      "title": "Esporte: Cálcio e Paixão Italiana",
+      "description": "Viva a atmosfera eletrizante da Série A no San Siro. Siga os vermelhos-e-pretos e os brancos-e-pretos enquanto eles se desafiam no retângulo de jogo em uma partida de tirar o fôlego, decidida no último segundo em plena Zona Cesarini!",
+      "img_alt": "Os torcedores no estádio expondo uma coreografia espetacular",
+      "price_value": "120,00"
+    },
+    "natura": {
+      "title": "Natureza: As Maravilhas das Ilhas Eólias",
+      "description": "Um arquipélago vulcânico único no mundo. Explore Lipari, admire as espetaculares explorações noturnas do vulcão e mergulhe nas lamas sulfúricas do vulcão para uma experiência regeneradora.",
+      "img_alt": "O pôr do sol no mar cristalino das ilhas em frente à Sicília",
+      "price_value": "1450,00"
+    },
+    "film": {
+      "title": "Cinema: A Rimini de Federico Fellini",
+      "description": "Rastreie os lugares do imaginário felliniano em Rimini. Relembre as atmosferas oníricas da obra-prima '8 e meio' e aquele arcord nostálgico da juventude romagnola que marcou a história do cinema mundial.",
+      "img_alt": "O famoso Cinema Fulgor restaurado no coração da cidade",
+      "price_value": "450,00"
+    },
+    "feste": {
+      "title": "Feriados: O Ritual do Agosto de Ferro",
+      "description": "Junte-se à festa de verão por excelência. 15 de agosto na Itália significa churrascos na montanha, fogueiras na praia, viagens fora da porta para Riccione e relaxamento total sob o sol do Mediterrâneo.",
+      "img_alt": "Praia lotada e guarda-sóis coloridos durante a festa de meio de verão",
+      "price_value": "320,00"
+    },
+    "esperienze": {
+      "title": "Experiências: Os arranha-céus de Milão",
+      "description": "Admire a face futurista da capital do design e da moda. Passeie entre as torres futuristas do CityLife, deixe-se encantar pelo premiado Bosque Vertical e desfrute de um aperitivo glamour admirando o horizonte que redefine a cidade à sombra da Pequena Madona.",
+      "img_alt": "Os modernos arranha-céus da Praça Gae Aulenti iluminados no céu do pôr do sol milanês",
+      "price_value": "180,00"
+    },
+    "tradizione": {
+      "title": "Artesanato: Os presépios de Nápoles",
+      "description": "Mergulhe na atmosfera mágica e atemporal da rua São Gregório Armênio. Descubra os segredos das lojas históricas onde os mestres presépios moldam à mão pastores em terra cozida, fundindo admiravelmente a devoção sagrada com a ironia do folclore partenopeu.",
+      "img_alt": "Os detalhes coloridos das estatuetas artesanais exibidas em uma loja histórica do Quebra-Nápoles",
+      "price_value": "350,00"
+    },
+    "scienza": {
+      "title": "Ciência: Bolonha, hub europeu de IA e Big Data",
+      "description": "Descubra o motor tecnológico que está gessando o futuro. Visite o futurista Tecnopolo de Bolonha, sede do supercomputador Leonardo, onde a antiga tradição acadêmica da 'Douta' se une à pesquisa de vanguarda em escala global.",
+      "img_alt": "Os corredores tecnológicos e as locais dos servidores do supercomputador dentro do Tecnopolo",
+      "price_value": "150,00"
+    },
+    "macchine": {
+      "title": "Motores: O Vale do Motor de Modena",
+      "description": "Entre no coração pulsante da engenharia automotiva global. Em Modena você pode ouvir o rugido dos motores dos carros de corrida do Pônei Saltitante e explorar os museums dos supercarros mais rápidos do planeta.",
+      "img_alt": "Um carro esportivo vermelho flamejante exibido em frente ao museu Enzo Ferrari",
+      "price_value": "1850,00"
+    },
+    "musica": {
+      "title": "Música: O Festival de Sanremo",
+      "description": "O templo da canção italiana. Viva a semana mais esperada do ano no Teatro Ariston, onde os bigs da música italiana e novas propostas se desafiam no palco que lançou mitos internacionais.",
+      "img_alt": "A fachada iluminada do Teatro Ariston durante a semana do Festival",
+      "price_value": "950,00"
+    }
+  }
+}

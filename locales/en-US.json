@@ -38,10 +38,22 @@
       "price_value": "320,00"
     },
     "esperienze": {
-      "title": "Experiences: The Neapolitan Express",
-      "description": "Much more than a drink, a real social cult. Discover the secret of coffee in Naples, extracted to a rule of art with the classic cuccumella or the traditional moka. A short, dense express served boiling hot.",
-      "img_alt": "A steaming cup of coffee with a dense cream on a bar counter",
-      "price_value": "1,20"
+      "title": "Experiences: The Skyscrapers of Milan",
+      "description": "Admire the futuristic face of the capital of design and fashion. Stroll among the futuristic towers of CityLife, let yourself be enchanted by the award-winning Vertical Wood and enjoy a glamour aperitif admiring the skyline that redefines the city in the shadow of the Little Madonna.",
+      "img_alt": "The modern skyscrapers of Gae Aulenti Square illuminated in the sky of the Milanese sunset",
+      "price_value": "180,00"
+    },
+    "tradizione": {
+      "title": "Craftsmanship: The Cribs of Naples",
+      "description": "Immerse yourself in the magical and timeless atmosphere of Saint Gregory Armenian Street. Discover the secrets of the historical shops where the crib masters mold by hand shepherds in baked earth, admirably melting sacred devotion with the irony of Parthenopean folklore.",
+      "img_alt": "The colored details of the artisanal figurines displayed in a historical shop of Naples-Splitter",
+      "price_value": "350,00"
+    },
+    "scienza": {
+      "title": "Science: Bologna, European Hub of AI and Big Data",
+      "description": "Discover the technological engine that is plastering the future. Visit the futuristic Techno-pole of Bologna, home of the supercomputer Leonardo, where the ancient academic tradition of 'The Learned' joins with vanguard research on a global scale.",
+      "img_alt": "The technological corridors and the lights of the servers of the supercomputer inside the Techno-pole",
+      "price_value": "150,00"
     },
     "macchine": {
       "title": "Engines: The Motor Valley of Modena",

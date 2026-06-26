@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Boutique Italien - Große Erlebnisse und Traditionen",
+    "subtitle": "Erkunden Sie die authentische Seele der Halbinsel durch ihre kulturellen Abzeichen.",
+    "promo_label": "Spezielles Frühvogel-Angebot gültig bis:",
+    "promo_date": "15/08/2026",
+    "currency_format": "€{price}"
+  },
+  "sections": {
+    "palio": {
+      "title": "Events: Das Palio von Siena",
+      "description": "Entdecken Sie die zeitlose Magie von Siena. Leben Sie die historische Rivalität zwischen den Laden-Bezirken, gehen Sie inmitten der mittelalterlichen Nachbarschaften in Partei und erleben Sie das legendäre Rennen der Barbiere, geführt von der Autorität des Movers auf dem großen Glas.",
+      "img_alt": "Die parteiende Menge auf dem Feldplatz während der historischen Parade",
+      "price_value": "2500,00"
+    },
+    "calcio": {
+      "title": "Sport: Italienische Leidenschaft Kalzium",
+      "description": "Erleben Sie die elektrisierende Atmosphäre der Serie A im San Siro. Folgen Sie den Rot-und-Schwarzen und den Weiß-und-Schwarzen, während sie sich auf dem Spielrechteck in einem atemberaubenden Match herausfordern, das in der letzten Sekunde in der vollen Cesarini-Zone entschieden wird!",
+      "img_alt": "Die Fans im Stadion, die eine spektakuläre Choreografie aussetzen",
+      "price_value": "120,00"
+    },
+    "natura": {
+      "title": "Natur: Die Wunder der Äolischen Inseln",
+      "description": "Ein einzigartiger vulkanischer Archipel auf der Welt. Erkunden Sie Lipari, bewundern Sie die spektakulären nächtlichen Erkundungen des Vulkans und tauchen Sie in die Schwefelschlämme des Vulkans für ein regenerierendes Erlebnis ein.",
+      "img_alt": "Der Sonnenuntergang auf dem kristallinen Meer der Inseln vor Sizilien",
+      "price_value": "1450,00"
+    },
+    "film": {
+      "title": "Kino: Das Rimini von Federico Fellini",
+      "description": "Verfolgen Sie die Orte des fellinischen Imaginären in Rimini zurück. Erleben Sie die traumhaften Atmosphären des Meisterwerks '8 und ein halbes' und jenen nostalgischen Arcord der romagnolischen Jugend wieder, der die Geschichte des Weltkinos markiert hat.",
+      "img_alt": "Das berühmte Fulgor-Kino, restauriert im Herzen der Stadt",
+      "price_value": "450,00"
+    },
+    "feste": {
+      "title": "Feiertage: Das Ritual des Eisernen Augusts",
+      "description": "Schließen Sie sich der Sommerparty par excellence an. Der 15. August in Italien bedeutet Grills in dem Berg, Lagerfeuer am Strand, Ausflüge außerhalb der Tür nach Riccione und totales Relax unter der Mittelmoorsonne.",
+      "img_alt": "Gepackter Strand und farbige Regenschirme während der Mittsommerparty",
+      "price_value": "320,00"
+    },
+    "esperienze": {
+      "title": "Erlebnisse: Die Wolkenkratzer von Mailand",
+      "description": "Bewundern Sie das futuristische Gesicht der Hauptstadt des Designs und der Mode. Spazieren Sie zwischen den zukunftsweisenden Türmen von CityLife, lassen Sie sich vom preisgekrönten Vertikalen Wald verzaubern und genießen Sie einen glamourösen Aperitif, während Sie die Skyline bewundern, die die Stadt im Schatten der kleinen Madonna neu definiert.",
+      "img_alt": "Die modernen Wolkenkratzer des Gae-Aulenti-Platzes, erleuchtet im Himmel des mailändischen Sonnenuntergangs",
+      "price_value": "180,00"
+    },
+    "tradizione": {
+      "title": "Handwerk: Die Krippen von Neapel",
+      "description": "Tauchen Sie ein in die magische und zeitlose Atmosphäre der Sankt-Gregor-der-Armenier-Straße. Entdecken Sie die Geheimnisse der historischen Läden, in denen die Krippenmeister Hirten aus gekochter Erde von Hand modellieren und dabei die heilige Hingabe bewundernswert mit der Ironie der parthenopeischen Folklore verschmelzen.",
+      "img_alt": "Die farbigen Details der handwerklichen Statuen, ausgestellt in einem historischen Laden des Neapel-Spalters",
+      "price_value": "350,00"
+    },
+    "scienza": {
+      "title": "Wissenschaft: Bologna, europäischer Hub für KI und Big Data",
+      "description": "Entdecken Sie den technologischen Motor, der die Zukunft gipst. Besuchen Sie den futuristischen Techno-Pol von Bologna, Heimat des Supercomputers Leonardo, wo die alte akademische Tradition der 'Gelehrten' sich mit der Avantgarde-Forschung auf globaler Ebene vereint.",
+      "img_alt": "Die technologischen Korridore und die Lichter der Server des Supercomputers innerhalb des Techno-Pols",
+      "price_value": "150,00"
+    },
+    "macchine": {
+      "title": "Motoren: Das Motor Valley von Modena",
+      "description": "Treten Sie in das schlagende Herz der globalen Automobiltechnik ein. In Modena können Sie dem Brüllen der Motoren der Rennwagen des Tänzelnden Ponys lauschen und die Museen der schnellsten Superautos des Planeten erkunden.",
+      "img_alt": "Ein flammend rotes Sportauto, ausgestellt vor dem Enzo-Ferrari-Museum",
+      "price_value": "1850,00"
+    },
+    "musica": {
+      "title": "Musik: Das Sanremo-Festival",
+      "description": "Der Tempel des italienischen Liedes. Leben Sie die am meisten erwartete Woche des Jahres im Ariston-Theater, wo die Bigs der italienischen Musik und neue Vorschläge sich auf der Bühne herausfordern, die internationale Mythen gestartet hat.",
+      "img_alt": "Die beleuchtete Fassade des Ariston-Theaters während der Festivalwoche",
+      "price_value": "950,00"
+    }
+  }
+}

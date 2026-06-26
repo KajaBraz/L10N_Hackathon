@@ -38,10 +38,22 @@
       "price_value": "320,00"
     },
     "esperienze": {
-      "title": "Esperienze: L'Espresso Napoletano",
-      "description": "Molto più di una bevanda, un vero e proprio culto sociale. Scopri il segreto del caffè a Napoli, estratto a regola d'arte con la classica cuccumella o la moka tradizionale. Un espresso corto, denso e servito bollente.",
-      "img_alt": "Una tazzina di caffè fumante con una crema densa sul bancone di un bar",
-      "price_value": "1,20"
+      "title": "Esperienze: I grattacieli di Milano",
+      "description": "Ammira il volto futuristico della capitale del design e della moda. Passeggia tra le torri avveniristiche di CityLife, lasciati incantare dal pluripremiato Bosco Verticale e goditi un aperitivo glamour ammirando lo skyline che ridefinisce la città all'ombra della Madonnina.",
+      "img_alt": "I moderni grattacieli di Piazza Gae Aulenti illuminati nel cielo del tramonto milanese",
+      "price_value": "180,00"
+    },
+    "tradizione": {
+      "title": "Artigianato: I presepi di Napoli",
+      "description": "Immergiti nell'atmosfera magica e senza tempo di via San Gregorio Armeno. Scopri i segreti delle storiche botteghe dove i maestri presepiali modellano a mano pastori in terracotta, fondendo mirabilmente la devozione sacra con l'ironia del folklore partenopeo.",
+      "img_alt": "I dettagli colorati delle statuine artigianali esposte in una storica bottega di Spaccanapoli",
+      "price_value": "350,00"
+    },
+    "scienza": {
+      "title": "Scienza: Bologna, hub europeo di AI e Big Data",
+      "description": "Scopri il motore tecnologico che sta plasmando il futuro. Visita l'avveniristico Tecnopolo di Bologna, sede del supercomputer Leonardo, dove l'antica tradizione accademica della 'Dotta' si unisce alla ricerca d'avanguardia su scala globale.",
+      "img_alt": "I corridoi tecnologici e le luci dei server del supercomputer all'interno del Tecnopolo",
+      "price_value": "150,00"
     },
     "macchine": {
       "title": "Motori: La Motor Valley di Modena",

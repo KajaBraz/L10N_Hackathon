@@ -29,5 +29,11 @@ LOCALE_PROFILES = {
         "date_convention": "Dates must match Polish layout formats strictly (DD.MM.YYYY).",
         "currency_convention": "Numbers must use spaces for thousands and commas for decimals. The currency symbol typically follows the amount, separated by a space (e.g., '1 200,00 zł' or '1 200,00 €').",
         "cultural_expectations": "Ensure a natural, engaging, and grammatically correct tone appropriate for a Polish audience. Idioms, regional concepts (like football or traditional holidays), and culinary terms must be transcreated accurately rather than translated literally to avoid absurd or robotic imagery."
+    },
+    "pt-BR": {
+        "target_locale_name": "Brazilian Portuguese (pt-BR)",
+        "date_convention": "Dates must match Brazilian layout formats strictly (DD/MM/YYYY).",
+        "currency_convention": "Numbers must use periods for thousands and commas for decimals. The currency symbol should precede the amount, typically separated by a space (e.g., 'R$ 1.200,00' or '€ 1.200,00').",
+        "cultural_expectations": "Ensure the tone is warm, natural, and localized for a Brazilian audience. Idiomatic expressions, culinary references, and sports terminology should be adapted contextually rather than translated literally to prevent clunky phrasing or absurd machine-like mistranslations."
     }
 }
