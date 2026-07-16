@@ -15,6 +15,9 @@ End-to-end translation quality management system with AI-powered evaluation, int
 ## Demo
 10-minute live walkthrough: [link](https://youtu.be/71iVNqUczwY)
 
+<img width="1710" height="987" alt="immagine" src="https://github.com/user-attachments/assets/29913957-a522-49b1-8af9-b1fae0e25289" />
+
+
 ## Quick Start
 
 ### 1. Setup Environment
